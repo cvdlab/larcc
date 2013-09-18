@@ -83,5 +83,31 @@ if __name__ == "__main__":
     grid_3d = simplexGrid([2,3,4])
     VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(grid_3d)))
 
+#------------------------------------------------------------------
+def facets(simplices):
+    """
+        Estraction of non-oriented (d-1)-facets of
+        d-dimensional "simplices".
+        
+        Return a list of d-tuples of integers
+        """
+    out = []
+    d = len(simplices[0])+1
+    for simplex in simplices:
+        out += [simplex[0:k]+simplex[k+1:d] for k in range(d-1)]
+    out = sorted(out)
+    return [simplex for k,simplex in enumerate(out[:-1])
+            if out[k] != out[k+1]] + [out[-1]]
+
+if __name__ == "__main__":
+    
+    V,CV = simplexGrid([1,1,1])
+    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,CV))))
+    SK2 = (V,facets(CV))
+    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(SK2)))
+    SK1 = (V,facets(SK2[1]))
+    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(SK1)))
+    
+    print "\nk_0, k_1, k_2, k_3 =",len(V),len(SK1[1]),len(SK2[1]),len(CV), "\n"
 
 #------------------------------------------------------------------
