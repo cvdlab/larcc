@@ -81,3 +81,9 @@ boundary = csrBoundaryFilter(csrFC3,facetLengths)
 coboundary_2 = csrTranspose(boundary)
 print "\ncoboundary_2 =\n", csrToMatrixRepresentation(coboundary_2)
 
+
+# boundary chain visualization
+boundaryCells_2 = boundaryCells(CV,FV3)
+boundary = (V3,[FV3[k] for k in boundaryCells_2])
+VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(boundary)))
+

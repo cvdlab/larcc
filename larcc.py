@@ -239,6 +239,106 @@ if __name__ == "__main__":
     VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(cubes)))
 
 #------------------------------------------------------------------
+def boundary(cells,facets):
+    csrCV = csrCreate(cells)
+    csrFV = csrCreate(facets)
+    csrFC = matrixProduct(csrFV, csrTranspose(csrCV))
+    facetLengths = [csrCell.getnnz() for csrCell in csrCV]
+    return csrBoundaryFilter(csrFC,facetLengths)
+
+def coboundary(cells,facets):
+    Boundary = boundary(cells,facets)
+    return csrTranspose(Boundary)
+
+if __name__ == "__main__":
+    V = [[0.0, 0.0, 0.0],
+    [1.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0],
+    [1.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0],
+    [1.0, 0.0, 1.0],
+    [0.0, 1.0, 1.0],
+    [1.0, 1.0, 1.0]]
+
+    CV =[[0, 1, 2, 4],
+    [1, 2, 4, 5],
+    [2, 4, 5, 6],
+    [1, 2, 3, 5],
+    [2, 3, 5, 6],
+    [3, 5, 6, 7]]
+    
+    FV =[[0, 1, 2],
+    [0, 1, 4],
+    [0, 2, 4],
+    [1, 2, 3],
+    [1, 2, 4],
+    [1, 2, 5],
+    [1, 3, 5],
+    [1, 4, 5],
+    [2, 3, 5],
+    [2, 3, 6],
+    [2, 4, 5],
+    [2, 4, 6],
+    [2, 5, 6],
+    [3, 5, 6],
+    [3, 5, 7],
+    [3, 6, 7],
+    [4, 5, 6],
+    [5, 6, 7]]
+
+    EV =[[0, 1],
+    [0, 2],
+    [0, 4],
+    [1, 2],
+    [1, 3],
+    [1, 4],
+    [1, 5],
+    [2, 3],
+    [2, 4],
+    [2, 5],
+    [2, 6],
+    [3, 5],
+    [3, 6],
+    [3, 7],
+    [4, 5],
+    [4, 6],
+    [5, 6],
+    [5, 7],
+    [6, 7]]
+    
+    print "\ncoboundary_2 =\n", csrToMatrixRepresentation(coboundary(CV,FV))
+    print "\ncoboundary_1 =\n", csrToMatrixRepresentation(coboundary(FV,EV))
+    print "\ncoboundary_0 =\n", csrToMatrixRepresentation(coboundary(EV,AA(LIST)(range(len(V)))))
+
+#------------------------------------------------------------------
+def zeroChain(cells):
+	pass
+
+def totalChain(cells):
+	return csrCreate([[0] for cell in cells])
+
+def boundaryCells(cells,facets):
+	csrBoundaryMat = boundary(cells,facets)
+	csrChain = totalChain(cells)
+	csrBoundaryChain = matrixProduct(csrBoundaryMat, csrChain)
+	for k,value in enumerate(csrBoundaryChain.data):
+		if value % 2 == 0: csrBoundaryChain.data[k] = 0
+	boundaryCells = [k for k,val in enumerate(csrBoundaryChain.data.tolist()) if val == 1]
+	return boundaryCells
+
+
+if __name__ == "__main__":
+
+    boundaryCells_2 = boundaryCells(CV,FV)
+    boundaryCells_1 = boundaryCells([FV[k] for k in boundaryCells_2],EV)
+
+    print "\nboundaryCells_2 =\n", boundaryCells_2
+    print "\nboundaryCells_1 =\n", boundaryCells_1
+
+    boundary = (V,[FV[k] for k in boundaryCells_2])
+    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(boundary)))
+
+#------------------------------------------------------------------
 
 
 if __name__ == "__main__":

@@ -100,7 +100,7 @@ def facets(simplices):
             if out[k] != out[k+1]] + [out[-1]]
 
 if __name__ == "__main__":
-    
+
     V,CV = simplexGrid([1,1,1])
     VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,CV))))
     SK2 = (V,facets(CV))
@@ -111,3 +111,4 @@ if __name__ == "__main__":
     print "\nk_0, k_1, k_2, k_3 =",len(V),len(SK1[1]),len(SK2[1]),len(CV), "\n"
 
 #------------------------------------------------------------------
+
