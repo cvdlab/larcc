@@ -12,7 +12,7 @@ cells = [cell for cell in tetra.vertices.tolist()
          if  ((verts[cell[0]][2]<0) and (verts[cell[1]][2]<0) and (verts[cell[2]][2]<0) and (verts[cell[3]][2]<0) ) ]
 
 V, CV = verts, cells
-FV = facets(CV)
+FV = simplexFacets(CV)
 
 VIEW(MKPOL([V,AA(AA(lambda k:k+1))(FV),[]]))
 

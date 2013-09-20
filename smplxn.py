@@ -84,7 +84,7 @@ if __name__ == "__main__":
     VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(grid_3d)))
 
 #------------------------------------------------------------------
-def facets(simplices):
+def simplexFacets(simplices):
     """
         Estraction of non-oriented (d-1)-facets of
         d-dimensional "simplices".
@@ -103,9 +103,9 @@ if __name__ == "__main__":
 
     V,CV = simplexGrid([1,1,1])
     VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,CV))))
-    SK2 = (V,facets(CV))
+    SK2 = (V,simplexFacets(CV))
     VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(SK2)))
-    SK1 = (V,facets(SK2[1]))
+    SK1 = (V,simplexFacets(SK2[1]))
     VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(SK1)))
     
     print "\nk_0, k_1, k_2, k_3 =",len(V),len(SK1[1]),len(SK2[1]),len(CV), "\n"

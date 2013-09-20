@@ -238,6 +238,81 @@ if __name__ == "__main__":
     cubes = larProduct([squares,mod_0])
     VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(cubes)))
 
+
+#------------------------------------------------------------------
+def csrPredFilter(CSRm, pred):
+	# can be done in parallel (by rows)
+	coo = CSRm.tocoo()
+	triples = [[row,col,val] for row,col,val in zip(coo.row,coo.col,coo.data) if pred(val)]
+	i, j, data = TRANS(triples)
+	CSRm = scipy.sparse.coo_matrix((data,(i,j)),CSRm.shape).tocsr()
+	return CSRm
+
+if __name__ == "__main__" and False:
+    print "\n>>> csrPredFilter"
+    CSRm = csrPredFilter(matrixProduct(csrFV, csrTranspose(csrEV)).T, GE(2)).T
+    print "\nccsrPredFilter(csrFE) =\n", csrToMatrixRepresentation(CSRm)
+
+#------------------------------------------------------------------
+def larCellAdjacencies(CSRm):
+    CSRm = matrixProduct(CSRm,csrTranspose(CSRm))
+    return CSRm
+
+if __name__ == "__main__" and False:
+    print "\n>>> larCellAdjacencies"
+    adj_2_cells = larCellAdjacencies(csrFV)
+    print "\nadj_2_cells =\n", csrToMatrixRepresentation(adj_2_cells)
+    adj_1_cells = larCellAdjacencies(csrEV)
+    print "\nadj_1_cells =\n", csrToMatrixRepresentation(adj_1_cells)
+
+#------------------------------------------------------------------
+# extraction of facets of a cell complex
+
+def setup(model,dim):
+    V, cells = model
+    csr = csrCreate(cells)
+    csrAdjSquareMat = larCellAdjacencies(csr)
+    csrAdjSquareMat = csrPredFilter(csrAdjSquareMat, GE(dim)) # ? HOWTODO ?
+    return V,cells,csr,csrAdjSquareMat
+
+def larFacets(model,dim=3):
+    """
+        Estraction of (d-1)-cellFacets from "model" := (V,d-cells)
+        Return (V, (d-1)-cellFacets)
+		"""
+    V,cells,csr,csrAdjSquareMat = setup(model,dim)
+    cellFacets = []
+    # for each input cell i
+    for i in range(len(cells)):
+        adjCells = csrAdjSquareMat[i].tocoo()
+        cell1 = csr[i].tocoo().col
+        pairs = zip(adjCells.col,adjCells.data)
+        for j,v in pairs:
+            if (i<j):
+                cell2 = csr[j].tocoo().col
+                cell = list(set(cell1).intersection(cell2))
+                cellFacets.append(sorted(cell))
+    # sort and remove duplicates
+    cellFacets = sorted(AA(list)(set(AA(tuple)(cellFacets))))
+    return V,cellFacets
+
+if __name__ == "__main__":
+	V = [[0.,0.],[3.,0.],[0.,3.],[3.,3.],[1.,2.],[2.,2.],
+		 [1.,1.],[2.,1.]]
+	FV = [[0,1,6,7],[0,2,4,6],[4,5,6,7],[1,3,5,7],[2,3,4,5],
+	   [0,1,2,3]]
+		
+	_,EV = larFacets((V,FV),dim=2)
+	print "\nEV =",EV
+	VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,EV))))
+
+	FV = [[0,1,3],[1,2,4],[2,4,5],[3,4,6],[4,6,7],[5,7,8], # full
+		 [1,3,4],[4,5,7], # empty
+		 [0,1,2],[6,7,8],[0,3,6],[2,5,8]] # exterior
+		
+	_,EV = larFacets((V,FV),dim=2)
+	print "\nEV =",EV
+
 #------------------------------------------------------------------
 def boundary(cells,facets):
     csrCV = csrCreate(cells)
