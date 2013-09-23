@@ -450,7 +450,70 @@ def signedBoundaryCells(verts,cells,facets):
 	boundaryCells = list(coo.row * coo.data)
 	return AA(int)(boundaryCells)
 
-#------------------------------------------------------------------
+
+def pivotSimplices(V,CV,d=3):
+	"""
+	-----------------------------------------------------------------------
+	input:  "cell" indices of a convex and solid polytopes and "V" vertices
+	output:  biggest "simplex" indices spanning the polytope
+	-----------------------------------------------------------------------
+	m = number of cell vertices
+	d = dimension (number of coordinates) of cell vertices
+	d+1 = number of simplex vertices
+	vcell = cell vertices
+	vsimplex = simplex vertices
+	Id = identity matrix
+	basis = orthonormal spanning set of vectors e_k
+	vector = position vector of a simplex vertex in translated coordinates
+	unUsedIndices = cell indices not moved to simplex
+	-----------------------------------------------------------------------
+	"""
+	simplices = []
+	for cell in CV:
+		vcell = np.array([V[v] for v in cell])
+		m, simplex = len(cell), []
+		# translate the cell: for each k, vcell[k] -= vcell[0], and simplex[0] := cell[0]
+		for k in range(m-1,-1,-1): vcell[k] -= vcell[0]
+		# simplex = [0], basis = [], tensor = Id(d+1)
+		simplex += [cell[0]]
+		basis = []
+		tensor = np.array(IDNT(d))
+		# look for most far cell vertex
+		dists = [SUM([SQR(x) for x in v])**0.5 for v in vcell]
+		maxDistIndex = max(enumerate(dists),key=lambda x: x[1])[0]
+		vector = np.array([vcell[maxDistIndex]])
+		# normalize vector
+		den=(vector**2).sum(axis=-1) **0.5
+		basis = [vector/den]
+		simplex += [cell[maxDistIndex]]
+		unUsedIndices = [h for h in cell if h not in simplex]
+		
+		# for k in {2,d+1}:
+		for k in range(2,d+1):
+			# update the orthonormal tensor
+			e = basis[-1]
+			tensor = tensor - np.dot(e.T, e)
+			# compute the index h of a best vector
+			# look for most far cell vertex
+			dists = [SUM([SQR(x) for x in np.dot(tensor,v)])**0.5
+			if h in unUsedIndices else 0.0
+			for (h,v) in zip(cell,vcell)]
+			# insert the best vector index h in output simplex
+			maxDistIndex = max(enumerate(dists),key=lambda x: x[1])[0]
+			vector = np.array([vcell[maxDistIndex]])
+			# normalize vector
+			den=(vector**2).sum(axis=-1) **0.5
+			basis += [vector/den]
+			simplex += [cell[maxDistIndex]]
+			unUsedIndices = [h for h in cell if h not in simplex]
+		simplices += [simplex]
+	return simplices
+# -----------------------------------------------------------------------
+def simplexOrientations(V,simplices):
+	vcells = [[V[v]+[1.0] for v in simplex] for simplex in simplices]
+	return [SIGN(np.linalg.det(vcell)) for vcell in vcells]
+# -----------------------------------------------------------------------
+
 
 if __name__ == "__main__":
 	
