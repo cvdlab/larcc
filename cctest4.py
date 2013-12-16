@@ -1,11 +1,43 @@
 from smplxn import *
 
-V,FV = simplexGrid([10,10])
-EV = simplexFacets(FV)
+V,FV = simplexGrid([3,3])
 VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,FV))))
+EV = simplexFacets(FV)
+VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,EV))))
+VV = simplexFacets(EV)
+VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,VV))))
+
+np.set_printoptions(threshold='nan')
 
 csrSignedBoundaryMat = signedBoundary (V,FV,EV)
-print "\ncsrSignedBoundaryMat =\n", csrToMatrixRepresentation(csrSignedBoundaryMat)
+Z = csrToMatrixRepresentation(csrSignedBoundaryMat)
+print "\ncsrSignedBoundaryMat =\n", Z
+
+from pylab import *
+matshow(Z)
+show()
+
+
+
+
+V,FV = simplexGrid([10,10])
+VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,FV))))
+EV = simplexFacets(FV)
+VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,EV))))
+VV = simplexFacets(EV)
+VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,VV))))
+
+np.set_printoptions(threshold='nan')
+
+csrSignedBoundaryMat = signedBoundary (V,FV,EV)
+Z = csrToMatrixRepresentation(csrSignedBoundaryMat)
+print "\ncsrSignedBoundaryMat =\n", Z
+
+from pylab import *
+matshow(Z)
+show()
+
+
 
 boundaryCells_1 = signedBoundaryCells(V,FV,EV)
 print "\nboundaryCells_1 =\n", boundaryCells_1

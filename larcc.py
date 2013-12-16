@@ -165,7 +165,7 @@ if __name__ == "__main__":
 def csrToMatrixRepresentation(CSRm):
     nrows = csrGetNumberOfRows(CSRm)
     ncolumns = csrGetNumberOfColumns(CSRm)
-    ScipyMat = zeros((nrows,ncolumns),int)
+    ScipyMat = zeros((nrows,ncolumns),float)
     C = CSRm.tocoo()
     for triple in zip(C.row,C.col,C.data):
         ScipyMat[triple[0],triple[1]] = triple[2]
