@@ -37,10 +37,10 @@
 
 %----macros end-----------------------------------------------------------------
 
-\title{Multidimensional cuboidal grids and topological products in LAR-CC
-\footnote{This document is part of the \emph{Linear Algebraic Representation with CoChains} (LAR-CC) framework~\cite{cclar-proj:2013:00}. \today}
+\title{Hypercuboidal grids and topological products in LARCC
+\footnote{This document is part of the \emph{Linear Algebraic Representation with CoChains} (LARCC) framework~\cite{cclar-proj:2013:00}. \today}
 }
-\author{Alberto Paoluzzi}
+\author{LARCC team}
 %\date{}							%Activatetodisplayagivendateornodate
 
 \begin{document}
