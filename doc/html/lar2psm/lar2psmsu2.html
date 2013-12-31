@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>LAR model of a cell complex</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 149--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu3.html" >next</a>] [<a 
+href="lar2psmsu1.html" >prev</a>] [<a 
+href="lar2psmsu1.html#taillar2psmsu1.html" >prev-tail</a>] [<a 
+href="#taillar2psmsu2.html">tail</a>] [<a 
+href="lar2psmse2.html#lar2psmsu2.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x6-60002.2"></a>LAR model of a cell complex</h4>
+<!--l. 151--><p class="noindent" >A very important concept introduced by the LAR package is the definition of the <span 
+class="cmti-10x-x-109">model </span>of a cell
+complex, as a pair made by a list of vertices, given as lists of coordinates, and a topological
+relation.
+   <div class="newtheorem">
+<!--l. 153--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-10x-x-109">Definition </span>(LAR model)<span 
+class="cmbx-10x-x-109">.</span>  </span><span 
+class="cmti-10x-x-109">A </span>LAR model <span 
+class="cmti-10x-x-109">is a pair, e.g.</span><span 
+class="cmti-10x-x-109">&#x00A0;a Python tuple </span><span 
+class="cmtt-10x-x-109">(</span>V, FV)<span 
+class="cmti-10x-x-109">,</span>
+<span 
+class="cmti-10x-x-109">where:</span>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x6-6002x1"><span 
+class="cmitt-10x-x-109">V </span><span 
+class="cmti-10x-x-109">is the list of vertices, given as lists of coordinates;</span>
+     </li>
+     <li 
+  class="enumerate" id="x6-6004x2"><span 
+class="cmitt-10x-x-109">FV </span><span 
+class="cmti-10x-x-109">is a </span>cell-vertex <span 
+class="cmti-10x-x-109">relation, in this case the face-vertex relation, given as a list of</span>
+     <span 
+class="cmti-10x-x-109">cells, where each cell is given as a list of vertex indices.</span></li></ol>
+   </div>
+<!--l. 161--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x6-70002.2"></a><span 
+class="cmbx-10x-x-109">Examples</span></span>
+   Some very simple examples of 0D, 1D, and 2D models follows. They are displayed in
+Figure&#x00A0;<a 
+href="lar2psmsu8.html#x14-170011">1<!--tex4ht:ref: fig:lar2psm-01 --></a>.
+                                                                                  
+                                                                                  
+<div class="flushleft" 
+>
+<!--l. 162--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3c"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">2D model examples</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3c </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 167--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">V</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0.,0.],[1.,0.],[0.,1.],[1.,1.],[0.5,0.5]]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0],[1],[2],[3],[4]]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">EV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0,1],[0,2],[0,4],[1,3],[1,4],[2,3],[2,4],[3,4]]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">FV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0,1,4],[1,3,4],[2,3,4],[0,2,4]]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">model0d,</span><span 
+class="cmtt-10">&#x00A0;model1d,</span><span 
+class="cmtt-10">&#x00A0;model2d</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;(V,VV),</span><span 
+class="cmtt-10">&#x00A0;(V,EV),</span><span 
+class="cmtt-10">&#x00A0;(V,FV)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 178--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="lar2psmsu8.html#nuweb6d"><span 
+class="cmr-9">6d</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 182--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu3.html" >next</a>] [<a 
+href="lar2psmsu1.html" >prev</a>] [<a 
+href="lar2psmsu1.html#taillar2psmsu1.html" >prev-tail</a>] [<a 
+href="lar2psmsu2.html" >front</a>] [<a 
+href="lar2psmse2.html#lar2psmsu2.html" >up</a>] </p></div>
+<!--l. 182--><p class="indent" >   <a 
+ id="taillar2psmsu2.html"></a>   
+</body></html> 

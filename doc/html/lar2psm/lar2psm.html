@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head>                        <title>Module Lar2psm </title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+
+<h2 class="titleHead">Module Lar2psm <span class="thank-mark"><a 
+href="#tk-1">*</a></span></h2>
+<div class="author" ><span 
+class="cmr-12">Alberto Paoluzzi</span></div><br />
+<div class="date" ><span 
+class="cmr-12">November 21, 2013</span></div>
+   <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">*</span></span>This document is part of the <span 
+class="cmti-10x-x-109">Linear Algebraic Representation with CoChains </span>(LAR-CC)
+framework&#x00A0;<span class="cite">[<a 
+href="lar2psmli4.html#Xcclar-proj:2013:00">CL13</a>]</span>. November 21, 2013</div></div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><span 
+class="cmbx-10">Abstract</span></div>
+     <!--l. 46--><p class="indent" >    <span 
+class="cmr-10">This software module contains all the functions needed to interface the LAR data</span>
+     <span 
+class="cmr-10">structure and/or the geometric objects defined by it with the Plasm environment. In</span>
+     <span 
+class="cmr-10">particular, it will include the interfaces towards the visualization primitives provided</span>
+     <span 
+class="cmr-10">by the language.</span>
+</div>
+   <div class="tableofcontents">
+   <span class="likesectionToc" ><a 
+href="lar2psmli1.html#x2-1000" id="QQ2-2-1">Contents</a></span>
+<br />   <span class="sectionToc" >1 <a 
+href="lar2psmse1.html#x3-20001" id="QQ2-3-2">Introduction</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="lar2psmse2.html#x4-30002" id="QQ2-4-3">Implementation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="lar2psmsu1.html#x5-40002.1" id="QQ2-5-4">Convex combination</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="lar2psmsu2.html#x6-60002.2" id="QQ2-6-6">LAR model of a cell complex</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.3 <a 
+href="lar2psmsu3.html#x7-80002.3" id="QQ2-7-8">Function <span 
+class="cmtt-10x-x-109">MKPOLS</span></a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.4 <a 
+href="lar2psmsu4.html#x8-100002.4" id="QQ2-8-10">&#8220;Explosion&#8221; of the scene</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="lar2psmse3.html#x9-110003" id="QQ2-9-11">Source Output: <span 
+class="cmtt-10x-x-109">lar2psm </span>module</a></span>
+                                                                                  
+                                                                                  
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="lar2psmsu5.html#x10-120003.1" id="QQ2-10-12">Importing a generic module</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.2 <a 
+href="lar2psmsu6.html#x11-140003.2" id="QQ2-11-14">Lar2psm exporting</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="lar2psmse4.html#x12-150004" id="QQ2-12-15">Unit tests</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.1 <a 
+href="lar2psmsu7.html#x13-160004.1" id="QQ2-13-16">Creation of repository of unit tests</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.2 <a 
+href="lar2psmsu8.html#x14-170004.2" id="QQ2-14-17">Viewing some simplicial complexes</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.3 <a 
+href="lar2psmsu9.html#x15-180004.3" id="QQ2-15-19">Testing convex combination of vectors</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="lar2psmse5.html#x16-190005" id="QQ2-16-20">Indices</a></span>
+<br />   &#x00A0;<span class="likesubsectionToc" ><a 
+href="lar2psmli2.html#x17-200005" id="QQ2-17-21">Index of variables</a></span>
+<br />   &#x00A0;<span class="likesubsectionToc" ><a 
+href="lar2psmli3.html#x18-210005" id="QQ2-18-22">Index of macros</a></span>
+<br />   <span class="likesectionToc" ><a 
+href="lar2psmli4.html#x19-220005" id="QQ2-19-23">References</a></span>
+   </div>
+
+
+
+
+
+ 
+</body></html> 
+
+                                                                                  
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Using the IDE</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="framework.tex"> 
+<meta name="date" content="2013-10-30 19:30:00"> 
+<link rel="stylesheet" type="text/css" href="framework.css"> 
+</head><body 
+>
+   <!--l. 116--><div class="crosslinks"><p class="noindent">[<a 
+href="frameworksu3.html" >prev</a>] [<a 
+href="frameworksu3.html#tailframeworksu3.html" >prev-tail</a>] [<a 
+href="#tailframeworksu4.html">tail</a>] [<a 
+href="frameworkse1.html#frameworksu4.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x6-80001.4"></a>Using the IDE</h4>
+<!--l. 118--><p class="noindent" >In short, in order to use the development environment, you must (a) open your terminal and
+move to the <span 
+class="cmtt-10x-x-109">larcc </span>directory, (b) write a <span 
+class="cmtt-10x-x-109">tex </span>file, including documentation and suitably tagged
+computer code, (c) save it in the <span 
+class="cmtt-10x-x-109">src </span>subdirectory, and (d) execute a <span 
+class="cmtt-10x-x-109">make </span>command, asking
+either for generation of the <span 
+class="cmtt-10x-x-109">pdf </span>or the <span 
+class="cmtt-10x-x-109">html </span>documentation, or execution of <a 
+href="http://en.wikipedia.org/wiki/Unit_testing" >unit testing</a>, or
+simply for the compilation of the source code.
+<!--l. 121--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">1.4.1   </span> <a 
+ id="x6-90001.4.1"></a>Using make</h5>
+<!--l. 123--><p class="noindent" >When using the IDE, the user must open the <span 
+class="cmtt-10x-x-109">Makefile </span>with any text editor, and modify the
+current values of two user-definable variables, according to his will:
+                                                                                  
+                                                                                  
+   <div class="verbatim" id="verbatim-7">
+NAME&#x00A0;=&#x00A0;&#x003C;name&#x003E;
+&#x00A0;<br />LANGUAGE&#x00A0;=&#x00A0;&#x003C;language&#x003E;
+</div>
+<!--l. 128--><p class="nopar" > where <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E; </span>is name of the new working document, and <span 
+class="cmtt-10x-x-109">&#x003C;language&#x003E; </span>may be only <span 
+class="cmtt-10x-x-109">py</span>
+(for Pyton). Soon such values will be extended to include <span 
+class="cmtt-10x-x-109">&#x003C;js&#x003E; </span>for Javascript and
+<span 
+class="cmtt-10x-x-109">&#x003C;lhs&#x003E; </span>for Literate Haskell. The make <span 
+class="cmti-10x-x-109">targets </span>currently available in the Makefile are the
+following:
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-10x-x-109">all</span> </dt><dd 
+class="description">is  the  default  option.  Its  execution  produces  a  <span 
+class="cmti-10x-x-109">pdf  </span>document  in  the  <span 
+class="cmtt-10x-x-109">doc/pdf</span>
+     subdirectory, and a pair of <span 
+class="cmti-10x-x-109">tex</span>/<span 
+class="cmti-10x-x-109">bbl </span>documents in the <span 
+class="cmtt-10x-x-109">doc/tex </span>subdirectory, all using
+     name <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E;</span>;
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">html</span> </dt><dd 
+class="description">similar to the default option, but produces a directory named <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E; </span>wth a bunch
+     of <span 
+class="cmti-10x-x-109">html </span>pages, located in the <span 
+class="cmtt-10x-x-109">doc/html </span>subdirectory;
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">test</span> </dt><dd 
+class="description">to execute the tests contained in the directory <span 
+class="cmtt-10x-x-109">test/&#x003C;language&#x003E;/&#x003C;name&#x003E;</span>
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">exec</span> </dt><dd 
+class="description">to execute <span 
+class="cmti-10x-x-109">nuweb </span>on the working document, i.e.&#x00A0;on <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E;.tex</span><span class="footnote-mark"><a 
+href="framework7.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x6-9001f1"></a> ;
+     this execution generates both the <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>&#x00A0;documentation file and the source output
+     files (for example the unit tests) written in the coding <span 
+class="cmtt-10x-x-109">&#x003C;language&#x003E;</span>;
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">clear</span> </dt><dd 
+class="description">to remove all the working files from the root directory. Used by other commands.
+     To be invoked by the user just in case that something did not work out.</dd></dl>
+   <!--l. 147--><div class="crosslinks"><p class="noindent">[<a 
+href="frameworksu3.html" >prev</a>] [<a 
+href="frameworksu3.html#tailframeworksu3.html" >prev-tail</a>] [<a 
+href="frameworksu4.html" >front</a>] [<a 
+href="frameworkse1.html#frameworksu4.html" >up</a>] </p></div>
+<!--l. 147--><p class="indent" >   <a 
+ id="tailframeworksu4.html"></a>   
+</body></html> 

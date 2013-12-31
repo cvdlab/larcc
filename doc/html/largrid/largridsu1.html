@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Generation of cells</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 97--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu2.html" >next</a>] [<a 
+href="#taillargridsu1.html">tail</a>] [<a 
+href="largridse2.html#largridsu1.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x5-40002.1"></a>Generation of cells</h4>
+<!--l. 99--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x5-50002.1"></a><span 
+class="cmbx-10x-x-109">Uniform 0D complex</span></span>
+   The <span 
+class="cmtt-10x-x-109">grid0 </span>second-order function generates a 0-dimensional uniform complex embedding
+<span 
+class="cmmi-10x-x-109">n </span>+ 1 equally-spaced (at unit intervals) 0-cells within the 1D interval. It returns the cells of this
+0-complex.
+<div class="flushleft" 
+>
+<!--l. 103--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of uniform 0D cellular complex</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 108--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;grid0(n):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;cells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;AA(LIST)(range(n+1))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;cells</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 116--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+<!--l. 122--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x5-60002.1"></a><span 
+class="cmbx-10x-x-109">Uniform 1D complex</span></span>
+   A similar <span 
+class="cmtt-10x-x-109">grid1 </span>function returns a uniform 1D cellular complex with <span 
+class="cmmi-10x-x-109">n </span>1D <span 
+class="cmtt-10x-x-109">cells</span>.
+<div class="flushleft" 
+>
+<!--l. 126--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of uniform 1D cellular complex</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 131--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;grid1(n):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;ints</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;range(n+1)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;cells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;TRANS([ints[:-1],ints[1:]])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;cells</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 140--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 146--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x5-70002.1"></a><span 
+class="cmbx-10x-x-109">Uniform 0D or 1D complex</span></span>
+   A <span 
+class="cmtt-10x-x-109">larGrid </span>function is finally given to generate the LAR representation of the cells of either a
+0- or a 1-dimensional complex, depending on the value of the <span 
+class="cmtt-10x-x-109">order </span>parameter, to take values in
+the set <span 
+class="cmsy-10x-x-109">{</span>0<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmsy-10x-x-109">}</span>.
+<div class="flushleft" 
+>
+<!--l. 149--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3c"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of cellular complex of 0/1 dimension </span><span 
+class="cmmi-10">d</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3c</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 154--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larGrid(n):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;def</span><span 
+class="cmtt-10">&#x00A0;larGrid1(d):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;d==0:</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;grid0(n)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;elif</span><span 
+class="cmtt-10">&#x00A0;d==1:</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;grid1(n)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;larGrid1</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 164--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 171--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu2.html" >next</a>] [<a 
+href="largridsu1.html" >front</a>] [<a 
+href="largridse2.html#largridsu1.html" >up</a>] </p></div>
+<!--l. 171--><p class="indent" >   <a 
+ id="taillargridsu1.html"></a>   
+</body></html> 

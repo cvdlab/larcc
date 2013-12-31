@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Largrid exporting</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 763--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu6.html" >next</a>] [<a 
+href="largridse4.html" >prev</a>] [<a 
+href="largridse4.html#taillargridse4.html" >prev-tail</a>] [<a 
+href="largridse4.html#taillargridse5.html">tail</a>] [<a 
+href="largrid.html#largridse6.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x13-330005"></a>Largrid exporting</h3>
+<!--l. 765--><p class="noindent" >In this section we assemble top-down the <span 
+class="cmtt-10x-x-109">largrid </span>module, by orderly listing the macros it is
+composed of. As might be expected, the present one is the module version corresponding to the
+current state of the system, i.e.&#x00A0;to a very initial state. Other functions will be added when
+needed, and the module translation in different languages (C/C++, Javascript, Haskell, OpenCL
+kernels) will be (hopefully soon) appended.
+<div class="flushleft" 
+>
+<!--l. 767--><p class="noindent" >
+<a 
+ id="nuweb14b"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"lib/py/largrid.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">14b </span><span 
+class="cmsy-10">&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 771--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"""Module</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;functions</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;grid</span><span 
+class="cmtt-10">&#x00A0;generation</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;Cartesian</span><span 
+class="cmtt-10">&#x00A0;product"""</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Importing </span><span 
+class="cmtt-10">smplxn </span><span 
+class="cmr-10">and </span><span 
+class="cmtt-10">numpy </span><span 
+class="cmr-10">libraries</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu7.html#nuweb16"><span 
+class="cmr-9">16</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of vertices of decompositions of 1D intervals</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu2.html#nuweb4a"><span 
+class="cmr-9">4a</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of uniform 0D cellular complex</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu1.html#nuweb3a"><span 
+class="cmr-9">3a</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of uniform 1D cellular complex</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu1.html#nuweb3b"><span 
+class="cmr-9">3b</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of cellular complex of 0/1 dimension </span><span 
+class="cmmi-10">d</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu1.html#nuweb3c"><span 
+class="cmr-9">3c</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of grid vertices</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu3.html#nuweb4b"><span 
+class="cmr-9">4b</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Transformation from multindex to address in a linear array storage</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu3.html#nuweb5"><span 
+class="cmr-9">5</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of grid cells</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu3.html#nuweb7"><span 
+class="cmr-9">7</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Enumeration of binary ranges of given order</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu4.html#nuweb9a"><span 
+class="cmr-9">9a</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Filtering binary ranges by order</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu4.html#nuweb9c"><span 
+class="cmr-9">9c</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Assembling grid skeletons</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu4.html#nuweb10b"><span 
+class="cmr-9">10b</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Multidimensional grid generation</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu5.html#nuweb12a"><span 
+class="cmr-9">12a</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Cartesian product of two lar models</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridse4.html#nuweb13a"><span 
+class="cmr-9">13a</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">if</span><span 
+class="cmtt-10">&#x00A0;__name__=="__main__":</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Multidimensional visualisation examples</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridsu5.html#nuweb12b"><span 
+class="cmr-9">12b</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Test examples of Cartesian product</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="largridse4.html#nuweb14a"><span 
+class="cmr-9">14a</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 795--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu6.html" >next</a>] [<a 
+href="largridse4.html" >prev</a>] [<a 
+href="largridse4.html#taillargridse4.html" >prev-tail</a>] [<a 
+href="largridse5.html" >front</a>] [<a 
+href="largrid.html#largridse6.html" >up</a>] </p></div>
+<!--l. 795--><p class="indent" >   <a 
+ id="taillargridse5.html"></a>  
+</body></html> 

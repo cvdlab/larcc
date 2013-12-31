@@ -1,0 +1,28 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{PBCF93}
+
+\bibitem[KL94]{Knuth:1994:CSS:561208}
+Donald~Ervin Knuth and Silvio Levy, \emph{The cweb system of structured
+  documentation: Version 3.0}, 1st ed., Addison-Wesley Longman Publishing Co.,
+  Inc., Boston, MA, USA, 1994.
+
+\bibitem[Knu84]{Knuth:1984:LP:473.479}
+Donald~E. Knuth, \emph{Literate programming}, Comput. J. \textbf{27} (1984),
+  no.~2, 97--111.
+
+\bibitem[Knu92]{Knuth:1992:LP:129057}
+\bysame, \emph{Literate programming}, Center for the Study of Language and
+  Information, Stanford, CA, USA, 1992.
+
+\bibitem[PBCF93]{Paoluzzi:1993:DMS:169728.169719}
+A.~Paoluzzi, F.~Bernardini, C.~Cattani, and V.~Ferrucci,
+  \emph{Dimension-independent modeling with simplicial complexes}, {ACM} Trans.
+  Graph. \textbf{12} (1993), no.~1, 56--102.
+
+\end{thebibliography}

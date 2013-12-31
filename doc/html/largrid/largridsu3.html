@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Full-dimensional grids</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 209--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu5.html" >next</a>] [<a 
+href="#taillargridsu3.html">tail</a>] [<a 
+href="largridse3.html#largridsu3.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x8-110003.1"></a>Full-dimensional grids</h4>
+<!--l. 211--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.1.1   </span> <a 
+ id="x8-120003.1.1"></a>Vertex generation</h5>
+<!--l. 213--><p class="noindent" >First the grid vertices are produced by the <span 
+class="cmtt-10x-x-109">larVertProd </span>function, via Cartesian product of
+vertices of the <span 
+class="cmmi-10x-x-109">n </span>1-dimensional arguments (vertex lists in <span 
+class="cmtt-10x-x-109">vertLists</span>), orderly corresponding to
+<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">0</span></sub>, <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub>, ..., <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">n</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub> in the output points (<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmmi-8">n</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub>).
+<div class="flushleft" 
+>
+                                                                                  
+                                                                                  
+<!--l. 215--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of grid vertices</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 220--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larVertProd(vertLists):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;AA(CAT)(CART(vertLists))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 227--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 234--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.1.2   </span> <a 
+ id="x8-130003.1.2"></a>Mapping of indices to storage</h5>
+<!--l. 236--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-140003.1.2"></a><span 
+class="cmbx-10x-x-109">Multi-index to address transformation</span></span>
+   The second-order utility <span 
+class="cmtt-10x-x-109">index2address </span>function transforms a <span 
+class="cmtt-10x-x-109">shape </span>list for a
+multidimensional array into a function that, when applied to a multindex array, i.e.&#x00A0;to a list of
+integers within the <span 
+class="cmtt-10x-x-109">shape</span>&#8217;s bounds, returns the integer address of the array component within
+the linear storage of the multidimensional array.
+<!--l. 239--><p class="indent" >   The transformation formula for a <span 
+class="cmmi-10x-x-109">d</span>-dimensional array with <span 
+class="cmtt-10x-x-109">shape </span>(<span 
+class="cmmi-10x-x-109">n</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">,n</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,...,n</span><sub><span 
+class="cmmi-8">d</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub>) is a linear combination
+of the 0-based<span class="footnote-mark"><a 
+href="largrid9.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x8-14001f1"></a> 
+multi-index (<span 
+class="cmmi-10x-x-109">i</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">,i</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,...,i</span><sub><span 
+class="cmmi-8">d</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub>) with <span 
+class="cmtt-10x-x-109">weights </span>equal to (<span 
+class="cmmi-10x-x-109">w</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">,w</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,...,w</span><sub><span 
+class="cmmi-8">d</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,</span>1):
+   <center class="math-display" >
+<img 
+src="largrid0x.png" alt="addr = i &#x00D7; w  + i  &#x00D7; w +  &#x22C5;&#x22C5;&#x22C5;+  i   &#x00D7; w
+        0    0   1    1        d-1    d-1
+" class="math-display" ></center>
+<!--l. 242--><p class="nopar" > where
+   <center class="math-display" >
+<img 
+src="largrid1x.png" alt="wk = nk+1 &#x00D7; nk+2 &#x00D7; &#x22C5;&#x22C5;&#x22C5;&#x00D7;  nd-1,    0 &#x2264; k &#x2264; d- 2.
+" class="math-display" ></center>
+<!--l. 246--><p class="nopar" >
+<!--l. 248--><p class="indent" >   Therefore, we get <span 
+class="cmtt-10x-x-109">index2address([4,3,6])([2,2,0])</span> = 48 = 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>(3 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>6) + 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>(6 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>1) + 0,
+where <span 
+class="cmtt-10x-x-109">[2,2,0] </span>represent the numbers of (pages, rows, columns) indexing an element in the
+three-dimensional array of shape <span 
+class="cmtt-10x-x-109">[4,3,6]</span>.
+                                                                                  
+                                                                                  
+<div class="flushleft" 
+>
+<!--l. 252--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb5"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Transformation from multindex to address in a linear array storage</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">5</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 257--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;index2address</span><span 
+class="cmtt-10">&#x00A0;(shape):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;n</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;len(shape)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;shape</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;shape[1:]+[1]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;weights</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[PROD(shape[k:])</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;range(n)]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;def</span><span 
+class="cmtt-10">&#x00A0;index2address0</span><span 
+class="cmtt-10">&#x00A0;(multindex):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;INNERPROD([multindex,</span><span 
+class="cmtt-10">&#x00A0;weights])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;index2address0</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 269--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 275--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-150003.1.2"></a><span 
+class="cmtt-10x-x-109">index2address </span><span 
+class="cmbx-10x-x-109">examples</span></span>
+   In the following example, <span 
+class="cmtt-10x-x-109">[3,6] </span>is the <span 
+class="cmtt-10x-x-109">shape </span>of a two-dimensional array with 3 rows and 6
+columns, stored in row-major order (i.e.&#x00A0;by rows). The expression <span 
+class="cmtt-10x-x-109">index2address([3,6])([2,0])</span>
+returns 12 = 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>(6 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>1) + 0, since the array element characterised by the multi-index value <span 
+class="cmtt-10x-x-109">[2,0]</span>
+is addressed at position 12 (starting from 0) in the linear storage of the array. Analogously, the
+function <span 
+class="cmtt-10x-x-109">index2address([3,6])</span>, when applied to all the index values addressing the
+array of shape <span 
+class="cmtt-10x-x-109">[3,6]</span>, produces the integers between 0 and 17 = 3 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>6 <span 
+class="cmsy-10x-x-109">- </span>1. In the last
+example, the function <span 
+class="cmtt-10x-x-109">index2address([4,3,6]) </span>is applied to all the 0-based triples
+indexing a three-dimensional array of the given shape. Of course, the mapping works
+correctly even when the array shape is one-dimensional, as shown by the last example
+below.
+<div class="flushleft" 
+>
+<!--l. 279--><p class="noindent" >
+                                                                                  
+                                                                                  
+ <div class="minipage"><a 
+ id="nuweb6a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Test example</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">6a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 284--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;index2address([3,6])([2,0])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">12</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;AA(index2address([3,6]))(CART([</span><span 
+class="cmtt-10">&#x00A0;range(0,3),</span><span 
+class="cmtt-10">&#x00A0;range(0,6)</span><span 
+class="cmtt-10">&#x00A0;]))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[0,</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;3,</span><span 
+class="cmtt-10">&#x00A0;4,</span><span 
+class="cmtt-10">&#x00A0;5,</span><span 
+class="cmtt-10">&#x00A0;6,</span><span 
+class="cmtt-10">&#x00A0;7,</span><span 
+class="cmtt-10">&#x00A0;8,</span><span 
+class="cmtt-10">&#x00A0;9,</span><span 
+class="cmtt-10">&#x00A0;10,</span><span 
+class="cmtt-10">&#x00A0;11,</span><span 
+class="cmtt-10">&#x00A0;12,</span><span 
+class="cmtt-10">&#x00A0;13,</span><span 
+class="cmtt-10">&#x00A0;14,</span><span 
+class="cmtt-10">&#x00A0;15,</span><span 
+class="cmtt-10">&#x00A0;16,</span><span 
+class="cmtt-10">&#x00A0;17]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;AA(index2address([4,3,6]))(CART([</span><span 
+class="cmtt-10">&#x00A0;range(0,4),</span><span 
+class="cmtt-10">&#x00A0;range(0,3),</span><span 
+class="cmtt-10">&#x00A0;range(0,6)</span><span 
+class="cmtt-10">&#x00A0;]))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[0,</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;3,</span><span 
+class="cmtt-10">&#x00A0;4,</span><span 
+class="cmtt-10">&#x00A0;5,</span><span 
+class="cmtt-10">&#x00A0;6,</span><span 
+class="cmtt-10">&#x00A0;7,</span><span 
+class="cmtt-10">&#x00A0;8,</span><span 
+class="cmtt-10">&#x00A0;9,</span><span 
+class="cmtt-10">&#x00A0;10,</span><span 
+class="cmtt-10">&#x00A0;11,</span><span 
+class="cmtt-10">&#x00A0;12,</span><span 
+class="cmtt-10">&#x00A0;13,</span><span 
+class="cmtt-10">&#x00A0;14,</span><span 
+class="cmtt-10">&#x00A0;15,</span><span 
+class="cmtt-10">&#x00A0;16,</span><span 
+class="cmtt-10">&#x00A0;17,</span><span 
+class="cmtt-10">&#x00A0;18,</span><span 
+class="cmtt-10">&#x00A0;19,</span><span 
+class="cmtt-10">&#x00A0;20,</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">21,</span><span 
+class="cmtt-10">&#x00A0;22,</span><span 
+class="cmtt-10">&#x00A0;23,</span><span 
+class="cmtt-10">&#x00A0;24,</span><span 
+class="cmtt-10">&#x00A0;25,</span><span 
+class="cmtt-10">&#x00A0;26,</span><span 
+class="cmtt-10">&#x00A0;27,</span><span 
+class="cmtt-10">&#x00A0;28,</span><span 
+class="cmtt-10">&#x00A0;29,</span><span 
+class="cmtt-10">&#x00A0;30,</span><span 
+class="cmtt-10">&#x00A0;31,</span><span 
+class="cmtt-10">&#x00A0;32,</span><span 
+class="cmtt-10">&#x00A0;33,</span><span 
+class="cmtt-10">&#x00A0;34,</span><span 
+class="cmtt-10">&#x00A0;35,</span><span 
+class="cmtt-10">&#x00A0;36,</span><span 
+class="cmtt-10">&#x00A0;37,</span><span 
+class="cmtt-10">&#x00A0;38,</span><span 
+class="cmtt-10">&#x00A0;39,</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">40,</span><span 
+class="cmtt-10">&#x00A0;41,</span><span 
+class="cmtt-10">&#x00A0;42,</span><span 
+class="cmtt-10">&#x00A0;43,</span><span 
+class="cmtt-10">&#x00A0;44,</span><span 
+class="cmtt-10">&#x00A0;45,</span><span 
+class="cmtt-10">&#x00A0;46,</span><span 
+class="cmtt-10">&#x00A0;47,</span><span 
+class="cmtt-10">&#x00A0;48,</span><span 
+class="cmtt-10">&#x00A0;49,</span><span 
+class="cmtt-10">&#x00A0;50,</span><span 
+class="cmtt-10">&#x00A0;51,</span><span 
+class="cmtt-10">&#x00A0;52,</span><span 
+class="cmtt-10">&#x00A0;53,</span><span 
+class="cmtt-10">&#x00A0;54,</span><span 
+class="cmtt-10">&#x00A0;55,</span><span 
+class="cmtt-10">&#x00A0;56,</span><span 
+class="cmtt-10">&#x00A0;57,</span><span 
+class="cmtt-10">&#x00A0;58,</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">59,</span><span 
+class="cmtt-10">&#x00A0;60,</span><span 
+class="cmtt-10">&#x00A0;61,</span><span 
+class="cmtt-10">&#x00A0;62,</span><span 
+class="cmtt-10">&#x00A0;63,</span><span 
+class="cmtt-10">&#x00A0;64,</span><span 
+class="cmtt-10">&#x00A0;65,</span><span 
+class="cmtt-10">&#x00A0;66,</span><span 
+class="cmtt-10">&#x00A0;67,</span><span 
+class="cmtt-10">&#x00A0;68,</span><span 
+class="cmtt-10">&#x00A0;69,</span><span 
+class="cmtt-10">&#x00A0;70,</span><span 
+class="cmtt-10">&#x00A0;71]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;index2address([4])([2])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">2</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 300--><p class="noindent" ><span 
+class="cmr-9">Macro never referenced.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 306--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.1.3   </span> <a 
+ id="x8-160003.1.3"></a>Multidimensional cell generation</h5>
+<!--l. 308--><p class="noindent" >In this section we discuss the implementation of the generation of cells as lists of indices to grid
+vertices. First, we study the case that the output complex is generated by the Cartesian
+product of <span 
+class="cmti-10x-x-109">any </span>number of either 0- or 1-dimensional cell complexes. Then, we discuss
+an efficient extraction of <span 
+class="cmmi-10x-x-109">d</span>-dimensional skeleton of a (solid) <span 
+class="cmmi-10x-x-109">n</span>-dimensional grid, for
+0 <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">n</span>.
+<!--l. 311--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-170003.1.3"></a><span 
+class="cmbx-10x-x-109">Example</span></span>
+   In order to better understand the generation of cuboidal grids from products of 0- or
+1-dimensional complexes, below we show a simple example of 2D grids embedded in <span 
+class="msbm-10x-x-109">E</span><sup><span 
+class="cmr-8">3</span></sup>. In
+particular, <span 
+class="cmtt-10x-x-109">v1 = [[0.],[1.],[2.],[3.]] </span>and <span 
+class="cmtt-10x-x-109">v0 = [[0.],[1.],[2.]] </span>are two arrays of 1D
+vertices, <span 
+class="cmtt-10x-x-109">c1 = [[0,1],[1,2],[2,3]] </span>and <span 
+class="cmtt-10x-x-109">c0 = [[0],[1],[2]] </span>are the LAR representation of a
+1-complex and a 0-complex, respectively. The solid 2-complex named <span 
+class="cmtt-10x-x-109">grid2D </span>given below is
+shown in Figure&#x00A0;<a 
+href="#x11-270014">4<!--tex4ht:ref: fig:grid23D --></a>a.
+                                                                                  
+                                                                                  
+<table 
+class="align-star">
+              <tr><td 
+class="align-odd"></td>              <td 
+class="align-even"><span 
+class="cmtt-10x-x-109">grid2D = larVertProd([v1,v1]),larCellProd([c1,c1])</span></td>              <td 
+class="align-label"></td>              <td 
+class="align-label">
+              </td></tr><tr><td 
+class="align-odd"></td>              <td 
+class="align-even"><span 
+class="cmtt-10x-x-109">VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(grid2D)))</span></td>                      <td 
+class="align-label"></td>              <td 
+class="align-label"></td></tr></table>
+<!--l. 319--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                                  
+                                                                                  
+<a 
+ id="x8-170011"></a>
+                                                                                  
+                                                                                  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">Exploded views of models <span 
+class="cmtt-10x-x-109">grid2D </span>and <span 
+class="cmtt-10x-x-109">grid3D</span>.</span></div><!--tex4ht:label?: x8-170011 -->
+                                                                                  
+                                                                                  
+<!--l. 325--><p class="indent" >   </div><hr class="endfigure">
+<!--l. 327--><p class="indent" >   Notice that <span 
+class="cmtt-10x-x-109">grid2D</span>, generated by product of two 1-complexes, is <span 
+class="cmti-10x-x-109">solid </span>in <span 
+class="msbm-10x-x-109">E</span><sup><span 
+class="cmr-8">2</span></sup>, whereas <span 
+class="cmtt-10x-x-109">grid3D</span>
+shown in Figure&#x00A0;<a 
+href="#x11-270014">4<!--tex4ht:ref: fig:grid23D --></a>b, generated by product of two 1-complexes and one 0-complex, is
+two-dimensional and embedded in <span 
+class="msbm-10x-x-109">E</span><sup><span 
+class="cmr-8">3</span></sup>.
+<div class="flushleft" 
+>
+<!--l. 330--><p class="noindent" >
+<a 
+ id="nuweb6b"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Example of cuboidal grid of dimensions (2</span><span 
+class="cmmi-10">,</span><span 
+class="cmr-10">3)</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">6b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 334--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">v1,</span><span 
+class="cmtt-10">&#x00A0;c1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0.],[1.],[2.],[3.]],[[0,1],[1,2],[2,3]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">v0,</span><span 
+class="cmtt-10">&#x00A0;c0</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0.],[1.],[2.]],</span><span 
+class="cmtt-10">&#x00A0;[[0],[1],[2]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">vertGrid</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;larVertProd([v1,</span><span 
+class="cmtt-10">&#x00A0;v1,</span><span 
+class="cmtt-10">&#x00A0;v0])</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">cellGrid</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;larCellProd([c1,</span><span 
+class="cmtt-10">&#x00A0;c1,</span><span 
+class="cmtt-10">&#x00A0;c0])</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">grid3D</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;vertGrid,cellGrid</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(grid3D)))</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 345--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">never</span>
+     <span 
+class="cmr-9">referenced.</span></dd></dl>
+</div>
+<!--l. 350--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x8-180003.1.3"></a><span 
+class="cmbx-10x-x-109">Cartesian product of 0/1-complexes</span></span>
+   Here, the input is given by the array <span 
+class="cmtt-10x-x-109">cellLists </span>of lists of cells of the argument complexes.
+Hence, the <span 
+class="cmtt-10x-x-109">shapes </span>variable contains the (list of) numbers <span 
+class="cmmi-10x-x-109">m</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">,m</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,... </span>of cells in each argument
+complex, and the <span 
+class="cmtt-10x-x-109">indices </span>variable (generated by Cartesian product) collects the whole set
+<span 
+class="cmmi-10x-x-109">M</span><sub><span 
+class="cmr-8">0</span></sub> <span 
+class="cmsy-10x-x-109">&#x00D7; </span><span 
+class="cmmi-10x-x-109">M</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x00D7;</span><img 
+src="largrid2x.png" alt="&#x22C5;&#x22C5;&#x22C5;"  class="@cdots" ><span style="margin-left:0.3em" class="thinspace"></span> of 0-based multi-indices corresponding to the cells of the output complex, with
+<span 
+class="cmmi-10x-x-109">M</span><sub><span 
+class="cmmi-8">k</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>0<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,...,m</span><sub><span 
+class="cmmi-8">k</span></sub> <span 
+class="cmsy-10x-x-109">- </span>1<span 
+class="cmsy-10x-x-109">}</span>.
+<!--l. 353--><p class="indent" >   The <span 
+class="cmtt-10x-x-109">jointCells </span>variable is used to contain the list of outputs of Cartesian products of <span 
+class="cmtt-10x-x-109">cells</span>
+corresponding to every <span 
+class="cmtt-10x-x-109">multindex </span>in <span 
+class="cmtt-10x-x-109">indices</span>.
+<div class="flushleft" 
+>
+<!--l. 356--><p class="noindent" >
+<a 
+ id="nuweb7"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of grid cells</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">7</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 360--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larCellProd(cellLists):</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;shapes</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[len(item)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;item</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;cellLists]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;indices</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;CART([range(shape)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;shape</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;shapes])</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;jointCells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[CART([cells[k]</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k,cells</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;zip(multindex,cellLists)])</span></span></span><br />
+                                                                                  
+                                                                                  
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;multindex</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;indices]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;convert</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;index2address([</span><span 
+class="cmtt-10">&#x00A0;shape+1</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;(len(cellLists[k][0])</span><span 
+class="cmtt-10">&#x00A0;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;1)</span><span 
+class="cmtt-10">&#x00A0;else</span><span 
+class="cmtt-10">&#x00A0;shape</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k,shape</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;enumerate(shapes)</span><span 
+class="cmtt-10">&#x00A0;])</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;[AA(convert)(cell)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;cell</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;jointCells]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+<!--l. 372--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 373--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">referenced</span>
+     <span 
+class="cmr-9">in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div>
+<!--l. 378--><p class="indent" >   With reference to the evaluation of the expression <span 
+class="cmtt-10x-x-109">larCellProd([c1,c1])</span>, where <span 
+class="cmtt-10x-x-109">c1 </span>is the
+LAR representation of a 1-complex with 3 cells, defined by 4 vertices (0-cells), we have the trace
+given below. Of course, the function invocation returns the list of cells of the topological product
+of the input complexes, each one expressed as a list of vertices of the Cartesian product of the
+corresponding component vertices. The partially evaluated function <span 
+class="cmtt-10x-x-109">index2address0</span>, stored in
+the <span 
+class="cmtt-10x-x-109">convert </span>variable, is used to execute the mapping, for each output <span 
+class="cmtt-10x-x-109">cell </span>in <span 
+class="cmtt-10x-x-109">jointCells</span>, from
+vertex multi-indices to their linear storage address. The mindful reader should notice that the
+number of generated cells is always equal to the product of terms in <span 
+class="cmtt-10x-x-109">shape</span>, in turn
+equal to the number of elements in <span 
+class="cmtt-10x-x-109">indices </span>and in <span 
+class="cmtt-10x-x-109">jointCells</span>. In this case we have
+<span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmtt-10x-x-109">larCellProd([c1,c1])</span><span 
+class="cmsy-10x-x-109">| </span>= 3 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>3 = 9.
+<div class="flushleft" 
+>
+<!--l. 382--><p class="noindent" >
+<a 
+ id="nuweb8"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Tracing the evaluation of expression &#8220;</span><span 
+class="cmtt-10">larCellProd([c1,c1])</span><span 
+class="cmr-10">&#8221;</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">8</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 386--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">c1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0,1],[1,2],[2,3]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">cellLists</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[[0,1],[1,2],[2,3]],</span><span 
+class="cmtt-10">&#x00A0;[[0,1],[1,2],[2,3]]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">shapes</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;3]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">indices</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[0,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[0,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;2]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">jointCells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[0,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;1]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[0,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;2]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[0,</span><span 
+class="cmtt-10">&#x00A0;3],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;3]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[1,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;1]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[1,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;2]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[1,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;3],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;3]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[2,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;0],</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;1]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[2,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;1],</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;2]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[2,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;3],</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;2],</span><span 
+class="cmtt-10">&#x00A0;[3,</span><span 
+class="cmtt-10">&#x00A0;3]]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">convert</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;&#x003C;function</span><span 
+class="cmtt-10">&#x00A0;index2address0&#x003E;</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">return</span><span 
+class="cmtt-10">&#x00A0;[</span></span></span><br />
+                                                                                  
+                                                                                  
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[0,</span><span 
+class="cmtt-10">&#x00A0;1,</span><span 
+class="cmtt-10">&#x00A0;4,</span><span 
+class="cmtt-10">&#x00A0;5],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[1,</span><span 
+class="cmtt-10">&#x00A0;2,</span><span 
+class="cmtt-10">&#x00A0;5,</span><span 
+class="cmtt-10">&#x00A0;6],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[2,</span><span 
+class="cmtt-10">&#x00A0;3,</span><span 
+class="cmtt-10">&#x00A0;6,</span><span 
+class="cmtt-10">&#x00A0;7],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[4,</span><span 
+class="cmtt-10">&#x00A0;5,</span><span 
+class="cmtt-10">&#x00A0;8,</span><span 
+class="cmtt-10">&#x00A0;9],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[5,</span><span 
+class="cmtt-10">&#x00A0;6,</span><span 
+class="cmtt-10">&#x00A0;9,</span><span 
+class="cmtt-10">&#x00A0;10],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[6,</span><span 
+class="cmtt-10">&#x00A0;7,</span><span 
+class="cmtt-10">&#x00A0;10,</span><span 
+class="cmtt-10">&#x00A0;11],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[8,</span><span 
+class="cmtt-10">&#x00A0;9,</span><span 
+class="cmtt-10">&#x00A0;12,</span><span 
+class="cmtt-10">&#x00A0;13],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[9,</span><span 
+class="cmtt-10">&#x00A0;10,</span><span 
+class="cmtt-10">&#x00A0;13,</span><span 
+class="cmtt-10">&#x00A0;14],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[10,</span><span 
+class="cmtt-10">&#x00A0;11,</span><span 
+class="cmtt-10">&#x00A0;14,</span><span 
+class="cmtt-10">&#x00A0;15]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+<!--l. 415--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 416--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">never</span>
+     <span 
+class="cmr-9">referenced.</span></dd></dl>
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 422--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu5.html" >next</a>] [<a 
+href="largridsu3.html" >front</a>] [<a 
+href="largridse3.html#largridsu3.html" >up</a>] </p></div>
+<!--l. 422--><p class="indent" >   <a 
+ id="taillargridsu3.html"></a>    
+</body></html> 

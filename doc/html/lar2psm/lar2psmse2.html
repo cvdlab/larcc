@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Implementation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 56--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmse3.html" >next</a>] [<a 
+href="lar2psmse1.html" >prev</a>] [<a 
+href="lar2psmse1.html#taillar2psmse1.html" >prev-tail</a>] [<a 
+href="#taillar2psmse2.html">tail</a>] [<a 
+href="lar2psm.html#lar2psmse2.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x4-30002"></a>Implementation</h3>
+<!--l. 57--><p class="noindent" >Since the present <span 
+class="cmtt-10x-x-109">lar2psm </span>module is an interface between the <span 
+class="cmtt-10x-x-109">larcc </span>library and the PLaSM
+language, and its various incarnations, it should allow to import the language itself (in Python,
+the <span 
+class="cmtt-10x-x-109">pyplasm </span>module).
+<div class="flushleft" 
+>
+<!--l. 59--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb2a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Import the pyplasm module</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">2a </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 64--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">from</span><span 
+class="cmtt-10">&#x00A0;pyplasm</span><span 
+class="cmtt-10">&#x00A0;import</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 70--><p class="noindent" ><span 
+class="cmr-9">Macro never referenced.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 76--><p class="indent" >   An useful utility will allow for the creation of a subdirectory from a <span 
+class="cmtt-10x-x-109">dirpath </span><span 
+class="cmti-10x-x-109">string</span>.
+<div class="flushleft" 
+>
+<!--l. 78--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb2b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Create directory from path</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">2b </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 83--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">import</span><span 
+class="cmtt-10">&#x00A0;os</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;createDir(dirpath):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;not</span><span 
+class="cmtt-10">&#x00A0;os.path.exists(dirpath):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;os.makedirs(dirpath)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 92--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb2c"><span 
+class="cmr-9">2c</span></a><a 
+href="lar2psmsu7.html#nuweb6a"><span 
+class="cmr-9">, 6a</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div><br /><br />
+</div>
+<!--l. 97--><p class="noindent" >It may be useful to define the repository(ies) for the unit tests associated to the module:
+<div class="flushleft" 
+>
+                                                                                  
+                                                                                  
+<!--l. 98--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb2c"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"test/py/lar2psm-tests.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">2c </span><span 
+class="cmsy-10">&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 103--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Create directory from path</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb2b"><span 
+class="cmr-9">2b</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">createDir(&#8217;test/py/lar2psm/&#8217;)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl></div><br /><br />
+</div>
+<!--l. 110--><p class="noindent" >
+   <div class="subsectionTOCS">
+   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="lar2psmsu1.html#x5-40002.1">Convex combination</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="lar2psmsu2.html#x6-60002.2">LAR model of a cell complex</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.3 <a 
+href="lar2psmsu3.html#x7-80002.3">Function <span 
+class="cmtt-10x-x-109">MKPOLS</span></a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.4 <a 
+href="lar2psmsu4.html#x8-100002.4">&#8220;Explosion&#8221; of the scene</a></span>
+   </div>
+
+
+
+                                                                                  
+                                                                                  
+   <!--l. 269--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmse3.html" >next</a>] [<a 
+href="lar2psmse1.html" >prev</a>] [<a 
+href="lar2psmse1.html#taillar2psmse1.html" >prev-tail</a>] [<a 
+href="lar2psmse2.html" >front</a>] [<a 
+href="lar2psm.html#lar2psmse2.html" >up</a>] </p></div>
+<!--l. 269--><p class="indent" >   <a 
+ id="taillar2psmse2.html"></a>  
+</body></html> 

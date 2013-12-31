@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Generation of embedding vertices</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 171--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu1.html" >prev</a>] [<a 
+href="largridsu1.html#taillargridsu1.html" >prev-tail</a>] [<a 
+href="#taillargridsu2.html">tail</a>] [<a 
+href="largridse2.html#largridsu2.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x6-80002.2"></a>Generation of embedding vertices</h4>
+<!--l. 173--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x6-90002.2"></a><span 
+class="cmbx-10x-x-109">Generation of grid vertices</span></span>
+   The second-order <span 
+class="cmtt-10x-x-109">larSplit </span>function is used to subdivide the real interval [0<span 
+class="cmmi-10x-x-109">,dom</span>] into <span 
+class="cmmi-10x-x-109">n</span>
+equal parts. It returns the list of <span 
+class="cmmi-10x-x-109">n </span>+ 1 <span 
+class="cmtt-10x-x-109">vertices </span>1D of this decomposition, each represented as a
+singleton list.
+<div class="flushleft" 
+>
+<!--l. 177--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Generation of vertices of decompositions of 1D intervals</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 182--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larSplit(dom):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;def</span><span 
+class="cmtt-10">&#x00A0;larSplit1(n):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;assert</span><span 
+class="cmtt-10">&#x00A0;n</span><span 
+class="cmtt-10">&#x00A0;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;and</span><span 
+class="cmtt-10">&#x00A0;type(n)</span><span 
+class="cmtt-10">&#x00A0;==</span><span 
+class="cmtt-10">&#x00A0;int</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;item</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;float(dom)/n</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;ints</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;range(n+1)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;items</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[item]*(n+1)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vertices</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;AA(LIST)(AA(PROD)(TRANS([ints,items])))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;vertices</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;larSplit1</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 196--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><a 
+href="largridsu6.html#nuweb15d"><span 
+class="cmr-9">, 15d</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div><br /><br />
+</div>
+   <!--l. 203--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu1.html" >prev</a>] [<a 
+href="largridsu1.html#taillargridsu1.html" >prev-tail</a>] [<a 
+href="largridsu2.html" >front</a>] [<a 
+href="largridse2.html#largridsu2.html" >up</a>] </p></div>
+<!--l. 203--><p class="indent" >   <a 
+ id="taillargridsu2.html"></a>   
+</body></html> 

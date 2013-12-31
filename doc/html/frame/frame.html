@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head>                        <title>Literate programming IDE for LAR-CC </title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="frame.tex"> 
+<meta name="date" content="2013-11-21 11:50:00"> 
+<link rel="stylesheet" type="text/css" href="frame.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+
+<h2 class="titleHead">Literate programming IDE for LAR-CC <span class="thank-mark"><a 
+href="#tk-1">*</a></span></h2>
+<div class="author" ><span 
+class="cmr-12">Alberto Paoluzzi</span></div><br />
+<div class="date" ><span 
+class="cmr-12">November 21, 2013</span></div>
+   <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">*</span></span>This document is part of the <span 
+class="cmti-10x-x-109">Linear Algebraic Representation with CoChains </span>(LAR-CC)
+framework&#x00A0;<span class="cite">[<a 
+href="frameli2.html#Xcclar-proj:2013:00">CL13</a>]</span>. November 21, 2013</div></div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><span 
+class="cmbx-10">Abstract</span></div>
+     <!--l. 46--><p class="indent" >    <span 
+class="cmr-10">This document introduces the developer of geometric libreries and applications</span>
+     <span 
+class="cmr-10">to  the  integrated  development  environment  (IDE)  set  up  for  documentation  and</span>
+     <span 
+class="cmr-10">multilanguage development using LAR-CC, the Linear Algebraic Representation for</span>
+     <span 
+class="cmr-10">geometry, manufacturing and physics with </span><span 
+class="cmti-10">Chains </span><span 
+class="cmr-10">and </span><span 
+class="cmti-10">CoChains</span><span 
+class="cmr-10">. This IDE is strongly</span>
+     <span 
+class="cmr-10">based on the </span><a 
+href="http://www.literateprogramming.com/" ><span 
+class="cmr-10">literate programming</span></a> <span 
+class="cmr-10">tool </span><span 
+class="cmti-10">Nuweb</span><span 
+class="cmr-10">, aiming at embedding the code in the</span>
+     <span 
+class="cmr-10">documentation, and not vice-versa. The main goal of this framework is to facilitate</span>
+     <span 
+class="cmr-10">how to express the </span><span 
+class="cmti-10">why </span><span 
+class="cmr-10">of software design decisions, and not only the tricky details</span>
+     <span 
+class="cmr-10">of low level coding. I would recommend writing programs as if they were research</span>
+     <span 
+class="cmr-10">papers and treat the code as you would write mathematical expressions in a research</span>
+     <span 
+class="cmr-10">paper. Using multiple programming languages is allowed and even encouraged in </span><span 
+class="cmtt-10">larcc</span><span 
+class="cmr-10">.</span>
+     <span 
+class="cmr-10">When  possible,  the  same  functions  coded  in  different  languages  should  stay  close</span>
+     <span 
+class="cmr-10">within the same document subsection. The </span><span 
+class="cmtt-10">larcc </span><span 
+class="cmr-10">IDE integrates a few programming,</span>
+     <span 
+class="cmr-10">documentation and version control tools, including </span><a 
+href="http://www.tug.org/texlive/" ><span class="LATEX"><span 
+class="cmr-10">L</span><span class="A"><span 
+class="cmr-10">A</span></span><span class="TEX"><span 
+class="cmr-10">T</span><span 
+class="E"><span 
+class="cmr-10">E</span></span><span 
+class="cmr-10">X</span></span></span></a><span 
+class="cmr-10">, </span><a 
+href="http://sourceforge.net/projects/nuweb/" ><span 
+class="cmti-10">Nuweb</span></a><span 
+class="cmr-10">, </span><a 
+href="http://johnmacfarlane.net/pandoc/" ><span 
+class="cmti-10">Pandoc</span></a><span 
+class="cmr-10">, </span><a 
+href="http://git-scm.com/" ><span 
+class="cmti-10">Git</span></a><span 
+class="cmr-10">, and</span>
+     <a 
+href="http://leoeditor.com/" ><span 
+class="cmr-10">Leo editor</span></a><span 
+class="cmr-10">.</span>
+</div>
+                                                                                  
+                                                                                  
+   <div class="tableofcontents">
+   <span class="likesectionToc" ><a 
+href="frameli1.html#x2-1000" id="QQ2-2-1">Contents</a></span>
+<br />   <span class="sectionToc" >1 <a 
+href="framese1.html#x3-20001" id="QQ2-3-2">Up and running</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.1 <a 
+href="framesu1.html#x4-30001.1" id="QQ2-4-3">Prerequisites</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.2 <a 
+href="framesu2.html#x5-70001.2" id="QQ2-5-7">Download</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.3 <a 
+href="framesu3.html#x6-80001.3" id="QQ2-6-9">Working-file</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.4 <a 
+href="framesu4.html#x7-90001.4" id="QQ2-7-10">Using the IDE</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="framese2.html#x9-120002" id="QQ2-9-13">Structure of <span 
+class="cmtt-10x-x-109">larcc</span></a></span>
+<br />   <span class="likesectionToc" ><a 
+href="frameli2.html#x10-130002" id="QQ2-10-15">References</a></span>
+   </div>
+
+
+ 
+</body></html> 
+
+                                                                                  
+
+

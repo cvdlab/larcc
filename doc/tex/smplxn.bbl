@@ -1,0 +1,19 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{PBCF93}
+
+\bibitem[CL13]{cclar-proj:2013:00}
+CVD-Lab, \emph{Linear algebraic representation}, Tech. Report 13-00, Roma Tre
+  University, October 2013.
+
+\bibitem[PBCF93]{Paoluzzi:1993:DMS:169728.169719}
+A.~Paoluzzi, F.~Bernardini, C.~Cattani, and V.~Ferrucci,
+  \emph{Dimension-independent modeling with simplicial complexes}, {ACM} Trans.
+  Graph. \textbf{12} (1993), no.~1, 56--102.
+
+\end{thebibliography}

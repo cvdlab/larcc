@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head>                        <title>Testing Literate Programming</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="cclar.tex"> 
+<meta name="date" content="2013-10-26 06:24:00"> 
+<link rel="stylesheet" type="text/css" href="cclar.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+
+<h2 class="titleHead">Testing Literate Programming</h2>
+<div class="author" ><span 
+class="cmr-12">TheAuthor</span></div><br />
+<div class="date" ><span 
+class="cmr-12">October 26, 2013</span></div>
+   </div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 43--><p class="noindent" ><span 
+class="cmbx-10">Abstract</span></div>
+     <!--l. 44--><p class="indent" >    <span 
+class="cmr-10">This document is my first effort on writing some literate programming</span><span 
+class="cmr-10">&#x00A0;</span><span class="cite"><span 
+class="cmr-10">[</span><a 
+href="cclarli4.html#XKnuth:1984:LP:473.479"><span 
+class="cmr-10">Knu84</span></a><span 
+class="cmr-10">,</span>
+     <span 
+class="cmr-10">&#x00A0;</span><a 
+href="cclarli4.html#XKnuth:1992:LP:129057"><span 
+class="cmr-10">Knu92</span></a><span 
+class="cmr-10">]</span></span><span 
+class="cmr-10">, aiming to provide the best embedded documentation for my experimental</span>
+     <span 
+class="cmr-10">code,  while  developing  it.  The  tool  choosen  is  </span><span 
+class="cmti-10">nuweb</span><span 
+class="cmr-10">,  in  my  view  the  simplest</span>
+     <span 
+class="cmr-10">multi-language derivation from the Knuth&#8217;s original WEB and CWEB tools</span><span 
+class="cmr-10">&#x00A0;</span><span class="cite"><span 
+class="cmr-10">[</span><a 
+href="cclarli4.html#XKnuth:1994:CSS:561208"><span 
+class="cmr-10">KL94</span></a><span 
+class="cmr-10">]</span></span><span 
+class="cmr-10">.</span>
+     <span 
+class="cmr-10">My approach to literate programming is also motivated by the wish for independency</span>
+     <span 
+class="cmr-10">of the content from a specific programming language. Actually, I have several candidate</span>
+     <span 
+class="cmr-10">languages  &#8212;  including  </span><span 
+class="cmtt-10">python</span><span 
+class="cmr-10">,  </span><span 
+class="cmtt-10">haskell</span><span 
+class="cmr-10">,  and  </span><span 
+class="cmtt-10">clojure </span><span 
+class="cmr-10">&#8212;  to  use  for  writing  the</span>
+     <span 
+class="cmr-10">reference documentation for my research work, so that </span><span 
+class="cmti-10">nuweb </span><span 
+class="cmr-10">gives me the freedom to</span>
+     <span 
+class="cmr-10">freely experiment with them, even mixing chunks of code written in different languages</span>
+     <span 
+class="cmr-10">in the same document, while providing an execution environment and unit testing in</span>
+     <span 
+class="cmr-10">the same time.</span>
+</div>
+   <div class="tableofcontents">
+   <span class="likesectionToc" ><a 
+href="cclarli1.html#x2-1000" id="QQ2-2-1">Contents</a></span>
+<br />   <span class="sectionToc" >1 <a 
+href="cclarse1.html#x3-20001" id="QQ2-3-2">Introduction</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >1.1 <a 
+href="cclarsu1.html#x4-30001.1" id="QQ2-4-3">Preview</a></span>
+                                                                                  
+                                                                                  
+<br />   <span class="sectionToc" >2 <a 
+href="cclarse2.html#x5-40002" id="QQ2-5-4">Signed (co)boundary matrices of a simplicial complex</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="cclarsu2.html#x6-60002.1" id="QQ2-6-6">Structured grid</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="cclarsu3.html#x7-120002.2" id="QQ2-7-12">Unstructured grid</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="cclarse3.html#x8-150003" id="QQ2-8-15">Generation of LAR of a cuboidal complex</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="cclarse4.html#x9-160004" id="QQ2-9-16">Algorithm for signed (co)boundary of a polytopal complex</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="cclarse5.html#x10-170005" id="QQ2-10-18">Index</a></span>
+<br />   &#x00A0;<span class="likesubsectionToc" ><a 
+href="cclarli2.html#x11-180005" id="QQ2-11-19">Index of variables</a></span>
+<br />   &#x00A0;<span class="likesubsectionToc" ><a 
+href="cclarli3.html#x12-190005" id="QQ2-12-20">Index of macros</a></span>
+<br />   <span class="likesectionToc" ><a 
+href="cclarli4.html#x13-200005" id="QQ2-13-21">References</a></span>
+   </div>
+
+
+
+
+
+ 
+</body></html> 
+
+                                                                                  
+
+

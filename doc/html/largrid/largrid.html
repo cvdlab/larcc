@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head>                        <title>Multidimensional cuboidal grids and topological products in LAR-CC
+</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+
+<h2 class="titleHead">Multidimensional cuboidal grids and topological products in
+LAR-CC <span class="thank-mark"><a 
+href="#tk-1">*</a></span></h2>
+<div class="author" ><span 
+class="cmr-12">Alberto Paoluzzi</span></div><br />
+<div class="date" ><span 
+class="cmr-12">December 31, 2013</span></div>
+   <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">*</span></span>This document is part of the <span 
+class="cmti-10x-x-109">Linear Algebraic Representation with CoChains </span>(LAR-CC)
+framework&#x00A0;<span class="cite">[<a 
+href="largridli2.html#Xcclar-proj:2013:00">CL13</a>]</span>. December 31, 2013</div></div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 71--><p class="noindent" >
+<!--l. 71--><p class="noindent" ><span 
+class="cmbx-10">Abstract</span></div>
+     <!--l. 72--><p class="indent" >    <span 
+class="cmr-10">Here we develop an efficient implementation of multidimensional grid generation</span>
+     <span 
+class="cmr-10">of  cuboidal  and  simplicial  cell  complexes,  and  a  fast  implementation  of  the  more</span>
+     <span 
+class="cmr-10">general Cartesian product of cellular complexes. Both kind of operators, depending on</span>
+     <span 
+class="cmr-10">the dimension of their input, may generate either full-dimensional (i.e.</span><span 
+class="cmr-10">&#x00A0;solid) output</span>
+     <span 
+class="cmr-10">complexes  or  cellular  complexes  of  dimension  </span><span 
+class="cmmi-10">d </span><span 
+class="cmr-10">embedded  in  Euclidean  space  of</span>
+     <span 
+class="cmr-10">dimension </span><span 
+class="cmmi-10">n</span><span 
+class="cmr-10">, with </span><span 
+class="cmmi-10">d </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">n</span><span 
+class="cmr-10">.</span>
+</div>
+   <div class="tableofcontents">
+   <span class="likesectionToc" ><a 
+href="largridli1.html#x2-1000" id="QQ2-2-1">Contents</a></span>
+<br />   <span class="sectionToc" >1 <a 
+href="largridse1.html#x3-20001" id="QQ2-3-2">Introduction</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="largridse2.html#x4-30002" id="QQ2-4-3">0D- and 1D-complexes</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="largridsu1.html#x5-40002.1" id="QQ2-5-4">Generation of cells</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="largridsu2.html#x6-80002.2" id="QQ2-6-8">Generation of embedding vertices</a></span>
+                                                                                  
+                                                                                  
+<br />   <span class="sectionToc" >3 <a 
+href="largridse3.html#x7-100003" id="QQ2-7-10">Cuboidal grids</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="largridsu3.html#x8-110003.1" id="QQ2-8-11">Full-dimensional grids</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.2 <a 
+href="largridsu4.html#x10-190003.2" id="QQ2-10-20">Lower-dimensional grid skeletons</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.3 <a 
+href="largridsu5.html#x11-250003.3" id="QQ2-11-28">Highest-level grid interface</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="largridse4.html#x12-280004" id="QQ2-12-32">Cartesian product of cellular complexes</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="largridse5.html#x13-330005" id="QQ2-13-37">Largrid exporting</a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="largridse6.html#x14-340006" id="QQ2-14-38">Unit tests</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.1 <a 
+href="largridsu6.html#x15-350006.1" id="QQ2-15-39">Creation of repository of unit tests</a></span>
+<br />   <span class="sectionToc" >7 <a 
+href="largridse7.html#x16-370007" id="QQ2-16-41">Indices</a></span>
+<br />   <span class="sectionToc" >A <a 
+href="largridse8.html#x17-38000A" id="QQ2-17-42">Appendix</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.1 <a 
+href="largridsu7.html#x18-39000A.1" id="QQ2-18-43">Utilities</a></span>
+<br />   <span class="likesectionToc" ><a 
+href="largridli2.html#x19-40000A.1" id="QQ2-19-44">References</a></span>
+   </div>
+
+
+
+
+
+
+
+
+ 
+</body></html> 
+
+                                                                                  
+
+

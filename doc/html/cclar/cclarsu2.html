@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Structured grid</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="cclar.tex"> 
+<meta name="date" content="2013-10-26 06:24:00"> 
+<link rel="stylesheet" type="text/css" href="cclar.css"> 
+</head><body 
+>
+   <!--l. 84--><div class="crosslinks"><p class="noindent">[<a 
+href="cclarsu3.html" >next</a>] [<a 
+href="#tailcclarsu2.html">tail</a>] [<a 
+href="cclarse2.html#cclarsu2.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x6-60002.1"></a>Structured grid</h4>
+<!--l. 86--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.1.1   </span> <a 
+ id="x6-70002.1.1"></a>2D example</h5>
+<!--l. 88--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x6-80002.1.1"></a><span 
+class="cmbx-10x-x-109">Generate a simplicial decomposition</span></span>
+   Then we generate and show a 2D decomposition of the unit square [0<span 
+class="cmmi-10x-x-109">,</span>1]<sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-109">&#x2282; </span><span 
+class="msbm-10x-x-109">E</span><sup><span 
+class="cmr-8">2</span></sup> into a 3 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>3
+grid of simplices (triangles, in this case), using the <span 
+class="cmtt-10x-x-109">simplexGrid </span>function, that returns a pair
+<span 
+class="cmtt-10x-x-109">(V,FV)</span>, made by the array <span 
+class="cmtt-10x-x-109">V </span>of vertices, and by the array <span 
+class="cmtt-10x-x-109">FV </span>of &#8220;faces by vertex&#8221; indices, that
+constitute a <span 
+class="cmti-10x-x-109">reduced </span>simplicial LAR of the [0<span 
+class="cmmi-10x-x-109">,</span>1]<sup><span 
+class="cmr-8">2</span></sup> domain. The computed <span 
+class="cmtt-10x-x-109">FV </span>array
+is then dispayed &#8220;exploded&#8221;, being <span 
+class="cmmi-10x-x-109">ex,ey,ez </span>the explosion parameters in the <span 
+class="cmmi-10x-x-109">x,y,z</span>
+coordinate directions, respectively. Notice that the <span 
+class="cmtt-10x-x-109">MKPOLS </span>pyplasm primitive requires a
+pair <span 
+class="cmtt-10x-x-109">(V,FV)</span>, that we call a &#8220;model&#8221;, as input &#8212; i.e. a pair made by the array <span 
+class="cmtt-10x-x-109">V </span>of
+vertices, and by a zero-based array of array of indices of vertices. Elsewhere in this
+document we identified such a data structure as CSR(<span 
+class="cmmi-10x-x-109">M</span><sub><span 
+class="cmmi-8">d</span></sub>), for some dimension <span 
+class="cmmi-10x-x-109">d</span>. Suc
+notation stands for the Compressed Sparse Row representation of a binary characteristic
+matrix.
+<div class="flushleft" 
+>
+<!--l. 91--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Generate a simplicial decomposition ot the [0</span><span 
+class="cmmi-10">,</span><span 
+class="cmr-10">1]</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmr-10">domain</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3a </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 96--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">V,FV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;simplexGrid([3,3])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,FV))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 103--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb3c"><span 
+class="cmr-9">3c</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 107--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x6-90002.1.1"></a><span 
+class="cmbx-10x-x-109">Extract the </span>(<span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109">- </span>1)<span 
+class="cmbx-10x-x-109">-faces</span></span>
+   Since the complex is simplicial, we can directly extract its facets (in this case the 1-faces, i.e.
+its edges) by invoking the <span 
+class="cmtt-10x-x-109">simplexFacets </span>function on the argument <span 
+class="cmtt-10x-x-109">FV</span>, so returning the array <span 
+class="cmtt-10x-x-109">EV</span>
+of &#8220;edges by vertex&#8221; indices.
+                                                                                  
+                                                                                  
+<div class="flushleft" 
+>
+<!--l. 110--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Extract the edges of the 2D decomposition</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3b </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 115--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">EV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;simplexFacets(FV)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">ex,ey,ez</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1.5,1.5,1.5</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(ex,ey,ez)(MKPOLS((V,EV))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 123--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb3c"><span 
+class="cmr-9">3c</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 127--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x6-100002.1.1"></a><span 
+class="cmbx-10x-x-109">Export the executable file</span></span>
+   We are finally able to generate and output a complete test file, including the visualization
+expressions. This file can be executed by the <span 
+class="cmtt-10x-x-109">test </span>target of the <span 
+class="cmtt-10x-x-109">make </span>command.
+<div class="flushleft" 
+>
+<!--l. 130--><p class="noindent" >
+<a 
+ id="nuweb3c"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"test/py/test01.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3c </span><span 
+class="cmsy-10">&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 134--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Inport the </span><span 
+class="cmmi-10">Simple</span><sub><span 
+class="cmmi-7">X</span></sub><sup><span 
+class="cmmi-7">n</span></sup> <span 
+class="cmr-10">library</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="cclarse2.html#nuweb2"><span 
+class="cmr-9">2</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Generate a simplicial decomposition ot the [0</span><span 
+class="cmmi-10">,</span><span 
+class="cmr-10">1]</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmr-10">domain</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb3a"><span 
+class="cmr-9">3a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Extract the edges of the 2D decomposition</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb3b"><span 
+class="cmr-9">3b</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+</div>
+<!--l. 142--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">2.1.2   </span> <a 
+ id="x6-110002.1.2"></a>3D example</h5>
+<!--l. 144--><p class="noindent" >In this case we produce a 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>2 grid of tetrahedra. The dimension (3D) of the model to be
+generated is inferred by the presence of 3 parameters in the parameter list of the <span 
+class="cmtt-10x-x-109">simplexGrid</span>
+function.
+<div class="flushleft" 
+>
+                                                                                  
+                                                                                  
+<!--l. 147--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Generate a simplicial decomposition ot the [0</span><span 
+class="cmmi-10">,</span><span 
+class="cmr-10">1]</span><sup><span 
+class="cmr-7">3</span></sup> <span 
+class="cmr-10">domain</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4a </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 152--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">V,CV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;simplexGrid([2,2,2])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,CV))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 159--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb4c"><span 
+class="cmr-9">4c</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 165--><p class="indent" >   and repeat two times the facet extraction:
+<div class="flushleft" 
+>
+<!--l. 168--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Extract the faces and edges of the 3D decomposition</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4b </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 173--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">FV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;simplexFacets(CV)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,FV))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">EV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;simplexFacets(FV)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,EV))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 183--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb4c"><span 
+class="cmr-9">4c</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 189--><p class="indent" >   and finally export a new test file:
+<div class="flushleft" 
+>
+<!--l. 192--><p class="noindent" >
+<a 
+ id="nuweb4c"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"test/py/test02.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4c </span><span 
+class="cmsy-10">&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 196--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Inport the </span><span 
+class="cmmi-10">Simple</span><sub><span 
+class="cmmi-7">X</span></sub><sup><span 
+class="cmmi-7">n</span></sup> <span 
+class="cmr-10">library</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="cclarse2.html#nuweb2"><span 
+class="cmr-9">2</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Generate a simplicial decomposition ot the [0</span><span 
+class="cmmi-10">,</span><span 
+class="cmr-10">1]</span><sup><span 
+class="cmr-7">3</span></sup> <span 
+class="cmr-10">domain</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb4a"><span 
+class="cmr-9">4a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Extract the faces and edges of the 3D decomposition</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb4b"><span 
+class="cmr-9">4b</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 207--><div class="crosslinks"><p class="noindent">[<a 
+href="cclarsu3.html" >next</a>] [<a 
+href="cclarsu2.html" >front</a>] [<a 
+href="cclarse2.html#cclarsu2.html" >up</a>] </p></div>
+<!--l. 207--><p class="indent" >   <a 
+ id="tailcclarsu2.html"></a>    
+</body></html> 

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Importing a generic module</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 272--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu6.html" >next</a>] [<a 
+href="#taillar2psmsu5.html">tail</a>] [<a 
+href="lar2psmse3.html#lar2psmsu5.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x10-120003.1"></a>Importing a generic module</h4>
+<!--l. 273--><p class="noindent" >First we define a parametric macro to allow the importing of <span 
+class="cmtt-10x-x-109">larcc </span>modules from the project
+repository <span 
+class="cmtt-10x-x-109">lib/py/</span>. When the user needs to import some project&#8217;s module, she may call this
+macro as done in Section&#x00A0;<a 
+href="lar2psmsu6.html#x11-140003.2">3.2<!--tex4ht:ref: sec:lar2psm --></a>.
+<div class="flushleft" 
+>
+<!--l. 275--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb5a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Import the module</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">5a </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 280--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">import</span><span 
+class="cmtt-10">&#x00A0;sys</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">sys.path.insert(0,</span><span 
+class="cmtt-10">&#x00A0;&#8217;lib/py/&#8217;)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">import</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmr-10">@1</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 288--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="lar2psmsu1.html#nuweb3a"><span 
+class="cmr-9">3a</span></a><a 
+href="lar2psmsu3.html#nuweb4b"><span 
+class="cmr-9">, 4b</span></a><a 
+href="#nuweb5b"><span 
+class="cmr-9">, 5b</span></a><a 
+href="lar2psmsu6.html#nuweb5d"><span 
+class="cmr-9">d</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div><br /><br />
+</div>
+<!--l. 294--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x10-130003.1"></a><span 
+class="cmbx-10x-x-109">Importing a module</span></span>
+   A function used to import a generic <span 
+class="cmtt-10x-x-109">lacccc </span>module within the current environment is also
+useful.
+                                                                                  
+                                                                                  
+<div class="flushleft" 
+>
+<!--l. 296--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb5b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Function to import a generic module</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">5b </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 301--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;importModule(moduleName):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Import the module</span><span 
+class="cmr-10">&#x00A0;(</span><a 
+ id="nuweb5c">
+<span 
+class="cmr-9">5c</span></a>
+    <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">moduleName</span></span></span> <span 
+class="cmr-10">) </span><a 
+href="#nuweb5a"><span 
+class="cmr-9">5a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 309--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="lar2psmsu6.html#nuweb5d"><span 
+class="cmr-9">5d</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 318--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu6.html" >next</a>] [<a 
+href="lar2psmsu5.html" >front</a>] [<a 
+href="lar2psmse3.html#lar2psmsu5.html" >up</a>] </p></div>
+<!--l. 318--><p class="indent" >   <a 
+ id="taillar2psmsu5.html"></a>   
+</body></html> 

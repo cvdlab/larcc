@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Signed (co)boundary matrices of a simplicial complex</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="cclar.tex"> 
+<meta name="date" content="2013-10-26 06:24:00"> 
+<link rel="stylesheet" type="text/css" href="cclar.css"> 
+</head><body 
+>
+   <!--l. 60--><div class="crosslinks"><p class="noindent">[<a 
+href="cclarse3.html" >next</a>] [<a 
+href="cclarse1.html" >prev</a>] [<a 
+href="cclarse1.html#tailcclarse1.html" >prev-tail</a>] [<a 
+href="#tailcclarse2.html">tail</a>] [<a 
+href="cclar.html#cclarse2.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x5-40002"></a>Signed (co)boundary matrices of a simplicial complex</h3>
+   <div class="paragraphTOCS">
+   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="cclarsu2.html#x6-60002.1">Structured grid</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.1 <a 
+href="cclarsu2.html#x6-70002.1.1">2D example</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.2 <a 
+href="cclarsu2.html#x6-110002.1.2">3D example</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="cclarsu3.html#x7-120002.2">Unstructured grid</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.2.1 <a 
+href="cclarsu3.html#x7-130002.2.1">2D example</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.2.2 <a 
+href="cclarsu3.html#x7-140002.2.2">3D example</a></span>
+   </div>
+<!--l. 63--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x5-50002"></a><span 
+class="cmbx-10x-x-109">Importing the library</span></span>
+   First of all, a modeling application having to deal with simplicial complexes must import the
+<span 
+class="cmmi-10x-x-109">Simple</span><sub><span 
+class="cmmi-8">X</span></sub><sup><span 
+class="cmmi-8">n</span></sup> library, denoted <span 
+class="cmtt-10x-x-109">smplxn </span>in <span 
+class="cmtt-10x-x-109">python</span>. The name of the library was firstly used
+by our CAD Lab at University of Rome &#8220;La Sapienza&#8221; in years 1987/88 when we
+started working with dimension-independent simplicial complexes&#x00A0;<span class="cite">[<a 
+href="cclarli4.html#XPaoluzzi:1993:DMS:169728.169719">PBCF93</a>]</span>. This one
+in turn imports some functions from the <span 
+class="cmtt-10x-x-109">scipy </span>package and the geometric library
+<span 
+class="cmtt-10x-x-109">pyplasm</span>&#x00A0;<span class="cite">[]</span>.
+<div class="flushleft" 
+>
+<!--l. 66--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb2"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Inport the </span><span 
+class="cmmi-10">Simple</span><sub><span 
+class="cmmi-7">X</span></sub><sup><span 
+class="cmmi-7">n</span></sup> <span 
+class="cmr-10">library</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">2 </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 71--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">import</span><span 
+class="cmtt-10">&#x00A0;sys</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">sys.path.insert(0,</span><span 
+class="cmtt-10">&#x00A0;&#8217;src/&#8217;)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">from</span><span 
+class="cmtt-10">&#x00A0;smplxn</span><span 
+class="cmtt-10">&#x00A0;import</span><span 
+class="cmtt-10">&#x00A0;*</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 80--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="cclarsu2.html#nuweb3c"><span 
+class="cmr-9">3c</span></a><a 
+href="cclarsu2.html#nuweb4c"><span 
+class="cmr-9">, 4c</span></a><a 
+href="cclarse4.html#nuweb4d"><span 
+class="cmr-9">d</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+<!--l. 84--><p class="noindent" >
+
+                                                                                  
+                                                                                  
+   <!--l. 218--><div class="crosslinks"><p class="noindent">[<a 
+href="cclarse3.html" >next</a>] [<a 
+href="cclarse1.html" >prev</a>] [<a 
+href="cclarse1.html#tailcclarse1.html" >prev-tail</a>] [<a 
+href="cclarse2.html" >front</a>] [<a 
+href="cclar.html#cclarse2.html" >up</a>] </p></div>
+<!--l. 218--><p class="indent" >   <a 
+ id="tailcclarse2.html"></a>   
+</body></html> 

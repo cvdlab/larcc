@@ -1,0 +1,37 @@
+\frametitle{Git \& GitHub}
+  \framesubtitle{{\bf Git} \emph{the tool}, {\bf GitHub} \emph{the service} for projects that uses Git}
+
+Every \emph{Git working directory} is a full-fledged \alert{repository} with complete history and \emph{full \alert{version tracking} capabilities}, not dependent on network access or a central server
+
+\vfill
+
+\begin{columns}
+\begin{column}{6.5cm}
+\begin{itemize}
+\item
+Put your IDE under the protection of a \alert{version control system}.
+
+\item
+\emph{\texttt{larcc}} comes from \href{https://github.com/}{\alert{Github}} equipped with an \emph{integrated Git}
+\end{itemize}
+\end{column}
+\pause
+\begin{column}{6cm}
+\begin{itemize}
+\item
+\emph{Mac OS X}: \alert{\texttt{Git}} available by default.
+\item
+\emph{Else}: download and install
+\href{http://git-scm.com/downloads}{\alert{http://git-scm.com/downloads}}
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vfill
+
+\begin{remark}[\alert{To download \texttt{larcc}}]
+\begin{verbatim}
+$ git clone https://github.com/cvdlab/larcc
+\end{verbatim}
+\end{remark}
+

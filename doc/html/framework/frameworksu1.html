@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Prerequisites</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="framework.tex"> 
+<meta name="date" content="2013-10-30 19:30:00"> 
+<link rel="stylesheet" type="text/css" href="framework.css"> 
+</head><body 
+>
+   <!--l. 52--><div class="crosslinks"><p class="noindent">[<a 
+href="frameworksu2.html" >next</a>] [<a 
+href="#tailframeworksu1.html">tail</a>] [<a 
+href="frameworkse1.html#frameworksu1.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x3-20001.1"></a>Prerequisites</h4>
+<!--l. 54--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-30001.1"></a><span class="LATEX"><span 
+class="cmbx-10x-x-109">L</span><span class="A"><span 
+class="cmbx-10x-x-109">A</span></span><span class="TEX"><span 
+class="cmbx-10x-x-109">T</span><span 
+class="E"><span 
+class="cmbx-10x-x-109">E</span></span><span 
+class="cmbx-10x-x-109">X</span></span></span></span>
+   The <span 
+class="cmtt-10x-x-109">larcc </span>IDE requires the users to embed the compute code within <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>&#x00A0;files written
+for documenting their work. Therefore the first requirement is a working <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>&#x00A0;environment.
+&#8220;As <span class="TEX">T<span 
+class="E">E</span>X</span>&#x00A0;Live is the basis of Mac<span class="TEX">T<span 
+class="E">E</span>X</span>, and is the <span class="TEX">T<span 
+class="E">E</span>X</span>&#x00A0;system for Unix, if you work
+cross-platform and want an identical system on all of your machines, then <span class="TEX">T<span 
+class="E">E</span>X</span>&#x00A0;Live is the way
+to go&#8221;&#x00A0;<span class="cite">[<a 
+href="frameworkli1.html#Xmiktek:2012">Wri12</a>]</span>.
+<!--l. 57--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-40001.1"></a><span 
+class="cmbx-10x-x-109">Python</span></span>
+   As of today, most of <span 
+class="cmtt-10x-x-109">larcc </span>development was done in Python. Hence a working Python
+environment is required, including three packages: <a 
+href="http://www.scipy.org" ><span 
+class="cmtt-10x-x-109">scipy</span></a>, <a 
+href="http://pyopengl.sourceforge.net" ><span 
+class="cmtt-10x-x-109">pyopengl</span></a>, and <a 
+href="https://github.com/plasm-language/pyplasm" ><span 
+class="cmtt-10x-x-109">pyplasm</span></a>. On a Mac,
+Python is installed by default, whereas <span 
+class="cmtt-10x-x-109">scipy </span>and <span 
+class="cmtt-10x-x-109">pyopengl </span>may be installed in the terminal by
+                                                                                  
+                                                                                  
+doing
+                                                                                  
+                                                                                  
+   <div class="verbatim" id="verbatim-1">
+$&#x00A0;sudo&#x00A0;easy-install&#x00A0;scipy
+&#x00A0;<br />$&#x00A0;sudo&#x00A0;easy-install&#x00A0;pyopengl
+</div>
+<!--l. 62--><p class="nopar" > Finally, to install <span 
+class="cmtt-10x-x-109">pyplasm </span>look at the README file in its downloaded directory:
+                                                                                  
+                                                                                  
+   <div class="verbatim" id="verbatim-2">
+$&#x00A0;git&#x00A0;clone&#x00A0;https://github.com/plasm-language/pyplasm
+</div>
+<!--l. 66--><p class="nopar" >
+<!--l. 68--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x3-50001.1"></a><span 
+class="cmbx-10x-x-109">Nuweb</span></span>
+   In 1984, Knuth introduced the idea of literate programming. The idea was that a
+programmer writes just one document, the web file&#8212;with suffix <span 
+class="cmtt-10x-x-109">.w</span>, that combines the
+documentation with the code. <span 
+class="cmti-10x-x-109">Nuweb </span>works with any programming language and <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>,
+and is probably the simplest incarnation of the Knut&#8217;s original work. The web site
+of the tool is <a 
+href="http://sourceforge.net/projects/nuweb/" >sourceforge.net/projects/nuweb/</a>. A revised version of source files can
+be found on <a 
+href="https://code.google.com/p/nuweb/downloads/list" >code.google.com/p/nuweb</a>. This package can build using the standard
+tools:
+                                                                                  
+                                                                                  
+   <div class="verbatim" id="verbatim-3">
+$&#x00A0;cd&#x00A0;&#x003C;path-to&#x003E;/nuweb/
+&#x00A0;<br />$&#x00A0;./configure
+&#x00A0;<br />$&#x00A0;make
+&#x00A0;<br />$&#x00A0;sudo&#x00A0;make&#x00A0;install
+</div>
+<!--l. 78--><p class="nopar" > For some documentation read the <a 
+href="https://code.google.com/p/nuweb/source/browse/branches/qse-nuweb/README?r=3" >wiki</a> page. Test your installation by just compiling to <span 
+class="cmti-10x-x-109">pdf </span>the
+<span 
+class="cmtt-10x-x-109">nuweb.w </span>document itself, whose chapter one contains the user documentation:
+                                                                                  
+                                                                                  
+   <div class="verbatim" id="verbatim-4">
+$&#x00A0;nuweb&#x00A0;nuweb.w
+</div>
+<!--l. 82--><p class="nopar" > Of course, in order to extend <span 
+class="cmtt-10x-x-109">larcc </span>and/or to make an efficient use of it, you are supposed to
+read carefully the first chapter of the <span 
+class="cmti-10x-x-109">nuweb.pdf  </span>document.
+                                                                                  
+                                                                                  
+   <!--l. 85--><div class="crosslinks"><p class="noindent">[<a 
+href="frameworksu2.html" >next</a>] [<a 
+href="frameworksu1.html" >front</a>] [<a 
+href="frameworkse1.html#frameworksu1.html" >up</a>] </p></div>
+<!--l. 85--><p class="indent" >   <a 
+ id="tailframeworksu1.html"></a>   
+</body></html> 

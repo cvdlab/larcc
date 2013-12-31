@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Lower-dimensional grid skeletons</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 422--><div class="crosslinks"><p class="noindent">[<a 
+href="largridse4.html" >next</a>] [<a 
+href="largridsu3.html" >prev</a>] [<a 
+href="largridsu3.html#taillargridsu3.html" >prev-tail</a>] [<a 
+href="#taillargridsu4.html">tail</a>] [<a 
+href="largridse3.html#largridsu5.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x10-190003.2"></a>Lower-dimensional grid skeletons</h4>
+<!--l. 424--><p class="noindent" >In order to compute the <span 
+class="cmmi-10x-x-109">d</span>-skeletons of a <span 
+class="cmmi-10x-x-109">n</span>-dimensional cuboidal &#8220;grid&#8221; complex, with 0 <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">n</span>,
+let us start by remarking a similarity with the generation of the boolean representation of
+numbers between 0 and 2<sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-109">- </span>1, generated as a list of strings by the <span 
+class="cmtt-10x-x-109">binaryPowerRange </span>function,
+given in Section&#x00A0;<a 
+href="#x10-200003.2.1">3.2.1<!--tex4ht:ref: sec:binaryPowerRange --></a>.
+<!--l. 426--><p class="indent" >   The binary representationn of such numbers are in fact filtered according to the number of
+their ones in Section&#x00A0;<a 
+href="#x10-220003.2.2">3.2.2<!--tex4ht:ref: sec:filterByOrder --></a>, and used to generate the distinct components of the skeletons of
+different orders of the assembled grid complexes in Section&#x00A0;<a 
+href="#x10-240003.2.3">3.2.3<!--tex4ht:ref: sec:assembly --></a>.
+<!--l. 428--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.2.1   </span> <a 
+ id="x10-200003.2.1"></a>Generation of skeleton components</h5>
+<!--l. 431--><p class="noindent" >The <span 
+class="cmtt-10x-x-109">binaryPowerRange </span>function, applied to an integer <span 
+class="cmmi-10x-x-109">n</span>, returns the string representation of all
+binary numerals between 0 and 2<sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-109">- </span>1. All the strings have the same length <span 
+class="cmmi-10x-x-109">n</span>. The bits in each
+strings will be used to select between either a 0- or a 1-dimensional complex as generator (via a
+Cartesian product of complexes) of a component of an embedded grid skeleton of proper intrinsic
+dimension.
+<div class="flushleft" 
+>
+<!--l. 434--><p class="noindent" >
+<a 
+ id="nuweb9a"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Enumeration of binary ranges of given order</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">9a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 438--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;binaryPowerRange</span><span 
+class="cmtt-10">&#x00A0;(n):</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;[(&#8217;{0:0&#8217;+str(n)+&#8217;b}&#8217;).format(k)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;range(2**n)]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+<!--l. 444--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 445--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">referenced</span>
+     <span 
+class="cmr-9">in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div>
+                                                                                  
+                                                                                  
+<!--l. 450--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x10-210003.2.1"></a><span 
+class="cmbx-10x-x-109">Examples of generation of bit strings</span></span>
+   Below we show the outputs returned by application of the <span 
+class="cmtt-10x-x-109">binaryPowerRange </span>function to the
+first 4 integers.
+<div class="flushleft" 
+>
+<!--l. 453--><p class="noindent" >
+<a 
+ id="nuweb9b"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Binary range examples</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">9b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 457--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;print</span><span 
+class="cmtt-10">&#x00A0;binaryPowerRange</span><span 
+class="cmtt-10">&#x00A0;(4),</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[&#8217;0000&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0001&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0010&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0011&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0100&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0101&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0110&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;0111&#8217;,</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;&#8217;1000&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1001&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1010&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1011&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1100&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1101&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1110&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1111&#8217;]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;print</span><span 
+class="cmtt-10">&#x00A0;binaryPowerRange</span><span 
+class="cmtt-10">&#x00A0;(3),</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[&#8217;000&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;001&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;010&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;011&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;100&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;101&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;110&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;111&#8217;]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;print</span><span 
+class="cmtt-10">&#x00A0;binaryPowerRange</span><span 
+class="cmtt-10">&#x00A0;(2),</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[&#8217;00&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;01&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;10&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;11&#8217;]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;print</span><span 
+class="cmtt-10">&#x00A0;binaryPowerRange</span><span 
+class="cmtt-10">&#x00A0;(1),</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[&#8217;0&#8217;,</span><span 
+class="cmtt-10">&#x00A0;&#8217;1&#8217;]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+<!--l. 470--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 471--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">never</span>
+     <span 
+class="cmr-9">referenced.</span></dd></dl>
+</div>
+<!--l. 476--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.2.2   </span> <a 
+ id="x10-220003.2.2"></a>Filtering grid skeleton components</h5>
+<!--l. 479--><p class="noindent" >The function <span 
+class="cmtt-10x-x-109">filterByOrder </span>is used to partition the previous binary strings into <span 
+class="cmmi-10x-x-109">n </span>+ 1 subsets,
+such that the bits into each string sum to the same number, ranging from 0 to <span 
+class="cmmi-10x-x-109">n </span>included,
+respectively.
+<div class="flushleft" 
+>
+<!--l. 482--><p class="noindent" >
+<a 
+ id="nuweb9c"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Filtering binary ranges by order</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">9c</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 486--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;filterByOrder(n):</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;terms</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[AA(int)(list(term))</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;term</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;binaryPowerRange(n)]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;[[term</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;term</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;terms</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;sum(term)</span><span 
+class="cmtt-10">&#x00A0;==</span><span 
+class="cmtt-10">&#x00A0;k]</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;range(n+1)]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+                                                                                  
+                                                                                  
+<!--l. 493--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 494--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">referenced</span>
+     <span 
+class="cmr-9">in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div>
+<!--l. 499--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x10-230003.2.2"></a><span 
+class="cmbx-10x-x-109">Examples of bit lists filtering</span></span>
+   Some examples of application of the <span 
+class="cmtt-10x-x-109">filterByOrder </span>function to the first few integers are
+shown below. Of course, the number of elements in each class (i.e.&#x00A0;in each returned list) is <span 
+class="cmex-10x-x-109">(</span><span 
+class="cmmi-8">n</span>
+   <span 
+class="cmmi-8">d</span><span 
+class="cmex-10x-x-109">)</span>
+  ,
+and the total number of elements for each fixed <span 
+class="cmmi-10x-x-109">n </span>is <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">d</span><span 
+class="cmr-8">=0</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmex-10x-x-109">(</span><span 
+class="cmmi-8">n</span>
+  <span 
+class="cmmi-8">d</span><span 
+class="cmex-10x-x-109">)</span>
+  = 2<sup><span 
+class="cmmi-8">n</span></sup>.
+<div class="flushleft" 
+>
+<!--l. 504--><p class="noindent" >
+<a 
+ id="nuweb10a"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Skeleton component examples</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">10a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 508--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;filterByOrder(4)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[[[0,0,0,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,0,0,1],</span><span 
+class="cmtt-10">&#x00A0;[0,0,1,0],</span><span 
+class="cmtt-10">&#x00A0;[0,1,0,0],</span><span 
+class="cmtt-10">&#x00A0;[1,0,0,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,0,1,1],</span><span 
+class="cmtt-10">&#x00A0;[0,1,0,1],</span><span 
+class="cmtt-10">&#x00A0;[0,1,1,0],</span><span 
+class="cmtt-10">&#x00A0;[1,0,0,1],</span><span 
+class="cmtt-10">&#x00A0;[1,0,1,0],</span><span 
+class="cmtt-10">&#x00A0;[1,1,0,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,1,1,1],</span><span 
+class="cmtt-10">&#x00A0;[1,0,1,1],</span><span 
+class="cmtt-10">&#x00A0;[1,1,0,1],</span><span 
+class="cmtt-10">&#x00A0;[1,1,1,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[1,1,1,1]]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;filterByOrder(3)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[[[0,0,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,0,1],</span><span 
+class="cmtt-10">&#x00A0;[0,1,0],</span><span 
+class="cmtt-10">&#x00A0;[1,0,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[0,1,1],</span><span 
+class="cmtt-10">&#x00A0;[1,0,1],</span><span 
+class="cmtt-10">&#x00A0;[1,1,0]],</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;[[1,1,1]]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;filterByOrder(2)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[[[0,0]],</span><span 
+class="cmtt-10">&#x00A0;[[0,1],</span><span 
+class="cmtt-10">&#x00A0;[1,0]],</span><span 
+class="cmtt-10">&#x00A0;[[1,1]]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x003E;&#x003E;&#x003E;</span><span 
+class="cmtt-10">&#x00A0;filterByOrder(1)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">[[[0]],</span><span 
+class="cmtt-10">&#x00A0;[[1]]]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+<!--l. 527--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 528--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">never</span>
+     <span 
+class="cmr-9">referenced.</span></dd></dl>
+</div>
+                                                                                  
+                                                                                  
+<!--l. 534--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">3.2.3   </span> <a 
+ id="x10-240003.2.3"></a>Assembling grid skeleton components</h5>
+<!--l. 537--><p class="noindent" >We are now finally able to generate the various subsets of cells of a <span 
+class="cmmi-10x-x-109">d</span>-dimensional cuboidal grid
+skeleton, produced respectively by the expression <span 
+class="cmtt-10x-x-109">larCellProd(cellLists) </span>for every
+permutation of 0- and 1-complexes, according to the partition classes of permtation of <span 
+class="cmmi-10x-x-109">n </span>bits
+previously produced. To understand why this assembling step of cells is necessary, the reader
+should look at Figure&#x00A0;<a 
+href="#x10-240012">2<!--tex4ht:ref: fig:sleletons --></a>, where three subsets of 2-cells of the 2-skeleton, respectively generated
+by the bit dispositions <span 
+class="cmtt-10x-x-109">[[0,1,1], [1,0,1], [1,1,0]]</span>, are separately displayed. Notice also
+that, whereas the dimension <span 
+class="cmmi-10x-x-109">n </span>of the embedding space is implicittly provided by the <span 
+class="cmtt-10x-x-109">length </span>of
+the <span 
+class="cmtt-10x-x-109">shape </span>parameter, the intrinsic dimension <span 
+class="cmmi-10x-x-109">d </span>of the skeleton to be produced must be given
+explicitly.
+<!--l. 540--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                                  
+                                                                                  
+<a 
+ id="x10-240012"></a>
+                                                                                  
+                                                                                  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2: </span><span  
+class="content">(a,b,c) Exploded views of subsets (orthogonal to coordinate axes) of 2-cells of a
+2-skeleton grid; (d) their assembled set.</span></div><!--tex4ht:label?: x10-240012 -->
+                                                                                  
+                                                                                  
+<!--l. 548--><p class="indent" >   </div><hr class="endfigure">
+<div class="flushleft" 
+>
+<!--l. 551--><p class="noindent" >
+<a 
+ id="nuweb10b"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Assembling grid skeletons</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">10b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 555--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larGridSkeleton(shape):</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;n</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;len(shape)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;def</span><span 
+class="cmtt-10">&#x00A0;larGridSkeleton0(d):</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;components</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;filterByOrder(n)[d]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;componentCellLists</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[AA(APPLY)(TRANS([</span><span 
+class="cmtt-10">&#x00A0;AA(larGrid)(shape),(component)</span><span 
+class="cmtt-10">&#x00A0;]))</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;component</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;components]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;CAT([</span><span 
+class="cmtt-10">&#x00A0;larCellProd(cellLists)</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;cellLists</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;componentCellLists</span><span 
+class="cmtt-10">&#x00A0;])</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;larGridSkeleton0</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+     <!--l. 568--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">referenced</span>
+     <span 
+class="cmr-9">in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div>
+<!--l. 574--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                                  
+                                                                                  
+<a 
+ id="x10-240023"></a>
+                                                                                  
+                                                                                  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;3: </span><span  
+class="content">Exploded views of 0-, 1-, 2-, and 3-dimensional skeletons.</span></div><!--tex4ht:label?: x10-240023 -->
+                                                                                  
+                                                                                  
+<!--l. 582--><p class="indent" >   </div><hr class="endfigure">
+                                                                                  
+                                                                                  
+   <!--l. 584--><div class="crosslinks"><p class="noindent">[<a 
+href="largridse4.html" >next</a>] [<a 
+href="largridsu3.html" >prev</a>] [<a 
+href="largridsu3.html#taillargridsu3.html" >prev-tail</a>] [<a 
+href="largridsu4.html" >front</a>] [<a 
+href="largridse3.html#largridsu5.html" >up</a>] </p></div>
+<!--l. 584--><p class="indent" >   <a 
+ id="taillargridsu4.html"></a>   
+</body></html> 

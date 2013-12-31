@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Highest-level grid interface</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 584--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu4.html" >prev</a>] [<a 
+href="largridsu4.html#taillargridsu4.html" >prev-tail</a>] [<a 
+href="largridsu4.html#taillargridsu5.html">tail</a>] [<a 
+href="largridse3.html#largridse4.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x11-250003.3"></a>Highest-level grid interface</h4>
+<!--l. 586--><p class="noindent" >The highest-level user interface for (hyper)-cuboidal grid generation is given by the function
+<span 
+class="cmtt-10x-x-109">larCuboids </span>applied to the <span 
+class="cmtt-10x-x-109">shape </span>parameter. For the sake of storage efficiency, the generated
+vertex coordinates are integer and 0-based in the lowest corner. The model may be properly
+scaled and/or translated <span 
+class="cmti-10x-x-109">a posteriori </span>when needed.
+<!--l. 589--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x11-260003.3"></a><span 
+class="cmbx-10x-x-109">Generation of (hyper)-cuboidal grids</span></span>
+   The generated complex is always full-dimension, i.e.&#x00A0;<span 
+class="cmti-10x-x-109">solid</span>, and possibly includes the cells of
+all dimensions, depending on the Boolean value of the <span 
+class="cmtt-10x-x-109">full </span>parameter. The grid&#8217;s intrinsic
+dimension, as well as the dimension of its embedding space, are specified by the length of the
+<span 
+class="cmtt-10x-x-109">shape </span>parameter. See the examples in Figure&#x00A0;<a 
+href="#x11-270014">4<!--tex4ht:ref: fig:grid23D --></a>, but remember that the PLaSM visualiser always
+embed in 3D the displayed model.
+<div class="flushleft" 
+>
+<!--l. 595--><p class="noindent" >
+<a 
+ id="nuweb12a"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Multidimensional grid generation</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">12a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 599--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larCuboids(shape,</span><span 
+class="cmtt-10">&#x00A0;full=False):</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;def</span><span 
+class="cmtt-10">&#x00A0;vertexDomain(n):</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;[[k]</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;range(n)]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vertLists</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[vertexDomain(k+1)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;shape]</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vertGrid</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;larVertProd(vertLists)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;gridMap</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;larGridSkeleton(shape)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;not</span><span 
+class="cmtt-10">&#x00A0;full:</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;cells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;gridMap(len(shape))</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;else:</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;skeletonIds</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;range(len(shape)+1)</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;cells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;CAT([</span><span 
+class="cmtt-10">&#x00A0;gridMap(id)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;id</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;skeletonIds</span><span 
+class="cmtt-10">&#x00A0;])</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;vertGrid,</span><span 
+class="cmtt-10">&#x00A0;cells</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+<!--l. 615--><p class="noindent" >
+     <dl class="list1"><dt class="list">
+</dt><dd 
+class="list">
+                                                                                  
+                                                                                  
+     <!--l. 616--><p class="noindent" ><span 
+class="cmr-9">Macro</span>
+     <span 
+class="cmr-9">referenced</span>
+     <span 
+class="cmr-9">in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl>
+</div>
+<!--l. 621--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x11-270003.3"></a><span 
+class="cmbx-10x-x-109">Multidimensional visualisation examples</span></span>
+   Visualisation examples of grid of dimension 1,2, and 3 are given below and are displayed in
+Figure&#x00A0;<a 
+href="#x11-270014">4<!--tex4ht:ref: fig:grid23D --></a>. The same input pattern may be used for higher-dimensional grids (say, of dimension 4
+and beyond), but to be visualised they should be carefully and properly projected in
+3D.
+<div class="flushleft" 
+>
+<!--l. 625--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb12b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Multidimensional visualisation examples</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">12b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 630--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(larCuboids([3],True))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(larCuboids([3,2],True))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(larCuboids([3,2,1],True))))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 638--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 644--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                                  
+                                                                                  
+<a 
+ id="x11-270014"></a>
+                                                                                  
+                                                                                  
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;4:  </span><span  
+class="content">Exploded  views  of  1D,  2D,  and  3D  cellular  complexes  (including  cells  of
+dimension 0,1,2, and 3).</span></div><!--tex4ht:label?: x11-270014 -->
+                                                                                  
+                                                                                  
+<!--l. 651--><p class="indent" >   </div><hr class="endfigure">
+   <!--l. 653--><div class="crosslinks"><p class="noindent">[<a 
+href="largridsu4.html" >prev</a>] [<a 
+href="largridsu4.html#taillargridsu4.html" >prev-tail</a>] [<a 
+href="largridsu5.html" >front</a>] [<a 
+href="largridse3.html#largridse4.html" >up</a>] </p></div>
+<!--l. 653--><p class="indent" >   <a 
+ id="taillargridsu5.html"></a>   
+</body></html> 

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Using the IDE</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="frame.tex"> 
+<meta name="date" content="2013-11-21 11:50:00"> 
+<link rel="stylesheet" type="text/css" href="frame.css"> 
+</head><body 
+>
+   <!--l. 117--><div class="crosslinks"><p class="noindent">[<a 
+href="framesu3.html" >prev</a>] [<a 
+href="framesu3.html#tailframesu3.html" >prev-tail</a>] [<a 
+href="#tailframesu4.html">tail</a>] [<a 
+href="framese1.html#framesu4.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x7-90001.4"></a>Using the IDE</h4>
+<!--l. 119--><p class="noindent" >In short, in order to use the development environment, you must (a) open your terminal and
+move to the <span 
+class="cmtt-10x-x-109">larcc </span>directory, (b) write a <span 
+class="cmtt-10x-x-109">tex </span>file, including documentation and suitably tagged
+computer code, (c) save it in the <span 
+class="cmtt-10x-x-109">src </span>subdirectory, and (d) execute a <span 
+class="cmtt-10x-x-109">make </span>command, asking
+either for generation of the <span 
+class="cmtt-10x-x-109">pdf </span>or the <span 
+class="cmtt-10x-x-109">html </span>documentation, or execution of <a 
+href="http://en.wikipedia.org/wiki/Unit_testing" >unit testing</a>, or
+simply for the compilation of the source code.
+<!--l. 122--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">1.4.1   </span> <a 
+ id="x7-100001.4.1"></a>Using Leo</h5>
+<!--l. 124--><p class="noindent" ><a 
+href="http://leoeditor.com" >Leo</a> is a multi-platform and open-source outliner and <span 
+class="cmti-10x-x-109">non-linear </span>text editor allowing for
+fundamentally different ways of using and organizing data, programs and scripts. Leo has
+been under active development for 15 years and has an active group of developers and
+users. The Leo environment allow to structure either simple or very complex projects
+as an acyclic graph, where nodes (said clones), and hence the subgraphs rooted in
+them, may have more than one father. Accordingly, every update to a clone node
+immediately extends to every its instances within the tree-like walk-through of the whole
+outline.
+<!--l. 131--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">1.4.2   </span> <a 
+ id="x7-110001.4.2"></a>Using make</h5>
+<!--l. 133--><p class="noindent" >When using the IDE, the user must open the <span 
+class="cmtt-10x-x-109">Makefile </span>with any text editor, and modify the
+current values of two user-definable variables, according to his will:
+                                                                                  
+                                                                                  
+   <div class="verbatim" id="verbatim-7">
+NAME&#x00A0;=&#x00A0;&#x003C;name&#x003E;
+&#x00A0;<br />LANGUAGE&#x00A0;=&#x00A0;&#x003C;language&#x003E;
+</div>
+<!--l. 138--><p class="nopar" > where <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E; </span>is name of the new working document, and <span 
+class="cmtt-10x-x-109">&#x003C;language&#x003E; </span>may be only <span 
+class="cmtt-10x-x-109">py</span>
+(for Pyton). Soon such values will be extended to include <span 
+class="cmtt-10x-x-109">&#x003C;js&#x003E; </span>for Javascript and
+<span 
+class="cmtt-10x-x-109">&#x003C;lhs&#x003E; </span>for Literate Haskell. The make <span 
+class="cmti-10x-x-109">targets </span>currently available in the Makefile are the
+following:
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-10x-x-109">all</span> </dt><dd 
+class="description">is  the  default  option.  Its  execution  produces  a  <span 
+class="cmti-10x-x-109">pdf  </span>document  in  the  <span 
+class="cmtt-10x-x-109">doc/pdf</span>
+     subdirectory, and a pair of <span 
+class="cmti-10x-x-109">tex</span>/<span 
+class="cmti-10x-x-109">bbl </span>documents in the <span 
+class="cmtt-10x-x-109">doc/tex </span>subdirectory, all using
+     name <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E;</span>;
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">html</span> </dt><dd 
+class="description">similar to the default option, but produces a directory named <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E; </span>wth a bunch
+     of <span 
+class="cmti-10x-x-109">html </span>pages, located in the <span 
+class="cmtt-10x-x-109">doc/html </span>subdirectory;
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">test</span> </dt><dd 
+class="description">to execute the tests contained in the directory <span 
+class="cmtt-10x-x-109">test/&#x003C;language&#x003E;/&#x003C;name&#x003E;</span>
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">exec</span> </dt><dd 
+class="description">to execute <span 
+class="cmti-10x-x-109">nuweb </span>on the working document, i.e.&#x00A0;on <span 
+class="cmtt-10x-x-109">&#x003C;name&#x003E;.tex</span><span class="footnote-mark"><a 
+href="frame8.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x7-11001f1"></a> ;
+     this execution generates both the <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>&#x00A0;documentation file and the source output
+     files (for example the unit tests) written in the coding <span 
+class="cmtt-10x-x-109">&#x003C;language&#x003E;</span>;
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">clear</span> </dt><dd 
+class="description">to remove all the working files from the root directory. Used by other commands.
+     To be invoked by the user just in case that something did not work out.</dd></dl>
+   <!--l. 157--><div class="crosslinks"><p class="noindent">[<a 
+href="framesu3.html" >prev</a>] [<a 
+href="framesu3.html#tailframesu3.html" >prev-tail</a>] [<a 
+href="framesu4.html" >front</a>] [<a 
+href="framese1.html#framesu4.html" >up</a>] </p></div>
+<!--l. 157--><p class="indent" >   <a 
+ id="tailframesu4.html"></a>   
+</body></html> 

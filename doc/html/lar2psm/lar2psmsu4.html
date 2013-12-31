@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>&#8220;Explosion&#8221; of the scene</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 226--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu3.html" >prev</a>] [<a 
+href="lar2psmsu3.html#taillar2psmsu3.html" >prev-tail</a>] [<a 
+href="#taillar2psmsu4.html">tail</a>] [<a 
+href="lar2psmse2.html#lar2psmsu4.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.4   </span> <a 
+ id="x8-100002.4"></a>&#8220;Explosion&#8221; of the scene</h4>
+<!--l. 228--><p class="noindent" >A function <span 
+class="cmtt-10x-x-109">EXPLODE </span>used to &#8220;explode&#8221; an HPC scene defined as a <span 
+class="cmti-10x-x-109">list </span>of HPC values, given three
+real scaling parameters, <span 
+class="cmtt-10x-x-109">sx,sy,sz</span>, that are used to transform the position of the centroid of each
+HPC cell. HPC stands for <span 
+class="cmti-10x-x-109">HierarchicaL Polyhedral Complex</span>, the type of plasm geometric values.
+Of course the assertion
+   <center class="math-display" >
+<img 
+src="lar2psm0x.png" alt="sx,sy,sz &#x2265; 1.0
+" class="math-display" ></center>
+<!--l. 231--><p class="nopar" > must be true, otherways the function would induce some compenetration of the cells of the
+scene.
+<div class="flushleft" 
+>
+<!--l. 235--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4d"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Explode the scene using </span><span 
+class="cmtt-10">sx,sy,sz </span><span 
+class="cmr-10">scaling parameters</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4d </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 240--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;EXPLODE</span><span 
+class="cmtt-10">&#x00A0;(sx,sy,sz):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;def</span><span 
+class="cmtt-10">&#x00A0;explode0</span><span 
+class="cmtt-10">&#x00A0;(scene):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;centers</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[CCOMB(S1(UKPOL(obj)))</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;obj</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;scene]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;scalings</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;len(centers)</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;[S([1,2,3])([sx,sy,sz])]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;scaledCenters</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[UK(APPLY(pair))</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;pair</span><span 
+class="cmtt-10">&#x00A0;in</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;zip(scalings,</span><span 
+class="cmtt-10">&#x00A0;[MK(p)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;p</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;centers])]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;translVectors</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[</span><span 
+class="cmtt-10">&#x00A0;VECTDIFF((p,q))</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;(p,q)</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;zip(scaledCenters,</span><span 
+class="cmtt-10">&#x00A0;centers)</span><span 
+class="cmtt-10">&#x00A0;]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;translations</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[</span><span 
+class="cmtt-10">&#x00A0;T([1,2,3])(v)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;v</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;translVectors</span><span 
+class="cmtt-10">&#x00A0;]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;STRUCT([</span><span 
+class="cmtt-10">&#x00A0;t(obj)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;(t,obj)</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;zip(translations,scene)</span><span 
+class="cmtt-10">&#x00A0;])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;explode0</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 255--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="lar2psmsu6.html#nuweb5d"><span 
+class="cmr-9">5d</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 261--><p class="indent" >   The <span 
+class="cmtt-10x-x-109">EXPLODE </span>function is second order: it first application (to the scaling parameters) returns
+a partial function to be applied to the <span 
+class="cmtt-10x-x-109">scene</span>, given as a <span 
+class="cmti-10x-x-109">list </span>of HPC (Hierarchical
+Polyhedral Complex) objects. <span 
+class="cmtt-10x-x-109">EXPLODE </span>is dimension-independent, since it can be applied to
+                                                                                  
+                                                                                  
+points, edges, faces, 3D cells, and even to geometric values of mixed dimensionality (see
+Figure&#x00A0;<a 
+href="lar2psmsu8.html#x14-170011">1<!--tex4ht:ref: fig:lar2psm-01 --></a>).
+<!--l. 264--><p class="indent" >   It works by computing the centroid of each object, and by applying to each of them a
+translation equal to the difference betwwen the scaled and the initial positions of its
+centroid. <span 
+class="cmtt-10x-x-109">EXPLODE </span>returns a single HPC object (the assembly of input objects, properly
+translated)
+   <!--l. 269--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu3.html" >prev</a>] [<a 
+href="lar2psmsu3.html#taillar2psmsu3.html" >prev-tail</a>] [<a 
+href="lar2psmsu4.html" >front</a>] [<a 
+href="lar2psmse2.html#lar2psmsu4.html" >up</a>] </p></div>
+<!--l. 269--><p class="indent" >   <a 
+ id="taillar2psmsu4.html"></a>  
+</body></html> 

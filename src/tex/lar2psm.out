@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Implementation}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Convex combination}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{LAR model of a cell complex}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Function MKPOLS}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{``Explosion'' of the scene}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Source Output: lar2psm module}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Importing a generic module}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Lar2psm exporting}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Unit tests}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Creation of repository of unit tests}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Viewing some simplicial complexes}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Testing convex combination of vectors}{section.4}% 13

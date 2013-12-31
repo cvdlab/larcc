@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Convex combination</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 110--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu2.html" >next</a>] [<a 
+href="#taillar2psmsu1.html">tail</a>] [<a 
+href="lar2psmse2.html#lar2psmsu1.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a 
+ id="x5-40002.1"></a>Convex combination</h4>
+<!--l. 111--><p class="noindent" >Next we define the <span 
+class="cmtt-10x-x-109">CCOMB </span>function that accepts as input a <span 
+class="cmtt-10x-x-109">vectors </span>list (i.e., a matrix) and
+returns <span 
+class="cmti-10x-x-109">the </span>point their convex combination.
+<div class="flushleft" 
+>
+<!--l. 113--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb2d"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Compute the convex combination of a list of vectors</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">2d </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 118--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">import</span><span 
+class="cmtt-10">&#x00A0;scipy</span><span 
+class="cmtt-10">&#x00A0;as</span><span 
+class="cmtt-10">&#x00A0;sp</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">from</span><span 
+class="cmtt-10">&#x00A0;pyplasm</span><span 
+class="cmtt-10">&#x00A0;import</span><span 
+class="cmtt-10">&#x00A0;*</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;CCOMB(vectors):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;(sp.array(VECTSUM(vectors))</span><span 
+class="cmtt-10">&#x00A0;/</span><span 
+class="cmtt-10">&#x00A0;float(len(vectors))).tolist()</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 127--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="lar2psmsu6.html#nuweb5d"><span 
+class="cmr-9">5d</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 133--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x5-50002.1"></a><span 
+class="cmbx-10x-x-109">Unit tests</span></span>
+   First we test <span 
+class="cmtt-10x-x-109">CCOMB </span>with some special data, then with some random vectors.
+                                                                                  
+                                                                                  
+<div class="flushleft" 
+>
+<!--l. 135--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb3a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"test/py/lar2psm/test-ccomb.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">3a </span><span 
+class="cmsy-10">&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 140--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Import the module</span><span 
+class="cmr-10">&#x00A0;(</span><a 
+ id="nuweb3b">
+<span 
+class="cmr-9">3b</span></a>
+    <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">lar2psm</span></span></span> <span 
+class="cmr-10">) </span><a 
+href="lar2psmsu5.html#nuweb5a"><span 
+class="cmr-9">5a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">from</span><span 
+class="cmtt-10">&#x00A0;lar2psm</span><span 
+class="cmtt-10">&#x00A0;import</span><span 
+class="cmtt-10">&#x00A0;*</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmtt-10">CCOMB </span><span 
+class="cmr-10">unit tests</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="lar2psmsu9.html#nuweb7"><span 
+class="cmr-9">7</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl></div><br /><br />
+</div>
+<!--l. 149--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu2.html" >next</a>] [<a 
+href="lar2psmsu1.html" >front</a>] [<a 
+href="lar2psmse2.html#lar2psmsu1.html" >up</a>] </p></div>
+<!--l. 149--><p class="indent" >   <a 
+ id="taillar2psmsu1.html"></a>   
+</body></html> 

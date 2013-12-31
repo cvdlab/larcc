@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Cartesian product of cellular complexes</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="largrid.tex"> 
+<meta name="date" content="2013-12-31 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="largrid.css"> 
+</head><body 
+>
+   <!--l. 653--><div class="crosslinks"><p class="noindent">[<a 
+href="largridse6.html" >next</a>] [<a 
+href="largridse3.html" >prev</a>] [<a 
+href="largridse3.html#taillargridse3.html" >prev-tail</a>] [<a 
+href="largridsu5.html#taillargridse4.html">tail</a>] [<a 
+href="largrid.html#largridse5.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x12-280004"></a>Cartesian product of cellular complexes</h3>
+   <div class="paragraphTOCS">
+   </div>
+<!--l. 656--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x12-290004"></a><span 
+class="cmbx-10x-x-109">LAR model of cellular complexes</span></span>
+   The external representation of a LAR model (necessarily geometrical, i.e.&#x00A0;embedded
+in some <span 
+class="msbm-10x-x-109">E</span><sup><span 
+class="cmmi-8">n</span></sup>, in order to be possible to draw it) is a pair (<span 
+class="cmti-10x-x-109">geometry</span>,<span 
+class="cmti-10x-x-109">topology</span>), where
+<span 
+class="cmti-10x-x-109">geometry </span>is the list of coordinates of vertices, i.e.&#x00A0;a two-dimensional array of numbers,
+where vertices are given by row, and <span 
+class="cmti-10x-x-109">topology </span>is a list of cells of fixed dimension <span 
+class="cmmi-10x-x-109">d</span>.
+When <span 
+class="cmmi-10x-x-109">d </span>= <span 
+class="cmmi-10x-x-109">n </span>the model is <span 
+class="cmti-10x-x-109">solid</span>; otherwise the model is some emberdded <span 
+class="cmmi-10x-x-109">d</span>-skeleton
+(0 <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">d &#x003C; n</span>).
+<!--l. 660--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x12-300004"></a><span 
+class="cmbx-10x-x-109">Binary product of cellular complexes</span></span>
+   The <span 
+class="cmtt-10x-x-109">larModelProduct </span>function takes as input a pair of LAR models and returns the model
+of their Cartesian product. Since this is a pair (<span 
+class="cmti-10x-x-109">geometry</span>, <span 
+class="cmti-10x-x-109">topology</span>), its second element returns
+the topological product of the input topologies.
+<div class="flushleft" 
+>
+<!--l. 664--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb13a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Cartesian product of two lar models</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">13a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 669--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;larModelProduct(twoModels):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;(V,</span><span 
+class="cmtt-10">&#x00A0;cells1),</span><span 
+class="cmtt-10">&#x00A0;(W,</span><span 
+class="cmtt-10">&#x00A0;cells2)</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;twoModels</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Cartesian product of vertices</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb13b"><span 
+class="cmr-9">13b</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Topological product of cells</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="#nuweb13c"><span 
+class="cmr-9">13c</span></a><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;model</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[list(v)</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;v</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;vertices.keys()],</span><span 
+class="cmtt-10">&#x00A0;cells</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;model</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 680--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+<!--l. 686--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x12-310004"></a><span 
+class="cmbx-10x-x-109">Cartesian product of argument vertices</span></span>
+   The following macro is used to generate a dictionary mapping between integer ids of new
+vertices and the sets <span 
+class="cmmi-10x-x-109">V </span>and <span 
+class="cmmi-10x-x-109">W </span>of vertices of the input complexes.
+<div class="flushleft" 
+>
+<!--l. 690--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb13b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Cartesian product of vertices</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">13b</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 695--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">vertices</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;collections.OrderedDict();</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">for</span><span 
+class="cmtt-10">&#x00A0;v</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;V:</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;w</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;W:</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;id</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;tuple(v+w)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;if</span><span 
+class="cmtt-10">&#x00A0;not</span><span 
+class="cmtt-10">&#x00A0;vertices.has_key(id):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;vertices[id]</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;k</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;k</span><span 
+class="cmtt-10">&#x00A0;+=</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 706--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb13a"><span 
+class="cmr-9">13a</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+<!--l. 713--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x12-320004"></a><span 
+class="cmbx-10x-x-109">Topological product of argument vertices</span></span>
+   Another macro generates the cells of the topological product, represented as lists of new
+vertices.
+<div class="flushleft" 
+>
+<!--l. 717--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb13c"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Topological product of cells</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">13c</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 722--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">cells</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[</span><span 
+class="cmtt-10">&#x00A0;[vertices[tuple(V[v]</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;W[w])]</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;v</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;c1</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;w</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;c2]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;c1</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;cells1</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;c2</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;cells2]</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 728--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="#nuweb13a"><span 
+class="cmr-9">13a</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+<div class="flushleft" 
+>
+<!--l. 736--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb14a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmr-10">Test examples of Cartesian product</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">14a</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 741--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">if</span><span 
+class="cmtt-10">&#x00A0;__name__</span><span 
+class="cmtt-10">&#x00A0;==</span><span 
+class="cmtt-10">&#x00A0;"__main__":</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;geom_0,topol_0</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0.],[1.],[2.],[3.],[4.]],[[0,1],[1,2],[2,3],[3,4]]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;geom_1,topol_1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[[0.],[1.],[2.]],</span><span 
+class="cmtt-10">&#x00A0;[[0,1],[1,2]]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;mod_0</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;(geom_0,topol_0)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;mod_1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;(geom_1,topol_1)</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;squares</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;larModelProduct([mod_0,mod_1])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(squares)))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;cubes</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;larModelProduct([squares,mod_0])</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(cubes)))</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 755--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="largridse5.html#nuweb14b"><span 
+class="cmr-9">14b</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 763--><div class="crosslinks"><p class="noindent">[<a 
+href="largridse6.html" >next</a>] [<a 
+href="largridse3.html" >prev</a>] [<a 
+href="largridse3.html#taillargridse3.html" >prev-tail</a>] [<a 
+href="largridse4.html" >front</a>] [<a 
+href="largrid.html#largridse5.html" >up</a>] </p></div>
+<!--l. 763--><p class="indent" >   <a 
+ id="taillargridse4.html"></a>   
+</body></html> 

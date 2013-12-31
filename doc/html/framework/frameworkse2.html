@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Structure of larcc</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="framework.tex"> 
+<meta name="date" content="2013-10-30 19:30:00"> 
+<link rel="stylesheet" type="text/css" href="framework.css"> 
+</head><body 
+>
+   <!--l. 147--><div class="crosslinks"><p class="noindent">[<a 
+href="frameworkse1.html" >prev</a>] [<a 
+href="frameworkse1.html#tailframeworkse1.html" >prev-tail</a>] [<a 
+href="#tailframeworkse2.html">tail</a>] [<a 
+href="framework.html#frameworkli1.html" >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x8-100002"></a>Structure of <span 
+class="cmtt-10x-x-109">larcc</span></h3>
+<!--l. 149--><p class="noindent" >The <span 
+class="cmtt-10x-x-109">larcc </span>project is hinged around four subdirectories (see Figure&#x00A0;<a 
+href="frameworksu2.html#x4-60011">1<!--tex4ht:ref: fig:tree --></a>) and a Makefile. The
+meaning and function of the four subdirectories are listed below.
+<!--l. 152--><p class="indent" >
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-10x-x-109">src</span> </dt><dd 
+class="description">(for  <span 
+class="cmti-10x-x-109">Source</span>)  is  the  directory  <span 
+class="cmtt-10x-x-109">src </span>that  contains  all  the  source  documents,  and  in
+     particular the <span 
+class="cmtt-10x-x-109">tex </span>files including the code of the algorithms and the tests developed in
+     the project. It is divided in subdirectories related to the type of the source file itself.
+     For example a <span 
+class="cmtt-10x-x-109">html </span>directory will contain the user-defined <span 
+class="cmtt-10x-x-109">css </span>source files, and the
+     <span 
+class="cmtt-10x-x-109">lhs </span>directory the <span 
+class="cmti-10x-x-109">literate Haskell </span>sorce files, to be processed directly by the Haskell
+     compiler <span 
+class="cmti-10x-x-109">GHC</span>. Such directories will also contain other programming resources needed
+     to build the libreries or the applications developed in the LAR-CC project.
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">test</span> </dt><dd 
+class="description"><a 
+href="http://en.wikipedia.org/wiki/Test-driven_development" >test-driven development</a> (TDD) is a software development process that relies on the
+     repetition of a very short development cycle: write a &#8220;unit test&#8221;, get it to pass, run
+     all tests, clean up the code (see Figure&#x00A0;<a 
+href="#x8-100012">2<!--tex4ht:ref: fig:tdd --></a>). The subdirectory <span 
+class="cmtt-10x-x-109">test </span>is the repository of
+     test suites, collection of test cases, and of unit test files, possibly grouped depending
+     on the source language, to be launched either individually, while writing each single
+     software function or application, or collectively before committing or pushing novel
+     developments or subsystems.
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">lib</span> </dt><dd 
+class="description">is the repository of compiled and/or executable programs. In particular, it is the place
+     where to store and retrieve all the libreries or modules or applications developed
+     by compilation of any document within the <span 
+class="cmtt-10x-x-109">scr </span>subdirectory of the <span 
+class="cmtt-10x-x-109">larcc </span>system,
+     excluding the documentation.
+     </dd><dt class="description">
+<span 
+class="cmbx-10x-x-109">doc</span> </dt><dd 
+class="description">conversely  contains  all  the  documentation  generated  by  the  system,  once  again
+     subdivided depending on the language and tools used for its reading or examination.</dd></dl>
+<!--l. 168--><p class="indent" >   <hr class="figure"><div class="figure" 
+>
+                                                                                  
+                                                                                  
+<a 
+ id="x8-100012"></a>
+                                                                                  
+                                                                                  
+
+<!--l. 170--><p class="noindent" ><img 
+src="images/tdd.png" alt="PIC"  
+>
+<br /> <div class="caption" 
+><span class="id">Figure&#x00A0;2: </span><span  
+class="content">test-driven development (TDD) cycle (from Wikipedia)</span></div><!--tex4ht:label?: x8-100012 -->
+                                                                                  
+                                                                                  
+<!--l. 173--><p class="indent" >   </div><hr class="endfigure">
+                                                                                  
+                                                                                  
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+href="frameworkse1.html" >prev</a>] [<a 
+href="frameworkse1.html#tailframeworkse1.html" >prev-tail</a>] [<a 
+href="frameworkse2.html" >front</a>] [<a 
+href="framework.html#frameworkli1.html" >up</a>] </p></div>
+<!--l. 8--><p class="indent" >   <a 
+ id="tailframeworkse2.html"></a>  
+</body></html> 

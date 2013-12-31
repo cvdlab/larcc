@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Lar2psm exporting</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 318--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu5.html" >prev</a>] [<a 
+href="lar2psmsu5.html#taillar2psmsu5.html" >prev-tail</a>] [<a 
+href="#taillar2psmsu6.html">tail</a>] [<a 
+href="lar2psmse3.html#lar2psmsu6.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x11-140003.2"></a>Lar2psm exporting</h4>
+<!--l. 320--><p class="noindent" >Here we assemble top-down the <span 
+class="cmtt-10x-x-109">lar2psm </span>module, by orderly listing the functional parts it is
+composed of. Of course, this one is the module version corresponding to the current
+state of the system, i.e.&#x00A0;to a very initial state. Other functions will be added when
+needed.
+<div class="flushleft" 
+>
+<!--l. 322--><p class="noindent" >
+<a 
+ id="nuweb5d"></a>
+<span 
+class="cmr-10">&#x00A0;</span> <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"lib/py/lar2psm.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">5d </span><span 
+class="cmsy-10">&#x2261;</span>
+     <dl class="list1"><dt class="list">
+     </dt><dd 
+class="list">
+     <!--l. 326--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"""Module</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;functions</span><span 
+class="cmtt-10">&#x00A0;needed</span><span 
+class="cmtt-10">&#x00A0;to</span><span 
+class="cmtt-10">&#x00A0;interface</span><span 
+class="cmtt-10">&#x00A0;LAR</span><span 
+class="cmtt-10">&#x00A0;with</span><span 
+class="cmtt-10">&#x00A0;pyplasm"""</span></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Import the module</span><span 
+class="cmr-10">&#x00A0;(</span><a 
+ id="nuweb5e">
+<span 
+class="cmr-9">5e</span></a>
+    <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">smplxn</span></span></span> <span 
+class="cmr-10">) </span><a 
+href="lar2psmsu5.html#nuweb5a"><span 
+class="cmr-9">5a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Function to import a generic module</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="lar2psmsu5.html#nuweb5b"><span 
+class="cmr-9">5b</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Compute the convex combination of a list of vectors</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="lar2psmsu1.html#nuweb2d"><span 
+class="cmr-9">2d</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">MaKe a list of HPC objects from a LAR model</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="lar2psmsu3.html#nuweb4a"><span 
+class="cmr-9">4a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Explode the scene using </span><span 
+class="cmtt-10">sx,sy,sz </span><span 
+class="cmr-10">scaling parameters</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="lar2psmsu4.html#nuweb4d"><span 
+class="cmr-9">4d</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br />
+     <span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+</div>
+   <!--l. 341--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu5.html" >prev</a>] [<a 
+href="lar2psmsu5.html#taillar2psmsu5.html" >prev-tail</a>] [<a 
+href="lar2psmsu6.html" >front</a>] [<a 
+href="lar2psmse3.html#lar2psmsu6.html" >up</a>] </p></div>
+<!--l. 341--><p class="indent" >   <a 
+ id="taillar2psmsu6.html"></a>  
+</body></html> 

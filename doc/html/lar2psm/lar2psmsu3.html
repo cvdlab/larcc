@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Function MKPOLS</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- TocLink,html,index=2,3 --> 
+<meta name="src" content="lar2psm.tex"> 
+<meta name="date" content="2013-11-21 16:08:00"> 
+<link rel="stylesheet" type="text/css" href="lar2psm.css"> 
+</head><body 
+>
+   <!--l. 182--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu4.html" >next</a>] [<a 
+href="lar2psmsu2.html" >prev</a>] [<a 
+href="lar2psmsu2.html#taillar2psmsu2.html" >prev-tail</a>] [<a 
+href="#taillar2psmsu3.html">tail</a>] [<a 
+href="lar2psmse2.html#lar2psmsu3.html" >up</a>] </p></div>
+   <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a 
+ id="x7-80002.3"></a>Function <span 
+class="cmtt-10x-x-109">MKPOLS</span></h4>
+<!--l. 184--><p class="noindent" >The function <span 
+class="cmtt-10x-x-109">MKPOLS </span>returns a list of HPC objects, i.e.&#x00A0;the geometric type of the PLaSM
+language. This list is generated to be displayed, possibly exploded, by the <span 
+class="cmtt-10x-x-109">pyplasm</span>
+viewer.
+<!--l. 186--><p class="indent" >   Each cell <span 
+class="cmtt-10x-x-109">f </span>in the model (i.e.&#x00A0;each vertex list in the <span 
+class="cmtt-10x-x-109">FV </span>array of the previous example) is
+mapped into a polyhedral cell by the <span 
+class="cmtt-10x-x-109">pyplasm </span>operator <span 
+class="cmtt-10x-x-109">MKPOL</span>. The vertex indices are mapped
+from base 0 (the Python and C standard) to base 1 (the Plasm, Matlab, and FORTRAN
+standard).
+<div class="flushleft" 
+>
+<!--l. 188--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4a"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">MaKe a list of HPC objects from a LAR model</span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4a </span><span 
+class="cmsy-10">&#x27E9;&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 193--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">def</span><span 
+class="cmtt-10">&#x00A0;MKPOLS</span><span 
+class="cmtt-10">&#x00A0;(model):</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;V,</span><span 
+class="cmtt-10">&#x00A0;FV</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;model</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;pols</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;[MKPOL([[V[v]</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;v</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;f],[range(1,len(f)+1)],</span><span 
+class="cmtt-10">&#x00A0;None])</span><span 
+class="cmtt-10">&#x00A0;for</span><span 
+class="cmtt-10">&#x00A0;f</span><span 
+class="cmtt-10">&#x00A0;in</span><span 
+class="cmtt-10">&#x00A0;FV]</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;return</span><span 
+class="cmtt-10">&#x00A0;pols</span><span 
+class="cmtt-10">&#x00A0;</span><span 
+class="cmtt-10">&#x00A0;</span></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl>
+    <dl class="list1"><dt class="list"></dt><dd 
+class="list">
+    <!--l. 202--><p class="noindent" ><span 
+class="cmr-9">Macro referenced in</span><span 
+class="cmr-9">&#x00A0;</span><a 
+href="lar2psmsu6.html#nuweb5d"><span 
+class="cmr-9">5d</span></a><span 
+class="cmr-9">.</span></dd></dl></div><br /><br />
+                                                                                  
+                                                                                  
+</div>
+<!--l. 208--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x7-90002.3"></a><span 
+class="cmbx-10x-x-109">Unit tests</span></span>
+   Some simple 3D, 2D, 1D and 0D models are generated and visualised exploded by the
+file
+<div class="flushleft" 
+>
+<!--l. 211--><p class="noindent" >
+ <div class="minipage"><a 
+ id="nuweb4b"></a>
+<span 
+class="cmr-10">&#x00A0;</span><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">"test/py/lar2psm/test-models.py"</span></span></span><span 
+class="cmr-10">&#x00A0;</span><span 
+class="cmr-9">4b </span><span 
+class="cmsy-10">&#x2261;</span>
+    <dl class="list1"><dt class="list">
+    </dt><dd 
+class="list">
+    <!--l. 216--><p class="noindent" ><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">Import the module</span><span 
+class="cmr-10">&#x00A0;(</span><a 
+ id="nuweb4c">
+<span 
+class="cmr-9">4c</span></a>
+    <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">lar2psm</span></span></span> <span 
+class="cmr-10">) </span><a 
+href="lar2psmsu5.html#nuweb5a"><span 
+class="cmr-9">5a</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x27E8;</span><span 
+class="cmr-10">View model examples</span><span 
+class="cmr-10">&#x00A0;</span><a 
+href="lar2psmsu8.html#nuweb6d"><span 
+class="cmr-9">6d</span></a> <span 
+class="cmsy-10">&#x27E9;</span><span class="obeylines-h"><span class="verb"></span></span><br 
+class="newline" /><span class="obeylines-h"><span class="verb"></span></span><span 
+class="cmsy-10">&#x25C7;</span></dd></dl></div><br /><br />
+</div>
+                                                                                  
+                                                                                  
+   <!--l. 226--><div class="crosslinks"><p class="noindent">[<a 
+href="lar2psmsu4.html" >next</a>] [<a 
+href="lar2psmsu2.html" >prev</a>] [<a 
+href="lar2psmsu2.html#taillar2psmsu2.html" >prev-tail</a>] [<a 
+href="lar2psmsu3.html" >front</a>] [<a 
+href="lar2psmse2.html#lar2psmsu3.html" >up</a>] </p></div>
+<!--l. 226--><p class="indent" >   <a 
+ id="taillar2psmsu3.html"></a>   
+</body></html> 
