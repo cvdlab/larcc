@@ -1,0 +1,28 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Some simplicial algorithms}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Linear extrusion of a complex}{2}{subsection.2.1}
+\contentsline {paragraph}{Computation}{2}{section*.2}
+\contentsline {paragraph}{Implementation}{3}{section*.3}
+\contentsline {paragraph}{Extrusion of single cells}{4}{section*.4}
+\contentsline {paragraph}{Assembling vertex indices in a tube with their shifted images}{4}{section*.5}
+\contentsline {paragraph}{Selecting and reshaping extruded cells in a tube}{4}{section*.6}
+\contentsline {subsubsection}{\numberline {2.1.1}Examples of simplicial complex extrusions}{4}{subsubsection.2.1.1}
+\contentsline {paragraph}{Example 1}{4}{section*.7}
+\contentsline {paragraph}{Examples 2 and 3}{5}{figure.4}
+\contentsline {subsection}{\numberline {2.2}Generation of multidimensional simplicial grids}{5}{subsection.2.2}
+\contentsline {paragraph}{Examples of simplicial grids}{5}{section*.9}
+\contentsline {subsection}{\numberline {2.3}Facet extraction from simplices}{6}{subsection.2.3}
+\contentsline {paragraph}{Examples of facet extraction}{6}{section*.10}
+\contentsline {subsection}{\numberline {2.4}Exporting the $Simple_x^n$ library}{6}{subsection.2.4}
+\contentsline {section}{\numberline {3}Signed (co)boundary matrices of a simplicial complex}{7}{section.3}
+\contentsline {section}{\numberline {4}Test examples}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Structured grid}{7}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}2D example}{7}{subsubsection.4.1.1}
+\contentsline {paragraph}{Generate a simplicial decomposition}{7}{section*.11}
+\contentsline {paragraph}{Extract the $(d-1)$-faces}{7}{section*.12}
+\contentsline {paragraph}{Export the executable file}{7}{section*.13}
+\contentsline {subsubsection}{\numberline {4.1.2}3D example}{7}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Unstructured grid}{8}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}2D example}{8}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}3D example}{8}{subsubsection.4.2.2}
+\contentsline {section}{\numberline {A}Utilities}{8}{appendix.A}

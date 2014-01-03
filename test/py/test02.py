@@ -1,10 +1,6 @@
 
 
-import sys
-sys.path.insert(0, 'lib/py/')
-from smplxn import *
-
-V,CV = simplexGrid([2,2,2])
+V,CV = larSimplexGrid([2,2,2])
 VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,CV))))
 
 

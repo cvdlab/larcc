@@ -1,4 +1,6 @@
 from larcc import *
+from lar2psm import *
+from scipy import *
 
 #------------------------------------------------------------------
 # extrusion of simplicial complexes

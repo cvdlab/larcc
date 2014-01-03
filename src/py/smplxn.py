@@ -1,5 +1,6 @@
+from smplxn import *
+import numpy as np
 
-from larcc import *
 
 #------------------------------------------------------------------
 # extrusion of simplicial complexes

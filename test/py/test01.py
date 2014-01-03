@@ -1,10 +1,6 @@
 
 
-import sys
-sys.path.insert(0, 'lib/py/')
-from smplxn import *
-
-V,FV = simplexGrid([3,3])
+V,FV = larSimplexGrid([3,3])
 VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,FV))))
 
 EV = simplexFacets(FV)

@@ -8,7 +8,7 @@ def larSplit(dom):
         item = float(dom)/n
         ints = range(n+1)
         items = [item]*(n+1)
-        vertices = AA(LIST)(AA(PROD)(TRANS([ints,items])))
+        vertices = [[int*item] for (int,item) in zip(ints,items)]
         return vertices
     return larSplit1
 
@@ -30,35 +30,35 @@ def larGrid(n):
 def larVertProd(vertLists):
     return AA(CAT)(CART(vertLists))
 
-def index2address (shape):
+def index2addr (shape):
     n = len(shape)
     shape = shape[1:]+[1]
     weights = [PROD(shape[k:]) for k in range(n)]
-    def index2address0 (multindex):
+    def index2addr0 (multindex):
         return INNERPROD([multindex, weights])
-    return index2address0
+    return index2addr0
 
 def larCellProd(cellLists):
     shapes = [len(item) for item in cellLists]
     indices = CART([range(shape) for shape in shapes])
-    jointCells = [CART([cells[k] for k,cells in zip(multindex,cellLists)])
-                  for multindex in indices]
-    convert = index2address([ shape+1 if (len(cellLists[k][0]) > 1) else shape
+    jointCells = [CART([cells[k] for k,cells in zip(index,cellLists)])
+                  for index in indices]
+    convert = index2addr([ shape+1 if (len(cellLists[k][0]) > 1) else shape
                              for k,shape in enumerate(shapes) ])
     return [AA(convert)(cell) for cell in jointCells]
 
-def binaryPowerRange (n):
+def binaryRange(n):
     return [('{0:0'+str(n)+'b}').format(k) for k in range(2**n)]
 
 def filterByOrder(n):
-    terms = [AA(int)(list(term)) for term in binaryPowerRange(n)]
+    terms = [AA(int)(list(term)) for term in binaryRange(n)]
     return [[term for term in terms if sum(term) == k] for k in range(n+1)]
 
 def larGridSkeleton(shape):
     n = len(shape)
     def larGridSkeleton0(d):
         components = filterByOrder(n)[d]
-        componentCellLists = [AA(APPLY)(TRANS([ AA(larGrid)(shape),(component) ]))
+        componentCellLists = [AA(APPLY)(zip( AA(larGrid)(shape),(component) ))
                               for component in components]
         return CAT([ larCellProd(cellLists)  for cellLists in componentCellLists ])
     return larGridSkeleton0

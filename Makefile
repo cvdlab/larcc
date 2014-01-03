@@ -1,8 +1,8 @@
 #
-# Makefile for cclar
+# Makefile for larcc
 #
 
-NAME = largrid
+NAME = smplxn
 LANGUAGE = py
 BIBFILE = $(NAME).bib
 

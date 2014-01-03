@@ -7,7 +7,7 @@ def larSplit(dom):
         item = float(dom)/n
         ints = range(n+1)
         items = [item]*(n+1)
-        vertices = AA(LIST)(AA(PROD)(TRANS([ints,items])))
+        vertices = [[int*item] for (int,item) in zip(ints,items)]
         return vertices
     return larSplit1
 
