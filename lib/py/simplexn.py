@@ -35,14 +35,14 @@ def larSimplexGrid(shape):
         model = larExtrude(model,item*[1])
     return model
 
-def simplexFacets(simplices):
+def larSimplexFacets(simplices):
     out = []
-    d = len(simplices[0])+1
+    d = len(simplices[0])
     for simplex in simplices:
-        out += [simplex[0:k]+simplex[k+1:d] for k in range(d-1)]
+        out += [simplex[0:k]+simplex[k+1:d] for k in range(d)]
     out = sorted(out)
-    return [simplex for k,simplex in enumerate(out[:-1])
-            if out[k] != out[k+1]] + [out[-1]]
+    return [facet for k,facet in enumerate(out[:-1]) if out[k] != out[k+1]] \
+      + [out[-1]] 
 
 if __name__ == "__main__":
    # example 1
@@ -73,8 +73,8 @@ if __name__ == "__main__":
    
    V,CV = larSimplexGrid([1,1,1])
    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,CV))))
-   SK2 = (V,simplexFacets(CV))
+   SK2 = (V,larSimplexFacets(CV))
    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(SK2)))
-   SK1 = (V,simplexFacets(SK2[1]))
+   SK1 = (V,larSimplexFacets(SK2[1]))
    VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(SK1)))
    
