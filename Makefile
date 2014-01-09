@@ -1,8 +1,8 @@
 #
-# Makefile for larcc
+# Makefile for LARCC framework
 #
 
-NAME = smplxn
+NAME = larcc
 LANGUAGE = py
 BIBFILE = $(NAME).bib
 

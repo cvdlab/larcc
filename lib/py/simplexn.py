@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Module for facet extraction, extrusion and simplicial grids"""
 from lar2psm import *
 from scipy import *

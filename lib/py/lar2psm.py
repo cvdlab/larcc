@@ -1,7 +1,7 @@
 """Module with functions needed to interface LAR with pyplasm"""
 import sys
 sys.path.insert(0, 'lib/py/')
-import smplxn
+import simplexn
 
 def importModule(moduleName):
    import sys

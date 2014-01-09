@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Basic representations}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}BRC (Binary Row Compressed)}{2}{subsection.1.1}
+\contentsline {paragraph}{BRC format example}{2}{section*.2}
+\contentsline {subsection}{\numberline {1.2}Format conversions}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Matrix operations}{2}{section.2}
+\contentsline {section}{\numberline {3}Topological operations}{3}{section.3}
+\contentsline {paragraph}{Orienting polytopal cells}{4}{section*.3}
+\contentsline {section}{\numberline {4}Exporting the library}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}MIT licence}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Importing of modules or packages}{6}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Writing the library file}{6}{subsection.4.3}
+\contentsline {section}{\numberline {5}Unit tests}{6}{section.5}
+\contentsline {section}{\numberline {A}Tutorial}{7}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Common macros}{7}{subsection.A.1}
+\contentsline {subsubsection}{\numberline {A.1.1}Model generation, skeleton and boundary extraction}{7}{subsubsection.A.1.1}
+\contentsline {subsubsection}{\numberline {A.1.2}Boundary of 3D simplicial grid}{8}{subsubsection.A.1.2}
+\contentsline {subsubsection}{\numberline {A.1.3}Oriented boundary of a random simplicial complex}{8}{subsubsection.A.1.3}
+\contentsline {subsubsection}{\numberline {A.1.4}Oriented boundary of a simplicial grid}{8}{subsubsection.A.1.4}
+\contentsline {subsubsection}{\numberline {A.1.5}Skeletons and oriented boundary of a simplicial complex}{9}{subsubsection.A.1.5}
+\contentsline {subsubsection}{\numberline {A.1.6}Boundary permutation of random 2D simplicial complex}{9}{subsubsection.A.1.6}
+\contentsline {subsection}{\numberline {A.2}Examples exporting}{10}{subsection.A.2}

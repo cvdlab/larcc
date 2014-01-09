@@ -1,0 +1,2909 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.6.23)  8 JAN 2014 18:35
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**larcc.tex
+(./larcc.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen113
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen114
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks18
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks19
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks27
+)
+\c@definition=\count103
+\c@theorem=\count104
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen122
+\Hy@linkcounter=\count105
+\Hy@pagecounter=\count106
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count107
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count108
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen123
+\Fld@menulength=\count109
+\Field@Width=\dimen124
+\Fld@charsize=\dimen125
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count110
+\c@Item=\count111
+\c@Hfootnote=\count112
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count113
+\c@bookmark@seq@number=\count114
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip49
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+No file larcc.aux.
+\openout1 = `larcc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count115
+\scratchdimen=\dimen126
+\scratchbox=\box28
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen127
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring ON on input line 49.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count121
+)
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+LaTeX Info: Redefining \nameref on input line 49.
+\@outlinefile=\write3
+\openout3 = `larcc.out'.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Citation `cclar-proj:2013:00' on page 1 undefined on input line 
+51.
+
+
+\tf@toc=\write4
+\openout4 = `larcc.toc'.
+
+[1
+
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+./larcc.tex:110: Missing $ inserted.
+<inserted text> 
+                $
+l.110     return scipy.sparse.coo_
+                                  matrix((data, ij)).asformat(shape)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:111: Extra }, or forgotten $.
+l.111 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:123: Undefined control sequence.
+l.123 @{print "\n
+                 >>> cooCreateFromBrc"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:129: Undefined control sequence.
+l.129 print "\ncooCreateFromBrc
+                               (FV) =\n", cooFV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:129: Undefined control sequence.
+l.129 print "\ncooCreateFromBrc(FV) =\n
+                                       ", cooFV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:130: Undefined control sequence.
+l.130 print "\ncooCreateFromBrc
+                               (EV) =\n", cooEV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:130: Undefined control sequence.
+l.130 print "\ncooCreateFromBrc(EV) =\n
+                                       ", cooEV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:142: Undefined control sequence.
+l.142 @{print "\n
+                 >>> csrCreateFromCoo"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:145: Undefined control sequence.
+l.145 print "\ncsr
+                  (FV) =\n", repr(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:145: Undefined control sequence.
+l.145 print "\ncsr(FV) =\n
+                          ", repr(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:146: Undefined control sequence.
+l.146 print "\ncsr
+                  (EV) =\n", repr(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:146: Undefined control sequence.
+l.146 print "\ncsr(EV) =\n
+                          ", repr(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:164: Undefined control sequence.
+l.164 @{print "\n
+                 >>> csrCreateFromCoo"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:168: Undefined control sequence.
+l.168 print "\ncsrCreate
+                        (FV) =\n", csrFV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:168: Undefined control sequence.
+l.168 print "\ncsrCreate(FV) =\n
+                                ", csrFV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:171: Missing $ inserted.
+<inserted text> 
+                $
+l.171 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (6197.94576pt too wide) in paragraph at lines 101--171
+\OT1/cmr/m/n/10.95 turn scipy.sparse.coo$[]\OML/cmm/m/it/10.95 atrix\OT1/cmr/m/
+n/10.95 ((\OML/cmm/m/it/10.95 data; ij\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 
+:asformat\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 shape\OT1/cmr/m/n/10.95 )@@\OM
+L/cmm/m/it/10.95 dBrctoCootransformation\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10
+.95 dTestexampleofBrctoCootransformation\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10
+.95 dCootoCsrtransformation\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10.95 dTestexam
+pleofCootoCsrtransformation\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10.95 dBrctoCsr
+transformation\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10.95 dTestexampleofBrctoCsr
+transformation\OT1/cmr/m/n/10.95 @[]$ 
+ []
+
+./larcc.tex:187: Undefined control sequence.
+l.187 @{print "\n
+                 >>> csrGetNumberOfRows"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:188: Undefined control sequence.
+l.188 print "\ncsrGetNumberOfRows
+                                 (csrFV) =", csrGetNumberOfRows(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:189: Undefined control sequence.
+l.189 print "\ncsrGetNumberOfRows
+                                 (csrEV) =", csrGetNumberOfRows(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:190: Undefined control sequence.
+l.190 print "\n
+               >>> csrGetNumberOfColumns"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:191: Undefined control sequence.
+l.191 print "\ncsrGetNumberOfColumns
+                                    (csrFV) =", csrGetNumberOfColumns(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:192: Undefined control sequence.
+l.192 print "\ncsrGetNumberOfColumns
+                                    (csrEV) =", csrGetNumberOfColumns(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:209: Undefined control sequence.
+l.209 @{print "\n
+                 >>> csrToMatrixRepresentation"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:210: Undefined control sequence.
+l.210 print "\nFV
+                  =\n", csrToMatrixRepresentation(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:210: Undefined control sequence.
+l.210 print "\nFV =\n
+                     ", csrToMatrixRepresentation(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:211: Undefined control sequence.
+l.211 print "\nEV
+                  =\n", csrToMatrixRepresentation(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:211: Undefined control sequence.
+l.211 print "\nEV =\n
+                     ", csrToMatrixRepresentation(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (25.05736pt too wide) in paragraph at lines 180--219
+\OT1/cmr/m/n/10.95 csr-Get-Num-berOf-Columns" print "(csrFV) =", csr-Get-Num-be
+rOf-Columns(csrFV) print "(csrEV)
+ []
+
+
+Overfull \hbox (20.05504pt too wide) in paragraph at lines 180--219
+\OT1/cmr/m/n/10.95 csr-Get-Num-berOf-Columns(CSRm) Scipy-Mat = ze-ros((nrows,nc
+olumns),int) C = CSRm.tocoo()
+ []
+
+[2]
+./larcc.tex:234: Missing $ inserted.
+<inserted text> 
+                $
+l.234     mtx = coo_
+                    matrix((coo.data, (coo.row, coo.col)), shape=inputShape)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:237: Extra }, or forgotten $.
+l.237 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:241: Undefined control sequence.
+l.241 @{print "\n
+                 >>> csrBoundaryFilter"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:245: Undefined control sequence.
+l.245 print "\ncsrMaxFilter
+                           (csrFE) =\n", csrToMatrixRepresentation(CSRm)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:245: Undefined control sequence.
+l.245 print "\ncsrMaxFilter(csrFE) =\n
+                                      ", csrToMatrixRepresentation(CSRm)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:251: You can't use `macro parameter character #' in math mode.
+l.251 	#
+         can be done in parallel (by rows)
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:262: Undefined control sequence.
+l.262 @{print "\n
+                 >>> csrPredFilter"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:264: Undefined control sequence.
+l.264 print "\nccsrPredFilter
+                             (csrFE) =\n", csrToMatrixRepresentation(CSRm)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:264: Undefined control sequence.
+l.264 print "\nccsrPredFilter(csrFE) =\n
+                                        ", csrToMatrixRepresentation(CSRm)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:267: Missing $ inserted.
+<inserted text> 
+                $
+l.267 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (42.69014pt too wide) in paragraph at lines 220--267
+\OT1/cmr/m/n/10.95 = 1 else: coo.data[k] = 0 mtx = coo$[]\OML/cmm/m/it/10.95 at
+rix\OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 coo:data; \OT1/cmr/m/n/10.95 (\OML/
+cmm/m/it/10.95 coo:row; coo:col\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 ; shape
+ \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 inputShape\OT1/cmr/m/n/10.95 )\OML/cm
+m/m/it/10.95 out \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (3934.55145pt too wide) in paragraph at lines 220--267
+\OML/cmm/m/it/10.95 mtx:tocsr\OT1/cmr/m/n/10.95 ()\OML/cmm/m/it/10.95 returnout
+\OT1/cmr/m/n/10.95 @@\OML/cmm/m/it/10.95 dTestexampleofMatrixfilteringtoproduce
+theboundarymatrix\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10.95 dMatrixfilteringvia
+agenericpredicate\OT1/cmr/m/n/10.95 @[]@\OML/cmm/m/it/10.95 dTestexampleofMatri
+xfilteringviaagenericpredicate\OT1/cmr/m/n/10.95 @[]$ 
+ []
+
+
+Overfull \hbox (13.19481pt too wide) in paragraph at lines 271--278
+\OT1/cmr/m/n/10.95 Cre-ate(cells) csrFV = csr-Cre-ate(facets) csrFC = ma-trix-P
+rod-uct(csrFV, csr-Trans-pose(csrCV))
+ []
+
+
+Overfull \hbox (42.0311pt too wide) in paragraph at lines 271--278
+\OT1/cmr/m/n/10.95 facetLengths = [csr-Cell.getnnz() for csr-Cell in csrCV] re-
+turn csr-Bound-ary-Fil-ter(csrFC,facetLengths) 
+ []
+
+
+Overfull \hbox (42.69858pt too wide) in paragraph at lines 279--288
+[]\OT1/cmr/m/n/10.95 def cobound-ary(cells,facets): Bound-ary = bound-ary(cells
+,facets) re-turn csr-Trans-pose(Boundary)
+ []
+
+./larcc.tex:300: Undefined control sequence.
+l.300 print "\ncoboundary
+                         _2 =\n", csrToMatrixRepresentation(coboundary(CV,FV))
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:300: Missing $ inserted.
+<inserted text> 
+                $
+l.300 print "\ncoboundary_
+                          2 =\n", csrToMatrixRepresentation(coboundary(CV,FV))
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:300: Undefined control sequence.
+l.300 print "\ncoboundary_2 =\n
+                               ", csrToMatrixRepresentation(coboundary(CV,FV))
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:301: Undefined control sequence.
+l.301 print "\ncoboundary
+                         _1 =\n", csrToMatrixRepresentation(coboundary(FV,EV))
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:301: Undefined control sequence.
+l.301 print "\ncoboundary_1 =\n
+                               ", csrToMatrixRepresentation(coboundary(FV,EV))
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:302: Undefined control sequence.
+l.302 print "\ncoboundary
+                         _0 =\n", csrToMatrixRepresentation(coboundary(EV,AA...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:302: Undefined control sequence.
+l.302 print "\ncoboundary_0 =\n
+                               ", csrToMatrixRepresentation(coboundary(EV,AA...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:303: Extra }, or forgotten $.
+l.303 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:309: Missing $ inserted.
+<inserted text> 
+                $
+l.309 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:309: Missing } inserted.
+<inserted text> 
+                }
+l.309 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (257.11913pt too wide) in paragraph at lines 300--309
+[]\OT1/cmr/m/n/10.95 print "$[] = "\OML/cmm/m/it/10.95 ; csrToMatrixRepresentat
+ion\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 coboundary\OT1/cmr/m/n/10.95 (\OML/c
+mm/m/it/10.95 CV; FV\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/
+10.95 "[] = "\OML/cmm/m/it/10.95 ; csrToMatrixRepresentation\OT1/cmr/m/n/10.95 
+(\OML/cmm/m/it/10.95 coboundary\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 FV; EV\O
+T1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "[] =
+ []
+
+
+Overfull \hbox (281.8833pt too wide) in paragraph at lines 300--309
+\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 ; csrToMatrixRepresentation\OT1/cmr/m/n
+/10.95 (\OML/cmm/m/it/10.95 coboundary\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 E
+V; AA\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 LIST\OT1/cmr/m/n/10.95 )(\OML/cmm/
+m/it/10.95 range\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 len\OT1/cmr/m/n/10.95 (
+\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 )))))@@\OML/cmm/m/it/10.95 dFromcellsan
+dfacetstoboundarycells\OT1/cmr/m/n/10.95 @[]$ 
+ []
+
+./larcc.tex:325: Missing $ inserted.
+<inserted text> 
+                $
+l.325 @{boundaryCells_
+                      2 = boundaryCells(CV,FV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:327: Missing $ inserted.
+<inserted text> 
+                $
+l.327 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (100.85997pt too wide) in paragraph at lines 313--327
+\OT1/cmr/m/n/10.95 am-ples of From cells and facets to bound-ary cells @boundar
+yCells$[] = \OML/cmm/m/it/10.95 boundaryCells\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/
+10.95 CV; FV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 boundaryCells[] \OT1/cmr/m/
+n/10.95 =
+ []
+
+[3]
+./larcc.tex:328: Undefined control sequence.
+l.328 print "\nboundaryCells
+                            _2 =\n", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:328: Missing $ inserted.
+<inserted text> 
+                $
+l.328 print "\nboundaryCells_
+                             2 =\n", boundaryCells_2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:328: Undefined control sequence.
+l.328 print "\nboundaryCells_2 =\n
+                                  ", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:329: Undefined control sequence.
+l.329 print "\nboundaryCells
+                            _1 =\n", boundaryCells_1
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:329: Undefined control sequence.
+l.329 print "\nboundaryCells_1 =\n
+                                  ", boundaryCells_1
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:330: Missing $ inserted.
+<inserted text> 
+                $
+l.330 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:331: Missing $ inserted.
+<inserted text> 
+                $
+l.331 boundary = (V,[FV[k] for k in boundaryCells_
+                                                  2])
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:333: Extra }, or forgotten $.
+l.333 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:338: You can't use `macro parameter character #' in math mode.
+l.338 	#
+         compute the set of pairs of indices to [boundary face,incident coface]
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:341: Missing $ inserted.
+<inserted text> 
+                $
+l.341 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:341: Missing } inserted.
+<inserted text> 
+                }
+l.341 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (1328.68835pt too wide) in paragraph at lines 331--341
+[]\OT1/cmr/m/n/10.95 boundary = (V,[FV[k] for k in boundaryCells$[]])\OML/cmm/m
+/it/10.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95
+ (1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/
+10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/
+m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKPOL
+S\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 boundary\OT1/cmr/m/n/10.95 )))@@\OML/c
+mm/m/it/10.95 dSignedboundarymatrixforsimplicialmodels\OT1/cmr/m/n/10.95 @[]$ 
+ []
+
+./larcc.tex:342: You can't use `macro parameter character #' in vertical mode.
+l.342 	#
+         compute the [face, coface] pair as vertex lists
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:345: You can't use `macro parameter character #' in vertical mode.
+l.345 	#
+         compute two n-cells to compare for sign
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (47.16968pt too wide) in paragraph at lines 345--348
+[]\OT1/cmr/m/n/10.95 compute two n-cells to com-pare for sign cell-Pairs = [ [l
+ist(set(coface).difference(face))+face,coface]
+ []
+
+./larcc.tex:349: You can't use `macro parameter character #' in vertical mode.
+l.349 	#
+         compute the local indices of missing boundary cofaces
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:353: You can't use `macro parameter character #' in vertical mode.
+l.353 	#
+         compute the point matrices to compare for sign
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:357: You can't use `macro parameter character #' in vertical mode.
+l.357 	#
+         signed incidence coefficients
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (177.73347pt too wide) in paragraph at lines 357--362
+[]\OT1/cmr/m/n/10.95 signed in-ci-dence co-ef-fi-cients co-face-Mats = TRANS(po
+intArrays)[1] co-face-Signs = AA(SIGN)(AA(np.linalg.det)(cofaceMats))
+ []
+
+
+Overfull \hbox (123.64026pt too wide) in paragraph at lines 357--362
+\OT1/cmr/m/n/10.95 face-Signs = AA(C(POWER)(-1))(missingVertIndices) sign-Pair-
+Prod = AA(PROD)(TRANS([cofaceSigns,faceSigns])) 
+ []
+
+./larcc.tex:363: You can't use `macro parameter character #' in vertical mode.
+l.363 	#
+         signed boundary matrix
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:364: Missing $ inserted.
+<inserted text> 
+                $
+l.364 	csrSignedBoundaryMat = csr_
+                                  matrix( (signPairProd,TRANS(pairs)) )
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:366: Extra }, or forgotten $.
+l.366 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:379: Missing $ inserted.
+<inserted text> 
+                $
+l.379 \paragraph
+                {Orienting polytopal cells}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1992.59084pt too wide) in paragraph at lines 363--379
+[]\OT1/cmr/m/n/10.95 signed bound-ary ma-trix csr-Signed-Bound-ary-Mat = csr$[]
+\OML/cmm/m/it/10.95 atrix\OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 signPairProd;
+ TRANS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 pairs\OT1/cmr/m/n/10.95 )))\OML/c
+mm/m/it/10.95 returncsrSignedBoundaryMat\OT1/cmr/m/n/10.95 @@\OML/cmm/m/it/10.9
+5 dOrientedboundarycellsforsimplicialmodels\OT1/cmr/m/n/10.95 @[]$ 
+ []
+
+./larcc.tex:401: You can't use `macro parameter character #' in horizontal mode
+.
+l.401 		#
+          translate the cell: for each k, vcell[k] -= vcell[0], and simplex[...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:403: You can't use `macro parameter character #' in horizontal mode
+.
+l.403 		#
+          simplex = [0], basis = [], tensor = Id(d+1)
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:407: You can't use `macro parameter character #' in horizontal mode
+.
+l.407 		#
+          look for most far cell vertex
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:411: You can't use `macro parameter character #' in horizontal mode
+.
+l.411 		#
+          normalize vector
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+[4]
+./larcc.tex:417: You can't use `macro parameter character #' in vertical mode.
+l.417 		#
+          for k in {2,d+1}:
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:419: You can't use `macro parameter character #' in horizontal mode
+.
+l.419 			#
+           update the orthonormal tensor
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:422: You can't use `macro parameter character #' in horizontal mode
+.
+l.422 			#
+           compute the index h of a best vector
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:423: You can't use `macro parameter character #' in horizontal mode
+.
+l.423 			#
+           look for most far cell vertex
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:427: You can't use `macro parameter character #' in horizontal mode
+.
+l.427 			#
+           insert the best vector index h in output simplex
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:430: You can't use `macro parameter character #' in horizontal mode
+.
+l.430 			#
+           normalize vector
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:452: Undefined control sequence.
+l.452 @{print "\n
+                 >>> larCellAdjacencies"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:453: Missing $ inserted.
+<inserted text> 
+                $
+l.453 adj_
+          2_cells = larCellAdjacencies(csrFV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:453: Double subscript.
+l.453 adj_2_
+            cells = larCellAdjacencies(csrFV)
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./larcc.tex:454: Undefined control sequence.
+l.454 print "\nadj
+                  _2_cells =\n", csrToMatrixRepresentation(adj_2_cells)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:454: Double subscript.
+l.454 print "\nadj_2_
+                     cells =\n", csrToMatrixRepresentation(adj_2_cells)
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./larcc.tex:454: Undefined control sequence.
+l.454 print "\nadj_2_cells =\n
+                              ", csrToMatrixRepresentation(adj_2_cells)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:454: Double subscript.
+l.454 ...ls =\n", csrToMatrixRepresentation(adj_2_
+                                                  cells)
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./larcc.tex:455: Double subscript.
+l.455 adj_1_
+            cells = larCellAdjacencies(csrEV)
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./larcc.tex:456: Undefined control sequence.
+l.456 print "\nadj
+                  _1_cells =\n", csrToMatrixRepresentation(adj_1_cells)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:456: Double subscript.
+l.456 print "\nadj_1_
+                     cells =\n", csrToMatrixRepresentation(adj_1_cells)
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./larcc.tex:456: Undefined control sequence.
+l.456 print "\nadj_1_cells =\n
+                              ", csrToMatrixRepresentation(adj_1_cells)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:456: Double subscript.
+l.456 ...ls =\n", csrToMatrixRepresentation(adj_1_
+                                                  cells)
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./larcc.tex:457: Extra }, or forgotten $.
+l.457 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:465: You can't use `macro parameter character #' in math mode.
+l.465 ...csrPredFilter(csrAdjSquareMat, GE(dim)) #
+                                                   ? HOWTODO ?
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:467: Missing $ inserted.
+<inserted text> 
+                $
+l.467 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:467: Missing } inserted.
+<inserted text> 
+                }
+l.467 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (45.10435pt too wide) in paragraph at lines 438--467
+\OT1/cmr/m/n/10.95 ad-ja-cen-cies @def lar-Cel-lAd-ja-cen-cies(CSRm): CSRm = ma
+-trix-Prod-uct(CSRm,csrTranspose(CSRm))
+ []
+
+
+Overfull \hbox (151.75104pt too wide) in paragraph at lines 438--467
+\OT1/cmr/m/n/10.95 lAd-ja-cen-cies" adj$[][]\OML/cmm/m/it/10.95 ells \OT1/cmr/m
+/n/10.95 = \OML/cmm/m/it/10.95 larCellAdjacencies\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 csrFV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 
+"[][]\OML/cmm/m/it/10.95 ells \OT1/cmr/m/n/10.95 = "\OML/cmm/m/it/10.95 ; csrTo
+MatrixRepresentation\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 adj[][]ells\OT1/cmr
+/m/n/10.95 )\OML/cmm/m/it/10.95 adj[][]ells \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (1279.63388pt too wide) in paragraph at lines 438--467
+\OML/cmm/m/it/10.95 larCellAdjacencies\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 c
+srEV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "[][]\OML/c
+mm/m/it/10.95 ells \OT1/cmr/m/n/10.95 = "\OML/cmm/m/it/10.95 ; csrToMatrixRepre
+sentation\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 adj[][]ells\OT1/cmr/m/n/10.95 
+)@@\OML/cmm/m/it/10.95 dExtractionoffacetsofacellcomplex\OT1/cmr/m/n/10.95 @[]$
+ 
+ []
+
+./larcc.tex:475: You can't use `macro parameter character #' in horizontal mode
+.
+l.475     #
+            for each input cell i
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:485: You can't use `macro parameter character #' in horizontal mode
+.
+l.485     #
+            sort and remove duplicates
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (80.78319pt too wide) in paragraph at lines 468--494
+\OT1/cmr/m/n/10.95 pairs: if (i<j): cell2 = csr[j].tocoo().col cell = list(set(
+cell1).intersection(cell2)) cell-Facets.append(sorted(cell))
+ []
+
+
+Overfull \hbox (83.7831pt too wide) in paragraph at lines 468--494
+\OT1/cmr/m/n/10.95 [[0.,0.],[3.,0.],[0.,3.],[3.,3.],[1.,2.],[2.,2.],[1.,1.],[2.
+,1.]] FV = [[0,1,6,7],[0,2,4,6],[4,5,6,7],[1,3,5,7],[2,3,4,5],[0,1,2,3]] 
+ []
+
+./larcc.tex:495: Missing $ inserted.
+<inserted text> 
+                $
+l.495 _
+       ,EV = larFacets((V,FV),dim=2)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:496: Undefined control sequence.
+l.496 print "\nEV
+                  =",EV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:498: Missing $ inserted.
+<inserted text> 
+                $
+l.498 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (107.14656pt too wide) in paragraph at lines 495--498
+[]$[]\OML/cmm/m/it/10.95 EV \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 larFacets\
+OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 V; FV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/
+10.95 ; dim \OT1/cmr/m/n/10.95 = 2)\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 
+" = "\OML/cmm/m/it/10.95 ; EVVIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLOD
+E\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10
+.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/i
+t/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5)(\OML/c
+mm/m/it/10.95 MKPOLS\OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 V; EV\OT1/cmr/m/n/
+10.95 ))))$ 
+ []
+
+./larcc.tex:499: You can't use `macro parameter character #' in horizontal mode
+.
+l.499 ...1,2,4],[2,4,5],[3,4,6],[4,6,7],[5,7,8], #
+                                                   full
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:500: You can't use `macro parameter character #' in horizontal mode
+.
+l.500 	[1,3,4],[4,5,7], #
+                          empty
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:501: You can't use `macro parameter character #' in horizontal mode
+.
+l.501 	[0,1,2],[6,7,8],[0,3,6],[2,5,8]] #
+                                          exterior
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (59.27441pt too wide) in paragraph at lines 499--502
+[]\OT1/cmr/m/n/10.95 FV = [[0,1,3],[1,2,4],[2,4,5],[3,4,6],[4,6,7],[5,7,8],  fu
+ll [1,3,4],[4,5,7],  empty [0,1,2],[6,7,8],[0,3,6],[2,5,8]]
+ []
+
+./larcc.tex:503: Missing $ inserted.
+<inserted text> 
+                $
+l.503 _
+       ,EV = larFacets((V,FV),dim=2)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:504: Undefined control sequence.
+l.504 print "\nEV
+                  =",EV
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:505: Extra }, or forgotten $.
+l.505 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:507: Missing $ inserted.
+<inserted text> 
+                $
+l.507 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[5]
+./larcc.tex:547: Missing $ inserted.
+<inserted text> 
+                $
+l.547 from scipy.sparse import vstack,hstack,csr_
+                                                 matrix,coo_matrix,lil_matri...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:548: Missing $ inserted.
+<inserted text> 
+                $
+l.548 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:557: You can't use `macro parameter character #' in horizontal mode
+.
+l.557 @{#
+          -*- coding: utf-8 -*-
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:577: Missing $ inserted.
+<inserted text> 
+                $
+l.577 if _
+          _name__ == "__main__":
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:577: Missing { inserted.
+<to be read again> 
+                   _
+l.577 if __
+           name__ == "__main__":
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./larcc.tex:577: Missing { inserted.
+<to be read again> 
+                   _
+l.577 if __name__
+                  == "__main__":
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./larcc.tex:577: Missing { inserted.
+<to be read again> 
+                   _
+l.577 if __name__ == "__
+                        main__":
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./larcc.tex:577: Missing { inserted.
+<to be read again> 
+                   _
+l.577 if __name__ == "__main__
+                              ":
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./larcc.tex:581: Missing $ inserted.
+<inserted text> 
+                $
+l.581 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:581: Missing } inserted.
+<inserted text> 
+                }
+l.581 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./larcc.tex:581: Missing } inserted.
+<inserted text> 
+                }
+l.581 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./larcc.tex:581: Missing } inserted.
+<inserted text> 
+                }
+l.581 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[6]
+./larcc.tex:633: You can't use `macro parameter character #' in horizontal mode
+.
+l.633 #
+        input of topology and geometry
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (56.50943pt too wide) in paragraph at lines 631--639
+\OT1/cmr/m/n/10.95 [[4,10],[8,10],[14,10],[8,7],[14,7],[4,4],[8,4],[14,4]] EV =
+ [[0,1],[1,2],[3,4],[5,6],[6,7],[0,5],[1,3],[2,4],[3,6],[4,7]]
+ []
+
+./larcc.tex:642: You can't use `macro parameter character #' in horizontal mode
+.
+l.642 @{#
+          characteristic matrices
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:645: Undefined control sequence.
+l.645 print "\nFV
+                  =\n", csrToMatrixRepresentation(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:645: Undefined control sequence.
+l.645 print "\nFV =\n
+                     ", csrToMatrixRepresentation(csrFV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:646: Undefined control sequence.
+l.646 print "\nEV
+                  =\n", csrToMatrixRepresentation(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:646: Undefined control sequence.
+l.646 print "\nEV =\n
+                     ", csrToMatrixRepresentation(csrEV)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:652: You can't use `macro parameter character #' in horizontal mode
+.
+l.652 @{#
+          product
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:654: Undefined control sequence.
+l.654 print "\nEF
+                  =\n", csrToMatrixRepresentation(csrEF)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:654: Undefined control sequence.
+l.654 print "\nEF =\n
+                     ", csrToMatrixRepresentation(csrEF)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:660: You can't use `macro parameter character #' in horizontal mode
+.
+l.660 @{#
+          boundary and coboundary operators
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:663: Missing $ inserted.
+<inserted text> 
+                $
+l.663 coboundary_
+                 1 = csrTranspose(boundary)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:664: Undefined control sequence.
+l.664 print "\ncoboundary
+                         _1 =\n", csrToMatrixRepresentation(coboundary_1)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:664: Undefined control sequence.
+l.664 print "\ncoboundary_1 =\n
+                               ", csrToMatrixRepresentation(coboundary_1)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:665: Extra }, or forgotten $.
+l.665 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:667: Missing $ inserted.
+<inserted text> 
+                $
+l.667 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (23.44482pt too wide) in paragraph at lines 659--667
+[]\OT1/cmr/m/n/10.95 @d bound-ary and cobound-ary op-er-a-tors @ bound-ary and 
+cobound-ary op-er-a-tors facetLengths
+ []
+
+
+Overfull \hbox (4.98358pt too wide) in paragraph at lines 659--667
+\OT1/cmr/m/n/10.95 = [csr-Cell.getnnz() for csr-Cell in csrEV] bound-ary = csr-
+Bound-ary-Fil-ter(csrEF,facetLengths)
+ []
+
+
+Overfull \hbox (43.69974pt too wide) in paragraph at lines 659--667
+\OT1/cmr/m/n/10.95 coboundary$[] = \OML/cmm/m/it/10.95 csrTranspose\OT1/cmr/m/n
+/10.95 (\OML/cmm/m/it/10.95 boundary\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 pri
+nt\OT1/cmr/m/n/10.95 "[] = "\OML/cmm/m/it/10.95 ; csrToMatrixRepresentation\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 coboundary[]\OT1/cmr/m/n/10.95 )@$ 
+ []
+
+./larcc.tex:670: You can't use `macro parameter character #' in horizontal mode
+.
+l.670 @{#
+          product operator
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:671: Missing $ inserted.
+<inserted text> 
+                $
+l.671 mod_
+          2D = (V2,FV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:679: Undefined control sequence.
+l.679 print "\nk
+                _3 =", len(CV), "\n"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:679: Undefined control sequence.
+l.679 print "\nk_3 =", len(CV), "\n
+                                   "
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:680: Extra }, or forgotten $.
+l.680 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:682: Missing $ inserted.
+<inserted text> 
+                $
+l.682 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (40.80022pt too wide) in paragraph at lines 669--682
+\OT1/cmr/m/n/10.95 [[0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10
+.95 ; \OT1/cmr/m/n/10.95 [1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 ]\OML/cmm/m/
+it/10.95 ; \OT1/cmr/m/n/10.95 [2\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 ]]\OML/
+cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 [[0]\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.9
+5 [1]\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 [2]]\OML/cmm/m/it/10.95 topol[] \
+OT1/cmr/m/n/10.95 = [[0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1]\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2]]\OML/
+cmm/m/it/10.95 mod[]D \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/1
+0.95 1\OML/cmm/m/it/10.95 ; topol[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 mod[
+]D \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 1\OML/cmm/m/it
+/10.95 ; topol[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 3\O
+ML/cmm/m/it/10.95 ; CV \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (156.79596pt too wide) in paragraph at lines 669--682
+\OML/cmm/m/it/10.95 larModelProduct\OT1/cmr/m/n/10.95 ([\OML/cmm/m/it/10.95 mod
+[]D; mod[]D\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/10.95 mod[]D \OT1/cmr/m/n/10.95 =
+ (\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; CV\OT1/cmr/m/n
+/10.95 )\OML/cmm/m/it/10.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE
+\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.
+95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2)(\OML/cm
+m/m/it/10.95 MKPOLS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 mod[]D\OT1/cmr/m/n/1
+0.95 )))\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "[] =
+ []
+
+./larcc.tex:685: You can't use `macro parameter character #' in horizontal mode
+.
+l.685 @{#
+          2-skeleton of the 3D product complex
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:686: Missing $ inserted.
+<inserted text> 
+                $
+l.686 mod_
+          2D_1 = (V2,EV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:694: Undefined control sequence.
+l.694 print "\nk
+                _2 =", len(FV3), "\n"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:694: Undefined control sequence.
+l.694 print "\nk_2 =", len(FV3), "\n
+                                    "
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:695: Extra }, or forgotten $.
+l.695 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:697: Missing $ inserted.
+<inserted text> 
+                $
+l.697 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (48.64453pt too wide) in paragraph at lines 684--697
+[]\OT1/cmr/m/n/10.95 @d 2-skeleton ex-trac-tion @ 2-skeleton of the 3D prod-uct
+ com-plex mod$[]\OML/cmm/m/it/10.95 D[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.
+95 V\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; EV\OT1/cmr/m/n/10.95 )\OML/cmm/m/
+it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 2 =
+ []
+
+
+Overfull \hbox (17.91258pt too wide) in paragraph at lines 684--697
+\OML/cmm/m/it/10.95 larModelProduct\OT1/cmr/m/n/10.95 ([\OML/cmm/m/it/10.95 mod
+[]D; mod[]D\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 
+2 = \OML/cmm/m/it/10.95 larModelProduct\OT1/cmr/m/n/10.95 ([\OML/cmm/m/it/10.95
+ mod[]D[]; mod[]D\OT1/cmr/m/n/10.95 ])[]\OML/cmm/m/it/10.95 FV[] \OT1/cmr/m/n/1
+0.95 =
+ []
+
+
+Overfull \hbox (177.5996pt too wide) in paragraph at lines 684--697
+\OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 FV[] \OT1
+/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/
+10.95 FV\OT1/cmr/m/n/10.95 3 = \OML/cmm/m/it/10.95 FV[] \OT1/cmr/m/n/10.95 + \O
+ML/cmm/m/it/10.95 FV[]SK\OT1/cmr/m/n/10.95 2 = (\OML/cmm/m/it/10.95 V\OT1/cmr/m
+/n/10.95 3\OML/cmm/m/it/10.95 ; FV\OT1/cmr/m/n/10.95 3)\OML/cmm/m/it/10.95 VIEW
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95 (1\OML/cmm/m/
+it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cm
+m/m/it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OM
+L/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2)(\OML/cmm/m/it/10.95 MKPOLS\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 SK\OT1/cmr/m/n/10.95 2)))\OML/cmm/m/it/10.95 print\O
+T1/cmr/m/n/10.95 "[] =
+ []
+
+./larcc.tex:700: You can't use `macro parameter character #' in horizontal mode
+.
+l.700 @{#
+          1-skeleton of the 3D product complex
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:701: Missing $ inserted.
+<inserted text> 
+                $
+l.701 mod_
+          2D_0 = (V2,AA(LIST)(range(len(V2))))
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:709: Undefined control sequence.
+l.709 print "\nk
+                _1 =", len(EV3), "\n"
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:709: Undefined control sequence.
+l.709 print "\nk_1 =", len(EV3), "\n
+                                    "
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:710: Extra }, or forgotten $.
+l.710 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:712: Missing $ inserted.
+<inserted text> 
+                $
+l.712 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (167.76025pt too wide) in paragraph at lines 699--712
+[]\OT1/cmr/m/n/10.95 @d 1-skeleton ex-trac-tion @ 1-skeleton of the 3D prod-uct
+ com-plex mod$[]\OML/cmm/m/it/10.95 D[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.
+95 V\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; AA\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 LIST\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 range\OT1/cmr/m/n/10.95 (
+\OML/cmm/m/it/10.95 len\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V\OT1/cmr/m/n/10
+.95 2))))\OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 1 =
+ []
+
+
+Overfull \hbox (22.51054pt too wide) in paragraph at lines 699--712
+\OML/cmm/m/it/10.95 larModelProduct\OT1/cmr/m/n/10.95 ([\OML/cmm/m/it/10.95 mod
+[]D[]; mod[]D\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.9
+5 1 = \OML/cmm/m/it/10.95 larModelProduct\OT1/cmr/m/n/10.95 ([\OML/cmm/m/it/10.
+95 mod[]D[]; mod[]D\OT1/cmr/m/n/10.95 ])[]\OML/cmm/m/it/10.95 EV[] \OT1/cmr/m/n
+/10.95 =
+ []
+
+
+Overfull \hbox (178.35994pt too wide) in paragraph at lines 699--712
+\OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 1[]\OML/cmm/m/it/10.95 EV[] \OT1
+/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 mod[]D[]\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/
+10.95 EV\OT1/cmr/m/n/10.95 3 = \OML/cmm/m/it/10.95 EV[] \OT1/cmr/m/n/10.95 + \O
+ML/cmm/m/it/10.95 EV[]SK\OT1/cmr/m/n/10.95 1 = (\OML/cmm/m/it/10.95 V\OT1/cmr/m
+/n/10.95 3\OML/cmm/m/it/10.95 ; EV\OT1/cmr/m/n/10.95 3)\OML/cmm/m/it/10.95 VIEW
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95 (1\OML/cmm/m/
+it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cm
+m/m/it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OM
+L/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2)(\OML/cmm/m/it/10.95 MKPOLS\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 SK\OT1/cmr/m/n/10.95 1)))\OML/cmm/m/it/10.95 print\O
+T1/cmr/m/n/10.95 "[] =
+ []
+
+./larcc.tex:715: You can't use `macro parameter character #' in horizontal mode
+.
+l.715 @{#
+          boundary and coboundary operators
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:716: Missing $ inserted.
+<inserted text> 
+                $
+l.716 np.set_
+             printoptions(threshold=sys.maxint)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:723: Undefined control sequence.
+l.723 print "\ncoboundary
+                         _0 =\n", csrToMatrixRepresentation(coboundary_0)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:723: Undefined control sequence.
+l.723 print "\ncoboundary_0 =\n
+                               ", csrToMatrixRepresentation(coboundary_0)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:724: Extra }, or forgotten $.
+l.724 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:726: Missing $ inserted.
+<inserted text> 
+                $
+l.726 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (69.94028pt too wide) in paragraph at lines 714--726
+[]\OT1/cmr/m/n/10.95 @d 0-coboundary com-pu-ta-tion @ bound-ary and cobound-ary
+ op-er-a-tors np.set$[]\OML/cmm/m/it/10.95 rintoptions\OT1/cmr/m/n/10.95 (\OML/
+cmm/m/it/10.95 threshold \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (139.30437pt too wide) in paragraph at lines 714--726
+\OML/cmm/m/it/10.95 sys:maxint\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 csrFV\OT1
+/cmr/m/n/10.95 3 = \OML/cmm/m/it/10.95 csrCreate\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 FV\OT1/cmr/m/n/10.95 3)\OML/cmm/m/it/10.95 csrEV\OT1/cmr/m/n/10.95 3 =
+ \OML/cmm/m/it/10.95 csrCreate\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EV\OT1/cm
+r/m/n/10.95 3)\OML/cmm/m/it/10.95 csrVE\OT1/cmr/m/n/10.95 3 = \OML/cmm/m/it/10.
+95 csrTranspose\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 csrEV\OT1/cmr/m/n/10.95 
+3)\OML/cmm/m/it/10.95 facetLengths \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (101.90071pt too wide) in paragraph at lines 714--726
+\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 csrCell:getnnz\OT1/cmr/m/n/10.95 ()\OML
+/cmm/m/it/10.95 forcsrCellincsrEV\OT1/cmr/m/n/10.95 3]\OML/cmm/m/it/10.95 bound
+ary \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 csrBoundaryFilter\OT1/cmr/m/n/10.9
+5 (\OML/cmm/m/it/10.95 csrVE\OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; facetLeng
+ths\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 coboundary[] \OT1/cmr/m/n/10.95 =
+ []
+
+./larcc.tex:732: Missing $ inserted.
+<inserted text> 
+                $
+l.732 coboundary_
+                 1 = csrTranspose(boundary)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:733: Undefined control sequence.
+l.733 print "\ncoboundary
+                         _1.T =\n", csrToMatrixRepresentation(coboundary_1.T)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:733: Undefined control sequence.
+l.733 print "\ncoboundary_1.T =\n
+                                 ", csrToMatrixRepresentation(coboundary_1.T)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:734: Extra }, or forgotten $.
+l.734 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:736: Missing $ inserted.
+<inserted text> 
+                $
+l.736 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (13.83308pt too wide) in paragraph at lines 728--736
+[]\OT1/cmr/m/n/10.95 @d 1-coboundary com-pu-ta-tion @csrEF3 = ma-trix-Prod-uct(
+csrEV3, csr-Trans-pose(csrFV3))
+ []
+
+
+Overfull \hbox (78.80615pt too wide) in paragraph at lines 728--736
+\OT1/cmr/m/n/10.95 facetLengths = [csr-Cell.getnnz() for csr-Cell in csrFV3] bo
+und-ary = csr-Bound-ary-Fil-ter(csrEF3,facetLengths)
+ []
+
+
+Overfull \hbox (65.62259pt too wide) in paragraph at lines 728--736
+\OT1/cmr/m/n/10.95 coboundary$[] = \OML/cmm/m/it/10.95 csrTranspose\OT1/cmr/m/n
+/10.95 (\OML/cmm/m/it/10.95 boundary\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 pri
+nt\OT1/cmr/m/n/10.95 "[]\OML/cmm/m/it/10.95 :T \OT1/cmr/m/n/10.95 = "\OML/cmm/m
+/it/10.95 ; csrToMatrixRepresentation\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 co
+boundary[]:T\OT1/cmr/m/n/10.95 )@$ 
+ []
+
+./larcc.tex:743: Missing $ inserted.
+<inserted text> 
+                $
+l.743 coboundary_
+                 2 = csrTranspose(boundary)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:744: Undefined control sequence.
+l.744 print "\ncoboundary
+                         _2 =\n", csrToMatrixRepresentation(coboundary_2)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:744: Undefined control sequence.
+l.744 print "\ncoboundary_2 =\n
+                               ", csrToMatrixRepresentation(coboundary_2)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:745: Extra }, or forgotten $.
+l.745 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:747: Missing $ inserted.
+<inserted text> 
+                $
+l.747 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (17.41986pt too wide) in paragraph at lines 738--747
+[]\OT1/cmr/m/n/10.95 @d 2-coboundary com-pu-ta-tion @csrCV = csr-Cre-ate(CV) cs
+rFC3 = ma-trix-Prod-uct(csrFV3,
+ []
+
+
+Overfull \hbox (8.43771pt too wide) in paragraph at lines 738--747
+\OT1/cmr/m/n/10.95 csr-Bound-ary-Fil-ter(csrFC3,facetLengths) coboundary$[] = \
+OML/cmm/m/it/10.95 csrTranspose\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 boundary
+\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "[] =
+ []
+
+[7]
+./larcc.tex:750: You can't use `macro parameter character #' in horizontal mode
+.
+l.750 @{#
+          boundary chain visualisation
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./larcc.tex:751: Missing $ inserted.
+<inserted text> 
+                $
+l.751 boundaryCells_
+                    2 = boundaryCells(CV,FV3)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:754: Extra }, or forgotten $.
+l.754 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:756: Missing $ inserted.
+<inserted text> 
+                $
+l.756 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (221.05728pt too wide) in paragraph at lines 749--756
+\OML/cmm/m/it/10.95 boundaryCells\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 CV; FV
+\OT1/cmr/m/n/10.95 3)\OML/cmm/m/it/10.95 boundary \OT1/cmr/m/n/10.95 = (\OML/cm
+m/m/it/10.95 V\OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 [\OM
+L/cmm/m/it/10.95 FV\OT1/cmr/m/n/10.95 3[\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95
+ ]\OML/cmm/m/it/10.95 forkinboundaryCells[]\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/1
+0.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95 (1\O
+ML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95
+ 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
+0.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKPOLS\OT1
+/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 boundary\OT1/cmr/m/n/10.95 )))@$ 
+ []
+
+./larcc.tex:777: Missing $ inserted.
+<inserted text> 
+                $
+l.777 _
+       ,FV = SK2
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:781: Missing $ inserted.
+<inserted text> 
+                $
+l.781 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1.7109pt too wide) in paragraph at lines 773--781
+[]\OT1/cmr/m/n/10.95 V,CV = lar-Sim-plex-Grid([10,10,3]) VIEW(EXPLODE(1.5,1.5,1
+.5)(MKPOLS((V,CV))))
+ []
+
+
+Overfull \hbox (0.19493pt too wide) in paragraph at lines 773--781
+\OT1/cmr/m/n/10.95 SK2 = (V,larSimplexFacets(CV)) VIEW(EXPLODE(1.5,1.5,1.5)(MKP
+OLS(SK2))) $[]\OML/cmm/m/it/10.95 FV \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (82.49605pt too wide) in paragraph at lines 773--781
+\OML/cmm/m/it/10.95 SK\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 SK\OT1/cmr/m/n/10
+.95 1 = (\OML/cmm/m/it/10.95 V; larSimplexFacets\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 FV\OT1/cmr/m/n/10.95 ))[]\OML/cmm/m/it/10.95 EV \OT1/cmr/m/n/10.95 = \
+OML/cmm/m/it/10.95 SK\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 VIEW\OT1/cmr/m/n/1
+0.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 :\OT1
+/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :
+\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.
+95 :\OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKPOLS\OT1/cmr/m/n/10.95 (\OML/cm
+m/m/it/10.95 SK\OT1/cmr/m/n/10.95 1)))$ 
+ []
+
+./larcc.tex:782: Missing $ inserted.
+<inserted text> 
+                $
+l.782 boundaryCells_
+                    2 = boundaryCells(CV,FV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:785: Undefined control sequence.
+l.785 print "\nboundaryCells
+                            _2 =\n", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:785: Undefined control sequence.
+l.785 print "\nboundaryCells_2 =\n
+                                  ", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:786: Extra }, or forgotten $.
+l.786 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:788: Missing $ inserted.
+<inserted text> 
+                $
+l.788 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (346.30966pt too wide) in paragraph at lines 782--788
+[]\OT1/cmr/m/n/10.95 boundaryCells$[] = \OML/cmm/m/it/10.95 boundaryCells\OT1/c
+mr/m/n/10.95 (\OML/cmm/m/it/10.95 CV; FV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95
+ boundary \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 V; \OT1/cmr/m/n/10.95 [\OML
+/cmm/m/it/10.95 FV\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ]
+\OML/cmm/m/it/10.95 forkinboundaryCells[]\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/10.
+95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95 (1\OML
+/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1
+\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.
+95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKPOLS\OT1/c
+mr/m/n/10.95 (\OML/cmm/m/it/10.95 boundary\OT1/cmr/m/n/10.95 )))\OML/cmm/m/it/1
+0.95 print\OT1/cmr/m/n/10.95 "[] =
+ []
+
+./larcc.tex:814: You can't use `macro parameter character #' in horizontal mode
+.
+l.814 @{verts = np.random.rand(10000, 3) #
+                                           1000 points in 3-d
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (27.01755pt too wide) in paragraph at lines 813--825
+[]\OT1/cmr/m/n/10.95 @d Gen-er-at-ing and view-ing a ran-dom 3D sim-pli-cial co
+m-plex @verts = np.random.rand(10000,
+ []
+
+
+Overfull \hbox (44.00818pt too wide) in paragraph at lines 813--825
+\OT1/cmr/m/n/10.95 (verts[cell[2]][2]<0) and (verts[cell[3]][2]<0) ) ] V, CV = 
+verts, cells VIEW(MKPOL([V,AA(AA(lambda
+ []
+
+./larcc.tex:830: Missing $ inserted.
+<inserted text> 
+                $
+l.830 boundaryCells_
+                    2 = boundaryCells(CV,FV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:831: Undefined control sequence.
+l.831 print "\nboundaryCells
+                            _2 =\n", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:831: Undefined control sequence.
+l.831 print "\nboundaryCells_2 =\n
+                                  ", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:834: Extra }, or forgotten $.
+l.834 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:836: Missing $ inserted.
+<inserted text> 
+                $
+l.836 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (80.77164pt too wide) in paragraph at lines 827--836
+\OT1/cmr/m/n/10.95 VIEW(MKPOL([V,AA(AA(lambda k:k+1))(FV),[]])) boundaryCells$[
+] = \OML/cmm/m/it/10.95 boundaryCells\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 CV
+; FV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "[] =
+ []
+
+
+Overfull \hbox (136.79893pt too wide) in paragraph at lines 827--836
+\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 ; boundaryCells[]bndry \OT1/cmr/m/n/10.
+95 = (\OML/cmm/m/it/10.95 V; \OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 FV\OT1/cmr
+/m/n/10.95 [\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 forkin
+boundaryCells[]\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/10.95 VIEW\OT1/cmr/m/n/10.95 
+(\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 :\OT1/cmr/
+m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/
+cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 :\
+OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKPOLS\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
+t/10.95 bndry\OT1/cmr/m/n/10.95 )))@$ 
+ []
+
+./larcc.tex:839: Missing $ inserted.
+<inserted text> 
+                $
+l.839 @{boundaryCells_
+                      2 = signedBoundaryCells(V,CV,FV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:840: Undefined control sequence.
+l.840 print "\nboundaryCells
+                            _2 =\n", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:840: Undefined control sequence.
+l.840 print "\nboundaryCells_2 =\n
+                                  ", boundaryCells_2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:845: Extra }, or forgotten $.
+l.845 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:847: Missing $ inserted.
+<inserted text> 
+                $
+l.847 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (130.89854pt too wide) in paragraph at lines 838--847
+[]\OT1/cmr/m/n/10.95 @d Com-put-ing and view-ing its ori-ented bound-ary @bound
+aryCells$[] = \OML/cmm/m/it/10.95 signedBoundaryCells\OT1/cmr/m/n/10.95 (\OML/c
+mm/m/it/10.95 V; CV; FV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/
+n/10.95 "[] =
+ []
+
+
+Overfull \hbox (19.27246pt too wide) in paragraph at lines 838--847
+\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 ; boundaryCells[]defswap\OT1/cmr/m/n/10
+.95 (\OML/cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 ) : \OML/cmm/m/it/10.95 retur
+n\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 [1]] + [\OML/
+cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 [0]] + \OML/cmm/m/it/10.95 mylist\OT1/c
+mr/m/n/10.95 [2 :]\OML/cmm/m/it/10.95 boundaryFV \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (239.63829pt too wide) in paragraph at lines 838--847
+\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 FV\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.
+95 ^^@\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ifk < \OT1/c
+mr/m/n/10.95 0\OML/cmm/m/it/10.95 elseswap\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
+95 FV\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ])\OML/cmm/m/i
+t/10.95 forkinboundaryCells[]\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 bndry \OT1
+/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 V; boundaryFV\OT1/cmr/m/n/10.95 )\OML/cmm
+/m/it/10.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.
+95 (1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/
+n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKP
+OLS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 bndry\OT1/cmr/m/n/10.95 )))@$ 
+ []
+
+[8]
+Overfull \hbox (9.1173pt too wide) in paragraph at lines 869--875
+[]\OT1/cmr/m/n/10.95 @d Com-put-ing and view-ing the 2-skeleton of sim-pli-cial
+ grid @FV = lar-Sim-plex-Facets(CV)
+ []
+
+./larcc.tex:879: Missing $ inserted.
+<inserted text> 
+                $
+l.879 boundaryCells_
+                    2 = signedBoundaryCells(V,CV,FV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:884: Extra }, or forgotten $.
+l.884 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:886: Missing $ inserted.
+<inserted text> 
+                $
+l.886 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (68.34126pt too wide) in paragraph at lines 877--886
+\OT1/cmr/m/n/10.95 ary-Mat = signed-Bound-ary (V,CV,FV) boundaryCells$[] = \OML
+/cmm/m/it/10.95 signedBoundaryCells\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V; C
+V; FV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 defswap\OT1/cmr/m/n/10.95 (\OML/cm
+m/m/it/10.95 l\OT1/cmr/m/n/10.95 ) :
+ []
+
+
+Overfull \hbox (68.87036pt too wide) in paragraph at lines 877--886
+\OML/cmm/m/it/10.95 return\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 l\OT1/cmr/m/n
+/10.95 [1]\OML/cmm/m/it/10.95 ; l\OT1/cmr/m/n/10.95 [0]\OML/cmm/m/it/10.95 ; l\
+OT1/cmr/m/n/10.95 [2]]\OML/cmm/m/it/10.95 boundaryFV \OT1/cmr/m/n/10.95 = [\OML
+/cmm/m/it/10.95 FV\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.9
+5 k\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ifk < \OT1/cmr/m/n/10.95 0\OML/cmm/m
+/it/10.95 elseswap\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 FV\OT1/cmr/m/n/10.95 
+[\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/10.95 forkinboundaryCe
+lls[]\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 boundary \OT1/cmr/m/n/10.95 =
+ []
+
+./larcc.tex:915: Missing $ inserted.
+<inserted text> 
+                $
+l.915 @{np.set_
+               printoptions(threshold='nan')
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:918: Undefined control sequence.
+l.918 print "\ncsrSignedBoundaryMat
+                                    =\n", Z
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:918: Undefined control sequence.
+l.918 print "\ncsrSignedBoundaryMat =\n
+                                       ", Z
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:922: Extra }, or forgotten $.
+l.922 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:924: Missing $ inserted.
+<inserted text> 
+                $
+l.924 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (116.14955pt too wide) in paragraph at lines 914--924
+[]\OT1/cmr/m/n/10.95 @d Ori-ented bound-ary ma-trix vi-su-al-iza-tion @np.set$[
+]\OML/cmm/m/it/10.95 rintoptions\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 thresho
+ld \OT1/cmr/m/n/10.95 =[] \OML/cmm/m/it/10.95 nan[]\OT1/cmr/m/n/10.95 )\OML/cmm
+/m/it/10.95 csrSignedBoundaryMat \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (44.13959pt too wide) in paragraph at lines 914--924
+\OML/cmm/m/it/10.95 signedBoundary\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V; FV
+; EV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 Z \OT1/cmr/m/n/10.95 = \OML/cmm/m/i
+t/10.95 csrToMatrixRepresentation\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 csrSig
+nedBoundaryMat\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "
+ =
+ []
+
+./larcc.tex:927: Missing $ inserted.
+<inserted text> 
+                $
+l.927 @{boundaryCells_
+                      1 = signedBoundaryCells(V,FV,EV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:928: Undefined control sequence.
+l.928 print "\nboundaryCells
+                            _1 =\n", boundaryCells_1
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:928: Undefined control sequence.
+l.928 print "\nboundaryCells_1 =\n
+                                  ", boundaryCells_1
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:933: Extra }, or forgotten $.
+l.933 @}
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:935: Missing $ inserted.
+<inserted text> 
+                $
+l.935 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (101.80345pt too wide) in paragraph at lines 926--935
+[]\OT1/cmr/m/n/10.95 @d Com-pu-ta-tion of ori-ented bound-ary cells @boundaryCe
+lls$[] = \OML/cmm/m/it/10.95 signedBoundaryCells\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 V; FV; EV\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.
+95 "[] =
+ []
+
+
+Overfull \hbox (19.42453pt too wide) in paragraph at lines 926--935
+\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 ; boundaryCells[]defswap\OT1/cmr/m/n/10
+.95 (\OML/cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 ) : \OML/cmm/m/it/10.95 retur
+n\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 [1]] + [\OML/
+cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 [0]] + \OML/cmm/m/it/10.95 mylist\OT1/c
+mr/m/n/10.95 [2 :]\OML/cmm/m/it/10.95 boundaryEV \OT1/cmr/m/n/10.95 =
+ []
+
+
+Overfull \hbox (240.0945pt too wide) in paragraph at lines 926--935
+\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 EV\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.
+95 ^^@\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ifk < \OT1/c
+mr/m/n/10.95 0\OML/cmm/m/it/10.95 elseswap\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
+95 EV\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ])\OML/cmm/m/i
+t/10.95 forkinboundaryCells[]\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 bndry \OT1
+/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 V; boundaryEV\OT1/cmr/m/n/10.95 )\OML/cmm
+/m/it/10.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 EXPLODE\OT1/cmr/m/n/10.
+95 (1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/
+n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 1\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 5)(\OML/cmm/m/it/10.95 MKP
+OLS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 bndry\OT1/cmr/m/n/10.95 )))@$ 
+ []
+
+<images/tria0.pdf, id=76, 518.93875pt x 460.72125pt>
+File: images/tria0.pdf Graphic file (type pdf)
+ <use images/tria0.pdf>
+Package pdftex.def Info: images/tria0.pdf used on input line 949.
+(pdftex.def)             Requested size: 137.60521pt x 107.4962pt.
+
+<images/tria1.pdf, id=77, 629.35126pt x 532.99126pt>
+File: images/tria1.pdf Graphic file (type pdf)
+ <use images/tria1.pdf>
+Package pdftex.def Info: images/tria1.pdf used on input line 950.
+(pdftex.def)             Requested size: 137.60303pt x 107.4991pt.
+
+<images/tria2.pdf, id=78, 610.28pt x 522.95375pt>
+File: images/tria2.pdf Graphic file (type pdf)
+ <use images/tria2.pdf>
+Package pdftex.def Info: images/tria2.pdf used on input line 951.
+(pdftex.def)             Requested size: 137.60506pt x 107.50145pt.
+
+Overfull \hbox (21.92696pt too wide) in paragraph at lines 957--970
+\OT1/cmr/m/n/10.95 NORM(VECTDIFF(tria[1:3])) c = VECT-NORM(VECTDIFF([tria[0],tr
+ia[2]])) m = max(a,b,c)
+ []
+
+[9 <./images/tria0.pdf> <./images/tria1.pdf> <./images/tria2.pdf>]
+./larcc.tex:987: Missing $ inserted.
+<inserted text> 
+                $
+l.987 @{boundaryCells_
+                      1 = signedBoundaryCells(V,FV,EV)
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./larcc.tex:988: Undefined control sequence.
+l.988 print "\nboundaryCells
+                            _1 =\n", boundaryCells_1
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:988: Undefined control sequence.
+l.988 print "\nboundaryCells_1 =\n
+                                  ", boundaryCells_1
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./larcc.tex:993: Extra }, or forgotten $.
+l.993 VIEW(COLOR(RED)(STRUCT(MKPOLS(bndry))))@}
+                                               
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./larcc.tex:995: Missing $ inserted.
+<inserted text> 
+                $
+l.995 \subsection
+                 {Examples exporting}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (125.8817pt too wide) in paragraph at lines 986--995
+[]\OT1/cmr/m/n/10.95 @d aaaaaa @boundaryCells$[] = \OML/cmm/m/it/10.95 signedBo
+undaryCells\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V; FV; EV\OT1/cmr/m/n/10.95 
+)\OML/cmm/m/it/10.95 print\OT1/cmr/m/n/10.95 "[] = "\OML/cmm/m/it/10.95 ; bound
+aryCells[]defswap\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.
+95 ) :
+ []
+
+
+Overfull \hbox (156.13437pt too wide) in paragraph at lines 986--995
+\OML/cmm/m/it/10.95 return\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 mylist\OT1/cm
+r/m/n/10.95 [1]] + [\OML/cmm/m/it/10.95 mylist\OT1/cmr/m/n/10.95 [0]] + \OML/cm
+m/m/it/10.95 mylist\OT1/cmr/m/n/10.95 [2 :]\OML/cmm/m/it/10.95 boundaryEV \OT1/
+cmr/m/n/10.95 = [\OML/cmm/m/it/10.95 EV\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.95 
+^^@\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ifk < \OT1/cmr/
+m/n/10.95 0\OML/cmm/m/it/10.95 elseswap\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 
+EV\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 ])\OML/cmm/m/it/1
+0.95 forkinboundaryCells[]\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 bndry \OT1/cm
+r/m/n/10.95 =
+ []
+
+
+Overfull \hbox (172.584pt too wide) in paragraph at lines 986--995
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 V; boundaryEV\OT1/cmr/m/n/10.95 )\OML/c
+mm/m/it/10.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 STRUCT\OT1/cmr/m/n/10
+.95 (\OML/cmm/m/it/10.95 MKPOLS\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 bndry\OT
+1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 pols\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/1
+0.95 D\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 VIEW\OT1/cmr/m/n/10.95 (\OML/cmm
+/m/it/10.95 COLOR\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 RED\OT1/cmr/m/n/10.95 
+)(\OML/cmm/m/it/10.95 STRUCT\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 MKPOLS\OT1/
+cmr/m/n/10.95 (\OML/cmm/m/it/10.95 bndry\OT1/cmr/m/n/10.95 ))))@$ 
+ []
+
+No file larcc.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1013.
+[10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1013.
+ (./larcc.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1013.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1013.
+
+
+
+Package rerunfilecheck Warning: File `larcc.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `larcc.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  9A658E22D4A2E7B836BADF62EF0986D4;1437.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1013.
+ )
+(\end occurred inside a group at level 20)
+
+### simple group (level 20) entered at line 987 ({)
+### simple group (level 19) entered at line 927 ({)
+### simple group (level 18) entered at line 915 ({)
+### simple group (level 17) entered at line 878 ({)
+### simple group (level 16) entered at line 839 ({)
+### simple group (level 15) entered at line 828 ({)
+### simple group (level 14) entered at line 770 ({)
+### simple group (level 13) entered at line 750 ({)
+### simple group (level 12) entered at line 739 ({)
+### simple group (level 11) entered at line 729 ({)
+### simple group (level 10) entered at line 715 ({)
+### simple group (level 9) entered at line 700 ({)
+### simple group (level 8) entered at line 685 ({)
+### simple group (level 7) entered at line 670 ({)
+### simple group (level 6) entered at line 660 ({)
+### simple group (level 5) entered at line 557 ({)
+### simple group (level 4) entered at line 492 ({)
+### simple group (level 3) entered at line 325 ({)
+### simple group (level 2) entered at line 227 ({)
+### simple group (level 1) entered at line 104 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 6576 strings out of 493315
+ 94614 string characters out of 6137904
+ 190687 words of memory out of 5000000
+ 9916 multiletter control sequences out of 15000+600000
+ 16869 words of font info for 66 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 32i,8n,28p,440b,765s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmbx9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on larcc.pdf (10 pages, 323898 bytes).
+PDF statistics:
+ 194 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+

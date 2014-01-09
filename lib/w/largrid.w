@@ -511,7 +511,8 @@ In this section we assemble top-down the \texttt{largrid} module, by orderly lis
 %------------------------------------------------------------------
 @O lib/py/largrid.py
 @{"""Module with functions for grid generation and Cartesian product"""
-@< Importing \texttt{smplxn} and \texttt{numpy} libraries @>
+import collections
+@< Importing \texttt{simplexn} and \texttt{numpy} libraries @>
 @< Generation of vertices of decompositions of 1D intervals  @>
 @< Generation of uniform 0D cellular complex  @>
 @< Generation of uniform 1D cellular complex  @>
@@ -601,8 +602,8 @@ The list of macros follow.
 \subsection{Utilities}
 
 %-------------------------------------------------------------------------------
-@d Importing \texttt{smplxn} and \texttt{numpy} libraries
-@{from smplxn import *
+@d Importing \texttt{simplexn} and \texttt{numpy} libraries
+@{from simplexn import *
 import numpy as np
 @}
 %-------------------------------------------------------------------------------

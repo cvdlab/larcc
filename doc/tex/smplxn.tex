@@ -32,7 +32,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
 
-\usepackage{hyperref}
+\usepackage[colorlinks]{hyperref}
 
 \input{macros}
 
@@ -68,14 +68,6 @@ Such a goal is achieved by calculating each cell in the output via closed combin
 Here we discuss an implementation of the linear extrusion of simplicial complexes according to the method discussed in~\cite{Paoluzzi:1993:DMS:169728.169719} and~\cite{DBLP:journals/cad/FerruciP91}. In synthesis, for each $d$-simplex in the input complex, we generate combinatorially a $(d+1)$-simplicial \emph{tube}, i.e.~a chain of $d+1$ simplexes of dimension $d+1$. It can be shown that if the input simplices are a simplicial complex, then the output simplices are a complex too. 
 
 In other words, if the input is a complex, where all $d$-cells either intersect along a common face or are pairwise disjoints, then the output is also a simplicial complex of dimension $d+1$. This method is computationally optimal, since it does not require any search or traversal of data structures. The algorithm~\cite{DBLP:journals/cad/FerruciP91} just writes the output making a constant number $O(1)$ of operation for each one of its $n$ output $d$-cells, so that the time complexity is $\Omega(n)$, where $n = d\,m$, being $m$ the number and $d$ the dimension (and the storage size) of the input cells, represented as lists of indices of vertices.
-
-\begin{definition}[Big-Omega order]
-We say that a function $f(n)$ is \emph{Big-Omega} order of a function $f(n)$, and write 
-$f(n) \in \Omega(g(n))$ when a constant $c$ exists, such that:
-\[
-\lim_{n\to\infty} \frac{f(n)}{g(n)}=c>0,\qquad \mbox{where\ } 0<c\leq\infty.
-\]
-\end{definition}
 
 \paragraph{Computation}
 
@@ -163,7 +155,7 @@ For each cell in \texttt{FV} a chain of vertices is created, then they are separ
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@@\hbox{$\langle\,$Create the indices of vertices in the cell "tube"\nobreak\ {\footnotesize \NWlink{nuweb4c}{4c}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@@\hbox{$\langle\,$Take groups of d+1 elements, by shifting one position\nobreak\ {\footnotesize \NWlink{nuweb5a}{5a}}$\,\rangle$}\verb@   @\\
+\mbox{}\verb@@\hbox{$\langle\,$Take groups of d+1 elements, by shifting one position\nobreak\ {\footnotesize \NWlink{nuweb4d}{4d}}$\,\rangle$}\verb@   @\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
 \vspace{-1ex}
@@ -199,7 +191,7 @@ Here the chain of vertices is spitted into subchains, and such subchains are res
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap4}
-\protect\makebox[0ex][r]{\NWtarget{nuweb5a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Take groups of d+1 elements, by shifting one position\nobreak\ {\footnotesize 5a}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb4d}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Take groups of d+1 elements, by shifting one position\nobreak\ {\footnotesize 4d}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@cellTube = [tube[k:k+d+1] for k in range(rangelimit)]@\\
@@ -215,6 +207,14 @@ Here the chain of vertices is spitted into subchains, and such subchains are res
 %-------------------------------------------------------------------------------
 
 
+
+\begin{definition}[Big-Omega order]
+We say that a function $f(n)$ is \emph{Big-Omega} order of a function $f(n)$, and write 
+$f(n) \in \Omega(g(n))$ when a constant $c$ exists, such that:
+\[
+\lim_{n\to\infty} \frac{f(n)}{g(n)}=c>0,\qquad \mbox{where\ } 0<c\leq\infty.
+\]
+\end{definition}
 
 
 
@@ -243,8 +243,8 @@ It is interesting to notice that the 2D model extruded in example 1 below and sh
 
 \paragraph{Examples 2 and 3}
 The examples show that the implemented \texttt{larExtrude} algorithm is fully multidimensional. 
-It may be worth noting the initial definition of the empty \texttt{model}, as a fair having the empty list as vertex set and the list \texttt{[[0]]} as the cell list. Such initial value is used
-to define a predefinite constant VOID
+It may be worth noting the initial definition of the empty \texttt{model}, as a pair having the empty list as vertex set and the list \texttt{[[0]]} as the cell list. Such initial value is used
+to define a predefinite constant \texttt{VOID}.
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -257,7 +257,7 @@ to define a predefinite constant VOID
 
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small \label{scrap5}
-\protect\makebox[0ex][r]{\NWtarget{nuweb5b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Examples of simplicial complex extrusions\nobreak\ {\footnotesize 5b}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb5}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Examples of simplicial complex extrusions\nobreak\ {\footnotesize 5}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@# example 1@\\
@@ -443,17 +443,18 @@ The current version of the \texttt{simplexn} library is exported here. Next vers
 \protect\makebox[0ex][r]{\NWtarget{nuweb9b}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"lib/py/simplexn.py"@\nobreak\ {\footnotesize 9b }$\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
+\mbox{}\verb@# -*- coding: utf-8 -*-@\\
 \mbox{}\verb@"""Module for facet extraction, extrusion and simplicial grids"""@\\
 \mbox{}\verb@from lar2psm import *@\\
 \mbox{}\verb@from scipy import *@\\
 \mbox{}\verb@@\\
 \mbox{}\verb@VOID = V0,CV0 = [[]],[[0]]    # the empty simplicial model@\\
-\mbox{}\verb@@\hbox{$\langle\,$Cumulative sum\nobreak\ {\footnotesize \NWlink{nuweb11d}{11d}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Cumulative sum\nobreak\ {\footnotesize \NWlink{nuweb12}{12}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Simplicial model extrusion in accord with a 1D pattern\nobreak\ {\footnotesize \NWlink{nuweb4a}{4a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Generation of simplicial grids\nobreak\ {\footnotesize \NWlink{nuweb7}{7}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Facets extraction from a set of simplices\nobreak\ {\footnotesize \NWlink{nuweb8b}{8b}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@if __name__ == "__main__":@\\
-\mbox{}\verb@   @\hbox{$\langle\,$Examples of simplicial complex extrusions\nobreak\ {\footnotesize \NWlink{nuweb5b}{5b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@   @\hbox{$\langle\,$Examples of simplicial complex extrusions\nobreak\ {\footnotesize \NWlink{nuweb5}{5}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@   @\hbox{$\langle\,$Examples of simplicial grids\nobreak\ {\footnotesize \NWlink{nuweb8a}{8a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@   @\hbox{$\langle\,$Examples of facet extraction from 3D simplicial cube\nobreak\ {\footnotesize \NWlink{nuweb9a}{9a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@{\NWsep}
@@ -614,7 +615,7 @@ and finally export a new test file:
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap17}
-\protect\makebox[0ex][r]{\NWtarget{nuweb11d}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Cumulative sum\nobreak\ {\footnotesize 11d}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb12}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Cumulative sum\nobreak\ {\footnotesize 12}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@@\\

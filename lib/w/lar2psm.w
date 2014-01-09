@@ -107,16 +107,6 @@ FV = [[0,1,4],[1,3,4],[2,3,4],[0,2,4]]
 model0d, model1d, model2d = (V,VV), (V,EV), (V,FV)
 @}
 %------------------------------------------------------------------
-%------------------------------------------------------------------
-@d 2D model examples 
-@{V = [[0.,0.],[1.,0.],[0.,1.],[1.,1.],[0.5,0.5]]
-VV = [[0],[1],[2],[3],[4]]
-EV = [[0,1],[0,2],[0,4],[1,3],[1,4],[2,3],[2,4],[3,4]]
-FV = [[0,1,4],[1,3,4],[2,3,4],[0,2,4]]
-
-model0d, model1d, model2d = (V,VV), (V,EV), (V,FV)
-@}
-%------------------------------------------------------------------
 
 \subsection{Function \texttt{MKPOLS}}
 
@@ -200,7 +190,7 @@ Here we assemble top-down the \texttt{lar2psm} module, by orderly listing the fu
 %------------------------------------------------------------------
 @O lib/py/lar2psm.py
 @{"""Module with functions needed to interface LAR with pyplasm"""
-@< Import the module @(smplxn@) @>
+@< Import the module @(simplexn@) @>
 @< Function to import a generic module @>
 @< Compute the convex combination of a list of vectors @>
 @< MaKe a list of HPC objects from a LAR model @>

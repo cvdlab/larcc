@@ -1,5 +1,6 @@
 """Module with functions for grid generation and Cartesian product"""
-from smplxn import *
+import collections
+from simplexn import *
 import numpy as np
 
 def larSplit(dom):

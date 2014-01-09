@@ -11,7 +11,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
 
-\usepackage{hyperref}
+\usepackage[colorlinks]{hyperref}
 
 \input{macros}
 
@@ -47,14 +47,6 @@ Such a goal is achieved by calculating each cell in the output via closed combin
 Here we discuss an implementation of the linear extrusion of simplicial complexes according to the method discussed in~\cite{Paoluzzi:1993:DMS:169728.169719} and~\cite{DBLP:journals/cad/FerruciP91}. In synthesis, for each $d$-simplex in the input complex, we generate combinatorially a $(d+1)$-simplicial \emph{tube}, i.e.~a chain of $d+1$ simplexes of dimension $d+1$. It can be shown that if the input simplices are a simplicial complex, then the output simplices are a complex too. 
 
 In other words, if the input is a complex, where all $d$-cells either intersect along a common face or are pairwise disjoints, then the output is also a simplicial complex of dimension $d+1$. This method is computationally optimal, since it does not require any search or traversal of data structures. The algorithm~\cite{DBLP:journals/cad/FerruciP91} just writes the output making a constant number $O(1)$ of operation for each one of its $n$ output $d$-cells, so that the time complexity is $\Omega(n)$, where $n = d\,m$, being $m$ the number and $d$ the dimension (and the storage size) of the input cells, represented as lists of indices of vertices.
-
-\begin{definition}[Big-Omega order]
-We say that a function $f(n)$ is \emph{Big-Omega} order of a function $f(n)$, and write 
-$f(n) \in \Omega(g(n))$ when a constant $c$ exists, such that:
-\[
-\lim_{n\to\infty} \frac{f(n)}{g(n)}=c>0,\qquad \mbox{where\ } 0<c\leq\infty.
-\]
-\end{definition}
 
 \paragraph{Computation}
 
@@ -147,6 +139,14 @@ outcells += [reshape(cellTube, newshape=(m,d,d+1)).tolist()]	@}
 
 
 
+\begin{definition}[Big-Omega order]
+We say that a function $f(n)$ is \emph{Big-Omega} order of a function $f(n)$, and write 
+$f(n) \in \Omega(g(n))$ when a constant $c$ exists, such that:
+\[
+\lim_{n\to\infty} \frac{f(n)}{g(n)}=c>0,\qquad \mbox{where\ } 0<c\leq\infty.
+\]
+\end{definition}
+
 
 
 \begin{theorem}[Optimality]
@@ -174,8 +174,8 @@ It is interesting to notice that the 2D model extruded in example 1 below and sh
 
 \paragraph{Examples 2 and 3}
 The examples show that the implemented \texttt{larExtrude} algorithm is fully multidimensional. 
-It may be worth noting the initial definition of the empty \texttt{model}, as a fair having the empty list as vertex set and the list \texttt{[[0]]} as the cell list. Such initial value is used
-to define a predefinite constant VOID
+It may be worth noting the initial definition of the empty \texttt{model}, as a pair having the empty list as vertex set and the list \texttt{[[0]]} as the cell list. Such initial value is used
+to define a predefinite constant \texttt{VOID}.
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -312,7 +312,8 @@ The current version of the \texttt{simplexn} library is exported here. Next vers
 
 %-------------------------------------------------------------------------------
 @o lib/py/simplexn.py 
-@{"""Module for facet extraction, extrusion and simplicial grids"""
+@{# -*- coding: utf-8 -*-
+"""Module for facet extraction, extrusion and simplicial grids"""
 from lar2psm import *
 from scipy import *
 
