@@ -2,7 +2,7 @@
 # Makefile for LARCC framework
 #
 
-NAME = larcc
+NAME = morph
 LANGUAGE = py
 BIBFILE = $(NAME).bib
 

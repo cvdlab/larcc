@@ -9,7 +9,7 @@ VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,VV))))
 
 np.set_printoptions(threshold='nan')
 csrSignedBoundaryMat = signedBoundary (V,FV,EV)
-Z = csrToMatrixRepresentation(csrSignedBoundaryMat)
+Z = csr2DenseMatrix(csrSignedBoundaryMat)
 print "\ncsrSignedBoundaryMat =\n", Z
 from pylab import *
 matshow(Z)

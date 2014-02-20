@@ -2,7 +2,7 @@
 from larcc import *
 from largrid import *
 
-# input of topology and geometry
+# input of geometry and topology  
 V2 = [[4,10],[8,10],[14,10],[8,7],[14,7],[4,4],[8,4],[14,4]]
 EV = [[0,1],[1,2],[3,4],[5,6],[6,7],[0,5],[1,3],[2,4],[3,6],[4,7]]
 FV = [[0,1,3,5,6],[1,2,3,4],[3,4,6,7]]
@@ -10,18 +10,18 @@ FV = [[0,1,3,5,6],[1,2,3,4],[3,4,6,7]]
 # characteristic matrices
 csrFV = csrCreate(FV)
 csrEV = csrCreate(EV)
-print "\nFV =\n", csrToMatrixRepresentation(csrFV)
-print "\nEV =\n", csrToMatrixRepresentation(csrEV)
+print "\nFV =\n", csr2DenseMatrix(csrFV)
+print "\nEV =\n", csr2DenseMatrix(csrEV)
 
 # product
 csrEF = matrixProduct(csrEV, csrTranspose(csrFV))
-print "\nEF =\n", csrToMatrixRepresentation(csrEF)
+print "\nEF =\n", csr2DenseMatrix(csrEF)
 
 # boundary and coboundary operators
 facetLengths = [csrCell.getnnz() for csrCell in csrEV]
 boundary = csrBoundaryFilter(csrEF,facetLengths)
 coboundary_1 = csrTranspose(boundary)
-print "\ncoboundary_1 =\n", csrToMatrixRepresentation(coboundary_1)
+print "\ncoboundary_1 =\n", csr2DenseMatrix(coboundary_1)
 
 # product operator
 mod_2D = (V2,FV)
@@ -64,20 +64,20 @@ csrVE3 = csrTranspose(csrEV3)
 facetLengths = [csrCell.getnnz() for csrCell in csrEV3]
 boundary = csrBoundaryFilter(csrVE3,facetLengths)
 coboundary_0 = csrTranspose(boundary)
-print "\ncoboundary_0 =\n", csrToMatrixRepresentation(coboundary_0)
+print "\ncoboundary_0 =\n", csr2DenseMatrix(coboundary_0)
 
 csrEF3 = matrixProduct(csrEV3, csrTranspose(csrFV3))
 facetLengths = [csrCell.getnnz() for csrCell in csrFV3]
 boundary = csrBoundaryFilter(csrEF3,facetLengths)
 coboundary_1 = csrTranspose(boundary)
-print "\ncoboundary_1.T =\n", csrToMatrixRepresentation(coboundary_1.T)
+print "\ncoboundary_1.T =\n", csr2DenseMatrix(coboundary_1.T)
 
 csrCV = csrCreate(CV)
 csrFC3 = matrixProduct(csrFV3, csrTranspose(csrCV))
 facetLengths = [csrCell.getnnz() for csrCell in csrCV]
 boundary = csrBoundaryFilter(csrFC3,facetLengths)
 coboundary_2 = csrTranspose(boundary)
-print "\ncoboundary_2 =\n", csrToMatrixRepresentation(coboundary_2)
+print "\ncoboundary_2 =\n", csr2DenseMatrix(coboundary_2)
 
 # boundary chain visualisation
 boundaryCells_2 = boundaryCells(CV,FV3)

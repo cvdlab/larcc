@@ -1,0 +1,120 @@
+\contentsline {chapter}{\numberline {1}Literate programming IDE for LAR-CC }{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Up and running}{7}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Prerequisites}{7}{subsection.1.1.1}
+\contentsline {paragraph}{\LaTeX }{7}{section*.2}
+\contentsline {paragraph}{Python}{8}{section*.3}
+\contentsline {paragraph}{Nuweb}{8}{section*.4}
+\contentsline {subsection}{\numberline {1.1.2}Download}{8}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Working-file}{9}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Using the IDE}{9}{subsection.1.1.4}
+\contentsline {subsubsection}{Using Leo}{10}{section*.5}
+\contentsline {subsubsection}{Using make}{10}{section*.6}
+\contentsline {section}{\numberline {1.2}Structure of \texttt {larcc}}{11}{section.1.2}
+\contentsline {chapter}{\numberline {2}Module Lar2psm }{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}Implementation}{15}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Convex combination}{16}{subsection.2.2.1}
+\contentsline {paragraph}{Unit tests}{16}{section*.8}
+\contentsline {subsection}{\numberline {2.2.2}LAR model of a cell complex}{16}{subsection.2.2.2}
+\contentsline {paragraph}{Examples}{16}{section*.9}
+\contentsline {subsection}{\numberline {2.2.3}Function \texttt {MKPOLS}}{17}{subsection.2.2.3}
+\contentsline {paragraph}{Unit tests}{17}{section*.10}
+\contentsline {subsection}{\numberline {2.2.4}``Explosion'' of the scene}{17}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Source Output: \texttt {lar2psm} module}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Importing a generic module}{18}{subsection.2.3.1}
+\contentsline {paragraph}{Importing a module}{18}{section*.11}
+\contentsline {subsection}{\numberline {2.3.2}Lar2psm exporting}{19}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Unit tests}{19}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Creation of repository of unit tests}{19}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Viewing some simplicial complexes}{19}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Testing convex combination of vectors}{20}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}The \texttt {smplxn} module }{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}Some simplicial algorithms}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Linear extrusion of a complex}{23}{subsection.3.2.1}
+\contentsline {paragraph}{Computation}{24}{section*.13}
+\contentsline {paragraph}{Implementation}{25}{section*.14}
+\contentsline {paragraph}{Extrusion of single cells}{25}{section*.15}
+\contentsline {paragraph}{Assembling vertex indices in a tube with their shifted images}{26}{section*.16}
+\contentsline {paragraph}{Selecting and reshaping extruded cells in a tube}{26}{section*.17}
+\contentsline {subsubsection}{Examples of simplicial complex extrusions}{26}{section*.18}
+\contentsline {paragraph}{Example 1}{26}{section*.19}
+\contentsline {paragraph}{Examples 2 and 3}{27}{section*.20}
+\contentsline {subsection}{\numberline {3.2.2}Generation of multidimensional simplicial grids}{28}{subsection.3.2.2}
+\contentsline {paragraph}{Examples of simplicial grids}{29}{section*.21}
+\contentsline {subsection}{\numberline {3.2.3}Facet extraction from simplices}{29}{subsection.3.2.3}
+\contentsline {paragraph}{Implementation}{29}{section*.22}
+\contentsline {paragraph}{Examples of facet extraction}{30}{section*.23}
+\contentsline {subsection}{\numberline {3.2.4}Exporting the $Simple_x^n$ library}{30}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Signed (co)boundary matrices of a simplicial complex}{31}{section.3.3}
+\contentsline {section}{\numberline {3.4}Test examples}{31}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Structured grid}{31}{subsection.3.4.1}
+\contentsline {subsubsection}{2D example}{31}{section*.24}
+\contentsline {paragraph}{Generate a simplicial decomposition}{31}{section*.25}
+\contentsline {paragraph}{Extract the $(d-1)$-faces}{32}{section*.26}
+\contentsline {paragraph}{Export the executable file}{32}{section*.27}
+\contentsline {subsubsection}{3D example}{32}{section*.28}
+\contentsline {subsection}{\numberline {3.4.2}Unstructured grid}{33}{subsection.3.4.2}
+\contentsline {subsubsection}{2D example}{33}{section*.29}
+\contentsline {subsubsection}{3D example}{33}{section*.30}
+\contentsline {section}{\numberline {3.5}Utilities}{33}{section.3.5}
+\contentsline {chapter}{\numberline {4}Hypercuboidal grids and topological products in LARCC }{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}0D- and 1D-complexes}{38}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Generation of cells}{38}{subsection.4.2.1}
+\contentsline {paragraph}{Uniform 0D complex}{38}{section*.32}
+\contentsline {paragraph}{Uniform 1D complex}{38}{section*.33}
+\contentsline {paragraph}{Uniform 0D or 1D complex}{38}{section*.34}
+\contentsline {subsection}{\numberline {4.2.2}Generation of embedding vertices}{39}{subsection.4.2.2}
+\contentsline {paragraph}{Generation of grid vertices}{39}{section*.35}
+\contentsline {section}{\numberline {4.3}Cuboidal grids}{39}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Full-dimensional grids}{39}{subsection.4.3.1}
+\contentsline {subsubsection}{Vertex generation}{39}{section*.36}
+\contentsline {subsubsection}{Mapping of indices to storage}{40}{section*.37}
+\contentsline {paragraph}{Multi-index to address transformation}{40}{section*.38}
+\contentsline {paragraph}{\texttt {index2addr} examples}{40}{section*.39}
+\contentsline {subsubsection}{Multidimensional cell generation}{41}{section*.40}
+\contentsline {paragraph}{Example}{41}{section*.41}
+\contentsline {paragraph}{Cartesian product of 0/1-complexes}{42}{section*.42}
+\contentsline {subsection}{\numberline {4.3.2}Lower-dimensional grid skeletons}{44}{subsection.4.3.2}
+\contentsline {subsubsection}{Generation of skeleton components}{44}{section*.43}
+\contentsline {paragraph}{Examples of generation of bit strings}{44}{section*.44}
+\contentsline {subsubsection}{Filtering grid skeleton components}{45}{section*.45}
+\contentsline {paragraph}{Examples of bit lists filtering}{45}{section*.46}
+\contentsline {subsubsection}{Assembling grid skeleton components}{45}{section*.47}
+\contentsline {subsection}{\numberline {4.3.3}Highest-level grid interface}{47}{subsection.4.3.3}
+\contentsline {paragraph}{Generation of (hyper)-cuboidal grids}{47}{section*.48}
+\contentsline {paragraph}{Multidimensional visualisation examples}{47}{section*.49}
+\contentsline {section}{\numberline {4.4}Cartesian product of cellular complexes}{48}{section.4.4}
+\contentsline {paragraph}{LAR model of cellular complexes}{48}{section*.50}
+\contentsline {paragraph}{Binary product of cellular complexes}{48}{section*.51}
+\contentsline {paragraph}{Cartesian product of argument vertices}{48}{section*.52}
+\contentsline {paragraph}{Topological product of argument vertices}{49}{section*.53}
+\contentsline {section}{\numberline {4.5}Largrid exporting}{49}{section.4.5}
+\contentsline {section}{\numberline {4.6}Unit tests}{50}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Creation of repository of unit tests}{50}{subsection.4.6.1}
+\contentsline {paragraph}{Vertices of 1D decompositions}{50}{section*.54}
+\contentsline {section}{\numberline {4.7}Indices}{51}{section.4.7}
+\contentsline {section}{\numberline {4.8}Appendix}{52}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Utilities}{52}{subsection.4.8.1}
+\contentsline {chapter}{\numberline {5}The basic \texttt {larcc} module }{55}{chapter.5}
+\contentsline {section}{\numberline {5.1}Basic representations}{55}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}BRC (Binary Row Compressed)}{55}{subsection.5.1.1}
+\contentsline {paragraph}{BRC format example}{55}{section*.56}
+\contentsline {subsection}{\numberline {5.1.2}Format conversions}{56}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Matrix operations}{57}{section.5.2}
+\contentsline {section}{\numberline {5.3}Topological operations}{60}{section.5.3}
+\contentsline {paragraph}{Orienting polytopal cells}{63}{section*.57}
+\contentsline {section}{\numberline {5.4}Exporting the library}{68}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}MIT licence}{68}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Importing of modules or packages}{68}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Writing the library file}{69}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Unit tests}{69}{section.5.5}
+\contentsline {section}{\numberline {5.6}Appendix: Tutorials}{70}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Model generation, skeleton and boundary extraction}{70}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Boundary of 3D simplicial grid}{73}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Oriented boundary of a random simplicial complex}{74}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.4}Oriented boundary of a simplicial grid}{75}{subsection.5.6.4}
+\contentsline {subsection}{\numberline {5.6.5}Skeletons and oriented boundary of a simplicial complex}{76}{subsection.5.6.5}
+\contentsline {subsection}{\numberline {5.6.6}Boundary of random 2D simplicial complex}{77}{subsection.5.6.6}
+\contentsline {subsection}{\numberline {5.6.7}Assemblies of simplices and hypercubes}{79}{subsection.5.6.7}

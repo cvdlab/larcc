@@ -34,7 +34,7 @@ from scipy.sparse import vstack,hstack,csr_matrix,coo_matrix,lil_matrix,triu
 
 from lar2psm import *
 
-def format(triples,shape="csr"):
+def triples2mat(triples,shape="csr"):
     n = len(triples)
     data = arange(n)
     ij = arange(2*n).reshape(2,n)
@@ -42,34 +42,33 @@ def format(triples,shape="csr"):
         ij[0][k],ij[1][k],data[k] = item
     return scipy.sparse.coo_matrix((data, ij)).asformat(shape)
 
-def cooCreateFromBrc(ListOfListOfInt):
+def brc2Coo(ListOfListOfInt):
     COOm = [[k,col,1] for k,row in enumerate(ListOfListOfInt)
             for col in row ]
     return COOm
 
-def csrCreateFromCoo(COOm):
-    CSRm = format(COOm,"csr")
+def coo2Csr(COOm):
+    CSRm = triples2mat(COOm,"csr")
     return CSRm
 
-def csrCreate(BRCm,shape=(0,0)):
+def csrCreate(BRCmatrix,shape=(0,0)):
+    triples = brc2Coo(BRCmatrix)
     if shape == (0,0):
-        out = csrCreateFromCoo(cooCreateFromBrc(BRCm))
-        return out
+        CSRmatrix = coo2Csr(triples)
     else:
-        CSRm = scipy.sparse.csr_matrix(shape)
-        for i,j,v in cooCreateFromBrc(BRCm):
-            CSRm[i,j] = v
-        return CSRm
+        CSRmatrix = scipy.sparse.csr_matrix(shape)
+        for i,j,v in triples: CSRmatrix[i,j] = v
+    return CSRmatrix
 
-def csrGetNumberOfRows(CSRm):
-    Int = CSRm.shape[0]
+def csrGetNumberOfRows(CSRmatrix):
+    Int = CSRmatrix.shape[0]
     return Int
     
-def csrGetNumberOfColumns(CSRm):
-    Int = CSRm.shape[1]
+def csrGetNumberOfColumns(CSRmatrix):
+    Int = CSRmatrix.shape[1]
     return Int
 
-def csrToMatrixRepresentation(CSRm):
+def csr2DenseMatrix(CSRm):
     nrows = csrGetNumberOfRows(CSRm)
     ncolumns = csrGetNumberOfColumns(CSRm)
     ScipyMat = zeros((nrows,ncolumns),int)
@@ -250,26 +249,32 @@ def larFacets(model,dim=3):
 
 if __name__ == "__main__": 
    
-   print "\n>>> cooCreateFromBrc"
+   print "\n>>> brc2Coo"
    V = [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]]
    FV = [[0, 1, 3], [1, 2, 4], [1, 3, 4], [2, 4, 5]]
    EV = [[0,1],[0,3],[1,2],[1,3],[1,4],[2,4],[2,5],[3,4],[4,5]]
-   cooFV = cooCreateFromBrc(FV)
-   cooEV = cooCreateFromBrc(EV)
-   print "\ncooCreateFromBrc(FV) =\n", cooFV
-   print "\ncooCreateFromBrc(EV) =\n", cooEV
+   cooFV = brc2Coo(FV)
+   cooEV = brc2Coo(EV)
+   assert cooFV == [[0,0,1],[0,1,1],[0,3,1],[1,1,1],[1,2,1],[1,4,1],[2,1,1],
+   [2,3,1], [2,4,1],[3,2,1],[3,4,1],[3,5,1]]
+   assert cooEV == [[0,0,1],[0,1,1],[1,0,1],[1,3,1],[2,1,1],[2,2,1],[3,1,1],
+   [3,3,1],[4,1,1],[4,4,1],[5,2,1],[5,4,1],[6,2,1],[6,5,1],[7,3,1],[7,4,1],
+   [8,4,1],[8,5,1]]
    
-   print "\n>>> csrCreateFromCoo"
-   csrFV = csrCreateFromCoo(cooFV)
-   csrEV = csrCreateFromCoo(cooEV)
+   csrFV = coo2Csr(cooFV)
+   csrEV = coo2Csr(cooEV)
    print "\ncsr(FV) =\n", repr(csrFV)
    print "\ncsr(EV) =\n", repr(csrEV)
    
-   print "\n>>> csrCreateFromCoo"
+   print "\n>>> brc2Csr"
    V = [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]]
    FV = [[0, 1, 3], [1, 2, 4], [1, 3, 4], [2, 4, 5]]
+   EV = [[0,1],[0,3],[1,2],[1,3],[1,4],[2,4],[2,5],[3,4],[4,5]]
    csrFV = csrCreate(FV)
+   csrEV = csrCreate(EV)
    print "\ncsrCreate(FV) =\n", csrFV
+   VIEW(STRUCT(MKPOLS((V,FV))))
+   VIEW(STRUCT(MKPOLS((V,EV))))
    
    print "\n>>> csrGetNumberOfRows"
    print "\ncsrGetNumberOfRows(csrFV) =", csrGetNumberOfRows(csrFV)
@@ -278,19 +283,19 @@ if __name__ == "__main__":
    print "\ncsrGetNumberOfColumns(csrFV) =", csrGetNumberOfColumns(csrFV)
    print "\ncsrGetNumberOfColumns(csrEV) =", csrGetNumberOfColumns(csrEV)
    
-   print "\n>>> csrToMatrixRepresentation"
-   print "\nFV =\n", csrToMatrixRepresentation(csrFV)
-   print "\nEV =\n", csrToMatrixRepresentation(csrEV)
+   print "\n>>> csr2DenseMatrix"
+   print "\nFV =\n", csr2DenseMatrix(csrFV)
+   print "\nEV =\n", csr2DenseMatrix(csrEV)
    
    print "\n>>> csrBoundaryFilter"
    csrEF = matrixProduct(csrFV, csrTranspose(csrEV)).T
    facetLengths = [csrCell.getnnz() for csrCell in csrEV]
    CSRm = csrBoundaryFilter(csrEF, facetLengths).T
-   print "\ncsrMaxFilter(csrFE) =\n", csrToMatrixRepresentation(CSRm)
+   print "\ncsrMaxFilter(csrFE) =\n", csr2DenseMatrix(CSRm)
    
    print "\n>>> csrPredFilter"
    CSRm = csrPredFilter(matrixProduct(csrFV, csrTranspose(csrEV)).T, GE(2)).T
-   print "\nccsrPredFilter(csrFE) =\n", csrToMatrixRepresentation(CSRm)
+   print "\nccsrPredFilter(csrFE) =\n", csr2DenseMatrix(CSRm)
    
    V = [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [1.0, 1.0, 0.0], 
    [0.0, 0.0, 1.0], [1.0, 0.0, 1.0], [0.0, 1.0, 1.0], [1.0, 1.0, 1.0]]
@@ -306,9 +311,9 @@ if __name__ == "__main__":
    [2, 5], [2, 6], [3, 5], [3, 6], [3, 7], [4, 5], [4, 6], [5, 6], [5, 7], 
    [6, 7]]
    
-   print "\ncoboundary_2 =\n", csrToMatrixRepresentation(coboundary(CV,FV))
-   print "\ncoboundary_1 =\n", csrToMatrixRepresentation(coboundary(FV,EV))
-   print "\ncoboundary_0 =\n", csrToMatrixRepresentation(coboundary(EV,AA(LIST)(range(len(V)))))
+   print "\ncoboundary_2 =\n", csr2DenseMatrix(coboundary(CV,FV))
+   print "\ncoboundary_1 =\n", csr2DenseMatrix(coboundary(FV,EV))
+   print "\ncoboundary_0 =\n", csr2DenseMatrix(coboundary(EV,AA(LIST)(range(len(V)))))
    
    boundaryCells_2 = boundaryCells(CV,FV)
    boundaryCells_1 = boundaryCells([FV[k] for k in boundaryCells_2],EV)
@@ -321,9 +326,9 @@ if __name__ == "__main__":
    
    print "\n>>> larCellAdjacencies"
    adj_2_cells = larCellAdjacencies(csrFV)
-   print "\nadj_2_cells =\n", csrToMatrixRepresentation(adj_2_cells)
+   print "\nadj_2_cells =\n", csr2DenseMatrix(adj_2_cells)
    adj_1_cells = larCellAdjacencies(csrEV)
-   print "\nadj_1_cells =\n", csrToMatrixRepresentation(adj_1_cells)
+   print "\nadj_1_cells =\n", csr2DenseMatrix(adj_1_cells)
    
    V = [[0.,0.],[3.,0.],[0.,3.],[3.,3.],[1.,2.],[2.,2.],[1.,1.],[2.,1.]]
    FV = [[0,1,6,7],[0,2,4,6],[4,5,6,7],[1,3,5,7],[2,3,4,5],[0,1,2,3]]

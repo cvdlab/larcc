@@ -10,6 +10,7 @@
 \usepackage{amsthm}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
 \usepackage[colorlinks]{hyperref}
 
 %----macros begin---------------------------------------------------------------
@@ -98,10 +99,10 @@ A = \mat{
 
 \subsection{Format conversions}
 
-First we give the function \texttt{format} to make the transformation from the sparse matrix as a list of triples \emph{(row,column,value)} for each non-zero element, to the \texttt{scipy.sparse} format corresponding to the \texttt{shape} parameter, set by default to \texttt{"csr"}, that stands for \emph{Compressed Sparse Row}, the normal matrix format of the LARCC framework. 
+First we give the function \texttt{triples2mat} to make the transformation from the sparse matrix, given as a list of triples \emph{row,column,value} (non-zero elements), to the \texttt{scipy.sparse} format corresponding to the \texttt{shape} parameter, set by default to \texttt{"csr"}, that stands for \emph{Compressed Sparse Row}, the normal matrix format of the LARCC framework. 
 %-------------------------------------------------------------------------------
 @d From list of triples to scipy.sparse
-@{def format(triples,shape="csr"):
+@{def triples2mat(triples,shape="csr"):
     n = len(triples)
     data = arange(n)
     ij = arange(2*n).reshape(2,n)
@@ -110,75 +111,107 @@ First we give the function \texttt{format} to make the transformation from the s
     return scipy.sparse.coo_matrix((data, ij)).asformat(shape)
 @}
 %-------------------------------------------------------------------------------
+The function \texttt{brc2Coo} transforms a \texttt{BRC} representation in a list of triples (\emph{row}, \emph{column}, 1) ordered by row.
 %-------------------------------------------------------------------------------
 @d Brc to Coo transformation
-@{def cooCreateFromBrc(ListOfListOfInt):
+@{def brc2Coo(ListOfListOfInt):
     COOm = [[k,col,1] for k,row in enumerate(ListOfListOfInt)
             for col in row ]
     return COOm
 @}
 %-------------------------------------------------------------------------------
+
+Two coordinate compressed sparse matrices \texttt{cooFV} and \texttt{cooEV} are created below, starting from the \texttt{BRC} representation \texttt{FV} and \texttt{EV} of the incidence of vertices on faces and edges, respectively, for a very simple plane triangulation.
 %-------------------------------------------------------------------------------
 @d Test example of Brc to Coo transformation
-@{print "\n>>> cooCreateFromBrc"
+@{print "\n>>> brc2Coo"
 V = [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]]
 FV = [[0, 1, 3], [1, 2, 4], [1, 3, 4], [2, 4, 5]]
 EV = [[0,1],[0,3],[1,2],[1,3],[1,4],[2,4],[2,5],[3,4],[4,5]]
-cooFV = cooCreateFromBrc(FV)
-cooEV = cooCreateFromBrc(EV)
-print "\ncooCreateFromBrc(FV) =\n", cooFV
-print "\ncooCreateFromBrc(EV) =\n", cooEV
+cooFV = brc2Coo(FV)
+cooEV = brc2Coo(EV)
+assert cooFV == [[0,0,1],[0,1,1],[0,3,1],[1,1,1],[1,2,1],[1,4,1],[2,1,1],
+[2,3,1], [2,4,1],[3,2,1],[3,4,1],[3,5,1]]
+assert cooEV == [[0,0,1],[0,1,1],[1,0,1],[1,3,1],[2,1,1],[2,2,1],[3,1,1],
+[3,3,1],[4,1,1],[4,4,1],[5,2,1],[5,4,1],[6,2,1],[6,5,1],[7,3,1],[7,4,1],
+[8,4,1],[8,5,1]]
 @}
 %-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
 @d Coo to Csr transformation
-@{def csrCreateFromCoo(COOm):
-    CSRm = format(COOm,"csr")
+@{def coo2Csr(COOm):
+    CSRm = triples2mat(COOm,"csr")
     return CSRm
 @}
 %-------------------------------------------------------------------------------
+
+Two CSR sparse matrices \texttt{csrFV} and \texttt{csrEV} are generated (by \emph{scipy.sparse})  in the following example:
 %-------------------------------------------------------------------------------
 @d Test example of Coo to Csr transformation
-@{print "\n>>> csrCreateFromCoo"
-csrFV = csrCreateFromCoo(cooFV)
-csrEV = csrCreateFromCoo(cooEV)
+@{csrFV = coo2Csr(cooFV)
+csrEV = coo2Csr(cooEV)
 print "\ncsr(FV) =\n", repr(csrFV)
 print "\ncsr(EV) =\n", repr(csrEV)
 @}
 %-------------------------------------------------------------------------------
+The \emph{scipy} printout of the last two lines above is the following:
+%-------------------------------------------------------------------------------
+{\small
+\begin{verbatim}
+csr(FV) = <4x6 sparse matrix of type '<type 'numpy.int64'>'
+		   with 12 stored elements in Compressed Sparse Row format>
+csr(EV) = <9x6 sparse matrix of type '<type 'numpy.int64'>'
+		   with 18 stored elements in Compressed Sparse Row format>
+\end{verbatim}}
+%-------------------------------------------------------------------------------
+The transformation from BRC to CSR format is implemented slightly differently, according to the fact that the matrix dimension is either unknown (\texttt{shape=(0,0)}) or known.
 %-------------------------------------------------------------------------------
 @d Brc to Csr transformation
-@{def csrCreate(BRCm,shape=(0,0)):
+@{def csrCreate(BRCmatrix,shape=(0,0)):
+    triples = brc2Coo(BRCmatrix)
     if shape == (0,0):
-        out = csrCreateFromCoo(cooCreateFromBrc(BRCm))
-        return out
+        CSRmatrix = coo2Csr(triples)
     else:
-        CSRm = scipy.sparse.csr_matrix(shape)
-        for i,j,v in cooCreateFromBrc(BRCm):
-            CSRm[i,j] = v
-        return CSRm
+        CSRmatrix = scipy.sparse.csr_matrix(shape)
+        for i,j,v in triples: CSRmatrix[i,j] = v
+    return CSRmatrix
 @}
 %-------------------------------------------------------------------------------
+The conversion to CSR format of the characteristic matrix \emph{faces-vertices} \texttt{FV} is given below for our simple example made by four triangle of a manifold 2D space, graphically shown in Figure~\ref{fig:2D-non-manifold}a. The LAR representation with CSR matrices does not make difference between manifolds and non-manifolds, conversely than most modern solid modelling representation schemes, as shown by removing from \texttt{FV} the third triangle, giving the model in Figure~\ref{fig:2D-non-manifold}b.
 %-------------------------------------------------------------------------------
 @d Test example of Brc to Csr transformation
-@{print "\n>>> csrCreateFromCoo"
+@{print "\n>>> brc2Csr"
 V = [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1]]
 FV = [[0, 1, 3], [1, 2, 4], [1, 3, 4], [2, 4, 5]]
+EV = [[0,1],[0,3],[1,2],[1,3],[1,4],[2,4],[2,5],[3,4],[4,5]]
 csrFV = csrCreate(FV)
+csrEV = csrCreate(EV)
 print "\ncsrCreate(FV) =\n", csrFV
+VIEW(STRUCT(MKPOLS((V,FV))))
+VIEW(STRUCT(MKPOLS((V,EV))))
 @}
 %-------------------------------------------------------------------------------
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[height=0.25\linewidth,width=0.25\linewidth]{images/2D-non-manifold-a} 
+   \includegraphics[height=0.25\linewidth,width=0.25\linewidth]{images/2D-non-manifold-b} 
+   \caption{(a) Manifold two-dimensional space; (b) non-manifold space.}
+   \label{fig:2D-non-manifold}
+\end{figure}
 
 \section{Matrix operations}
 
+As we know, the LAR representation of topology is based on CSR representation of sparse binary (and integer) matrices.
+Two Utility functions allow to query the number of rows and columns of a CSR matrix, independently from the low-level implementation (that in the following is provided by \emph{scipy.sparse}).
 %-------------------------------------------------------------------------------
 @d Query Matrix shape
-@{def csrGetNumberOfRows(CSRm):
-    Int = CSRm.shape[0]
+@{def csrGetNumberOfRows(CSRmatrix):
+    Int = CSRmatrix.shape[0]
     return Int
     
-def csrGetNumberOfColumns(CSRm):
-    Int = CSRm.shape[1]
+def csrGetNumberOfColumns(CSRmatrix):
+    Int = CSRmatrix.shape[1]
     return Int
 @}
 %-------------------------------------------------------------------------------
@@ -192,9 +225,12 @@ print "\ncsrGetNumberOfColumns(csrFV) =", csrGetNumberOfColumns(csrFV)
 print "\ncsrGetNumberOfColumns(csrEV) =", csrGetNumberOfColumns(csrEV)
 @}
 %-------------------------------------------------------------------------------
+
+\paragraph{}
+
 %-------------------------------------------------------------------------------
 @d Sparse to dense matrix transformation
-@{def csrToMatrixRepresentation(CSRm):
+@{def csr2DenseMatrix(CSRm):
     nrows = csrGetNumberOfRows(CSRm)
     ncolumns = csrGetNumberOfColumns(CSRm)
     ScipyMat = zeros((nrows,ncolumns),int)
@@ -206,11 +242,58 @@ print "\ncsrGetNumberOfColumns(csrEV) =", csrGetNumberOfColumns(csrEV)
 %-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
 @d Test examples of Sparse to dense matrix transformation
-@{print "\n>>> csrToMatrixRepresentation"
-print "\nFV =\n", csrToMatrixRepresentation(csrFV)
-print "\nEV =\n", csrToMatrixRepresentation(csrEV)
+@{print "\n>>> csr2DenseMatrix"
+print "\nFV =\n", csr2DenseMatrix(csrFV)
+print "\nEV =\n", csr2DenseMatrix(csrEV)
 @}
 %-------------------------------------------------------------------------------
+
+\paragraph{Characteristic matrices}
+Let us compute and show in dense form the characteristic matrices of 2- and 1-cells of the simple manifold just defined.
+By running the file \texttt{test/py/larcc/ex8.py} the reader will get the two matrices shown in Example~\ref{ex:denseMat}
+%-------------------------------------------------------------------------------
+@o test/py/larcc/ex8.py
+@{from larcc import *
+@< Test example of Brc to Csr transformation @>
+@< Test examples of Sparse to dense matrix transformation @>
+@}
+%-------------------------------------------------------------------------------
+ 
+\begin{example}[Dense Characteristic matrices]\label{ex:denseMat}
+Let us notice that the two matrices below have the some numbers of columns (indexed by vertices of the cell decomposition).
+This very fact allows to multiply one matrix for the other transposed, and hence to compute the matrix form of linear operators between the spaces of cells of various dimensions.
+\[
+\texttt{FV} =
+\begin{minipage}[c]{0.29\linewidth}
+\begin{verbatim}
+[[1 1 0 1 0 0]
+ [0 1 1 0 1 0]
+ [0 1 0 1 1 0]
+ [0 0 1 0 1 1]]
+\end{verbatim}
+\end{minipage}
+\qquad
+\texttt{EV} =
+\begin{minipage}[c]{0.29\linewidth}
+\begin{verbatim}
+[[1 1 0 0 0 0]
+ [1 0 0 1 0 0]
+ [0 1 1 0 0 0]
+ [0 1 0 1 0 0]
+ [0 1 0 0 1 0]
+ [0 0 1 0 1 0]
+ [0 0 1 0 0 1]
+ [0 0 0 1 1 0]
+ [0 0 0 0 1 1]]
+\end{verbatim}
+\end{minipage}
+\]
+\end{example}
+
+\paragraph{Matrix product and transposition}
+
+The following macro provides the IDE interface for the two main matrix operations required by LARCC, the binary product of compatible matrices and the unary transposition of matrices.
+
 %-------------------------------------------------------------------------------
 @d Matrix product and transposition
 @{def matrixProduct(CSRm1,CSRm2):
@@ -222,6 +305,43 @@ def csrTranspose(CSRm):
     return CSRm
 @}
 %-------------------------------------------------------------------------------
+
+\begin{example}[Operators from edges to faces and vice-versa]\label{ex:denseMat}
+As a general rule for operators between two spaces of chains of different dimensions supported by the \emph{same} cellular complex, we use names made by two characters, whose first letter correspond to the target space, and whose second letter to the domain space. Hence \texttt{FE} must be read as the operator from edges to faces. Of course, since this use correspond to see the first letter as the space generated by rows, and the second letter as the space generated by columns. Notice that the element $(i,j)$ of such matrices stores the number of vertices shared between the (row-)cell $i$ and the (column-)cell $j$.
+\[
+\texttt{FE} = \texttt{FV}\ \texttt{EV}^\top = 
+\begin{minipage}[c]{0.29\linewidth}
+\begin{verbatim}
+[[2 2 1 2 1 0 0 1 0]
+ [1 0 2 1 2 2 1 1 1]
+ [1 1 1 2 2 1 0 2 1]
+ [0 0 1 0 1 2 2 1 2]]
+\end{verbatim}
+\end{minipage}
+\qquad
+\texttt{EF} = \texttt{EV}\ \texttt{FV}^\top = 
+\begin{minipage}[c]{0.29\linewidth}
+\begin{verbatim}
+[[2 1 1 0]
+ [2 0 1 0]
+ [1 2 1 1]
+ [2 1 2 0]
+ [1 2 2 1]
+ [0 2 1 2]
+ [0 1 0 2]
+ [1 1 2 1]
+ [0 1 1 2]]
+\end{verbatim}
+\end{minipage}
+\]
+\end{example}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.6\linewidth]{images/2complex} 
+   \caption{example caption}
+   \label{fig:2complex}
+\end{figure}
 %-------------------------------------------------------------------------------
 @d Matrix filtering to produce the boundary matrix
 @{def csrBoundaryFilter(CSRm, facetLengths):
@@ -242,7 +362,7 @@ def csrTranspose(CSRm):
 csrEF = matrixProduct(csrFV, csrTranspose(csrEV)).T
 facetLengths = [csrCell.getnnz() for csrCell in csrEV]
 CSRm = csrBoundaryFilter(csrEF, facetLengths).T
-print "\ncsrMaxFilter(csrFE) =\n", csrToMatrixRepresentation(CSRm)
+print "\ncsrMaxFilter(csrFE) =\n", csr2DenseMatrix(CSRm)
 @}
 %-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
@@ -261,11 +381,16 @@ print "\ncsrMaxFilter(csrFE) =\n", csrToMatrixRepresentation(CSRm)
 @d Test example of Matrix filtering via a generic predicate
 @{print "\n>>> csrPredFilter"
 CSRm = csrPredFilter(matrixProduct(csrFV, csrTranspose(csrEV)).T, GE(2)).T
-print "\nccsrPredFilter(csrFE) =\n", csrToMatrixRepresentation(CSRm)
+print "\nccsrPredFilter(csrFE) =\n", csr2DenseMatrix(CSRm)
 @}
 %-------------------------------------------------------------------------------
 
 \section{Topological operations}
+
+\subsection{Incidence and adjacency operators}
+
+
+\subsection{Boundary and coboundary operators}
 
 %-------------------------------------------------------------------------------
 @d From cells and facets to boundary operator
@@ -297,9 +422,9 @@ EV =[[0, 1], [0, 2], [0, 4], [1, 2], [1, 3], [1, 4], [1, 5], [2, 3], [2, 4],
 [2, 5], [2, 6], [3, 5], [3, 6], [3, 7], [4, 5], [4, 6], [5, 6], [5, 7], 
 [6, 7]]
 
-print "\ncoboundary_2 =\n", csrToMatrixRepresentation(coboundary(CV,FV))
-print "\ncoboundary_1 =\n", csrToMatrixRepresentation(coboundary(FV,EV))
-print "\ncoboundary_0 =\n", csrToMatrixRepresentation(coboundary(EV,AA(LIST)(range(len(V)))))
+print "\ncoboundary_2 =\n", csr2DenseMatrix(coboundary(CV,FV))
+print "\ncoboundary_1 =\n", csr2DenseMatrix(coboundary(FV,EV))
+print "\ncoboundary_0 =\n", csr2DenseMatrix(coboundary(EV,AA(LIST)(range(len(V)))))
 @}
 %-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
@@ -451,9 +576,9 @@ def simplexOrientations(V,simplices):
 @d Test examples of Computation of cell adjacencies
 @{print "\n>>> larCellAdjacencies"
 adj_2_cells = larCellAdjacencies(csrFV)
-print "\nadj_2_cells =\n", csrToMatrixRepresentation(adj_2_cells)
+print "\nadj_2_cells =\n", csr2DenseMatrix(adj_2_cells)
 adj_1_cells = larCellAdjacencies(csrEV)
-print "\nadj_1_cells =\n", csrToMatrixRepresentation(adj_1_cells)
+print "\nadj_1_cells =\n", csr2DenseMatrix(adj_1_cells)
 @}
 %-------------------------------------------------------------------------------
 %-------------------------------------------------------------------------------
@@ -629,7 +754,7 @@ from largrid import *
 %-------------------------------------------------------------------------------
 @d input of 2D topology and geometry data
 @{
-# input of topology and geometry
+# input of geometry and topology  
 V2 = [[4,10],[8,10],[14,10],[8,7],[14,7],[4,4],[8,4],[14,4]]
 EV = [[0,1],[1,2],[3,4],[5,6],[6,7],[0,5],[1,3],[2,4],[3,6],[4,7]]
 FV = [[0,1,3,5,6],[1,2,3,4],[3,4,6,7]]
@@ -641,8 +766,8 @@ FV = [[0,1,3,5,6],[1,2,3,4],[3,4,6,7]]
 @{# characteristic matrices
 csrFV = csrCreate(FV)
 csrEV = csrCreate(EV)
-print "\nFV =\n", csrToMatrixRepresentation(csrFV)
-print "\nEV =\n", csrToMatrixRepresentation(csrEV)
+print "\nFV =\n", csr2DenseMatrix(csrFV)
+print "\nEV =\n", csr2DenseMatrix(csrEV)
 @}
 %-------------------------------------------------------------------------------
 
@@ -650,7 +775,7 @@ print "\nEV =\n", csrToMatrixRepresentation(csrEV)
 @d incidence matrix
 @{# product
 csrEF = matrixProduct(csrEV, csrTranspose(csrFV))
-print "\nEF =\n", csrToMatrixRepresentation(csrEF)
+print "\nEF =\n", csr2DenseMatrix(csrEF)
 @}
 %-------------------------------------------------------------------------------
 
@@ -660,7 +785,7 @@ print "\nEF =\n", csrToMatrixRepresentation(csrEF)
 facetLengths = [csrCell.getnnz() for csrCell in csrEV]
 boundary = csrBoundaryFilter(csrEF,facetLengths)
 coboundary_1 = csrTranspose(boundary)
-print "\ncoboundary_1 =\n", csrToMatrixRepresentation(coboundary_1)
+print "\ncoboundary_1 =\n", csr2DenseMatrix(coboundary_1)
 @}
 %-------------------------------------------------------------------------------
 
@@ -719,7 +844,7 @@ csrVE3 = csrTranspose(csrEV3)
 facetLengths = [csrCell.getnnz() for csrCell in csrEV3]
 boundary = csrBoundaryFilter(csrVE3,facetLengths)
 coboundary_0 = csrTranspose(boundary)
-print "\ncoboundary_0 =\n", csrToMatrixRepresentation(coboundary_0)
+print "\ncoboundary_0 =\n", csr2DenseMatrix(coboundary_0)
 @}
 %-------------------------------------------------------------------------------
 
@@ -729,7 +854,7 @@ print "\ncoboundary_0 =\n", csrToMatrixRepresentation(coboundary_0)
 facetLengths = [csrCell.getnnz() for csrCell in csrFV3]
 boundary = csrBoundaryFilter(csrEF3,facetLengths)
 coboundary_1 = csrTranspose(boundary)
-print "\ncoboundary_1.T =\n", csrToMatrixRepresentation(coboundary_1.T)
+print "\ncoboundary_1.T =\n", csr2DenseMatrix(coboundary_1.T)
 @}
 %-------------------------------------------------------------------------------
 
@@ -740,7 +865,7 @@ csrFC3 = matrixProduct(csrFV3, csrTranspose(csrCV))
 facetLengths = [csrCell.getnnz() for csrCell in csrCV]
 boundary = csrBoundaryFilter(csrFC3,facetLengths)
 coboundary_2 = csrTranspose(boundary)
-print "\ncoboundary_2 =\n", csrToMatrixRepresentation(coboundary_2)
+print "\ncoboundary_2 =\n", csr2DenseMatrix(coboundary_2)
 @}
 %-------------------------------------------------------------------------------
 
@@ -913,7 +1038,7 @@ VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS((V,VV))))
 @d Oriented boundary matrix visualization
 @{np.set_printoptions(threshold='nan')
 csrSignedBoundaryMat = signedBoundary (V,FV,EV)
-Z = csrToMatrixRepresentation(csrSignedBoundaryMat)
+Z = csr2DenseMatrix(csrSignedBoundaryMat)
 print "\ncsrSignedBoundaryMat =\n", Z
 from pylab import *
 matshow(Z)

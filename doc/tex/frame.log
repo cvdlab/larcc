@@ -1,0 +1,38 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.6.23)  9 JAN 2014 09:10
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**frame.tex
+(./frame.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+
+./frame.tex:45: LaTeX Error: Environment quote undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 \begin{quote}
+                  
+? 
+./frame.tex:45: Emergency stop.
+ ...                                              
+                                                  
+l.45 \begin{quote}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 6 strings out of 493315
+ 254 string characters out of 6137904
+ 52158 words of memory out of 5000000
+ 3558 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 5i,0n,4p,158b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
+./frame.tex:45:  ==> Fatal error occurred, no output PDF file produced!

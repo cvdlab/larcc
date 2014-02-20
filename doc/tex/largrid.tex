@@ -113,7 +113,7 @@ The \texttt{grid0} second-order function generates a 0-dimensional uniform compl
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -137,7 +137,7 @@ A similar \texttt{grid1} function returns a uniform 1D cellular complex with $n$
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -161,7 +161,7 @@ A \texttt{larGrid} function is finally given to generate the LAR representation 
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -193,7 +193,7 @@ The second-order \texttt{larSplit} function is used to subdivide the real interv
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}\NWlink{nuweb15d}{, 15d}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}\NWlink{nuweb15d}{, 15d}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -224,7 +224,7 @@ First the grid vertices are produced by the \texttt{larVertProd} function, via C
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -266,7 +266,7 @@ where \texttt{[2,2,0]} represent the numbers of (pages, rows, columns) indexing 
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -285,7 +285,9 @@ In the following example, \texttt{[3,6]} is the \texttt{shape} of a two-dimen\-s
 \mbox{}\verb@12@\\
 \mbox{}\verb@>>> [index2addr([3,6])(index) for index in CART([ range(3), range(6) ])]@\\
 \mbox{}\verb@[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]@\\
-\mbox{}\verb@>>> [index2addr([4,3,6])(index) for index in CART( AA(range)([4,3,6]) )]@\\
+\mbox{}\verb@>>> convert = index2addr([4,3,6])@\\
+\mbox{}\verb@<function index2address0>@\\
+\mbox{}\verb@>>> [convert(index) for index in CART( AA(range)([4,3,6]) )]@\\
 \mbox{}\verb@[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, @\\
 \mbox{}\verb@21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, @\\
 \mbox{}\verb@40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, @\\
@@ -370,7 +372,7 @@ The \texttt{jointCells} variable is used to contain the list of outputs of Carte
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{flushleft}
 %-------------------------------------------------------------------------------
@@ -442,7 +444,7 @@ The \texttt{binaryRange} function, applied to an integer $n$, returns the string
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{flushleft}
 %-------------------------------------------------------------------------------
@@ -491,7 +493,7 @@ The function \texttt{filterByOrder} is used to partition the previous binary str
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{flushleft}
 %-------------------------------------------------------------------------------
@@ -565,7 +567,7 @@ Notice also that, whereas the dimension $n$ of the embedding space is implicittl
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{flushleft}
 %-------------------------------------------------------------------------------
@@ -613,7 +615,7 @@ The grid's intrinsic dimension, as well as the dimension of its embedding space,
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{flushleft}
 %-------------------------------------------------------------------------------
@@ -635,7 +637,7 @@ Visualisation examples of grid of dimension 1,2, and 3 are given below and are d
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -669,7 +671,7 @@ The \texttt{larModelProduct} function takes as input a pair of LAR models and re
 \mbox{}\verb@def larModelProduct(twoModels):@\\
 \mbox{}\verb@    (V, cells1), (W, cells2) = twoModels@\\
 \mbox{}\verb@    @\hbox{$\langle\,$Cartesian product of vertices\nobreak\ {\footnotesize \NWlink{nuweb13b}{13b}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@    @\hbox{$\langle\,$Topological product of cells\nobreak\ {\footnotesize \NWlink{nuweb13c}{13c}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@    @\hbox{$\langle\,$Topological product of cells\nobreak\ {\footnotesize \NWlink{nuweb14a}{14a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@    model = [list(v) for v in vertices.keys()], cells@\\
 \mbox{}\verb@    return model@\\
 \mbox{}\verb@@{\NWsep}
@@ -677,7 +679,7 @@ The \texttt{larModelProduct} function takes as input a pair of LAR models and re
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -716,7 +718,7 @@ Another macro generates the cells of the topological product, represented as lis
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap20}
-\protect\makebox[0ex][r]{\NWtarget{nuweb13c}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Topological product of cells\nobreak\ {\footnotesize 13c}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb14a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Topological product of cells\nobreak\ {\footnotesize 14a}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@cells = [ [vertices[tuple(V[v] + W[w])] for v in c1 for w in c2]@\\
@@ -735,7 +737,7 @@ Another macro generates the cells of the topological product, represented as lis
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap21}
-\protect\makebox[0ex][r]{\NWtarget{nuweb14a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Test examples of Cartesian product\nobreak\ {\footnotesize 14a}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb14b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Test examples of Cartesian product\nobreak\ {\footnotesize 14b}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@if __name__ == "__main__":@\\
@@ -752,7 +754,7 @@ Another macro generates the cells of the topological product, represented as lis
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -765,12 +767,12 @@ Another macro generates the cells of the topological product, represented as lis
 In this section we assemble top-down the \texttt{largrid} module, by orderly listing the macros it is composed of. As might be expected, the present one is the module version corresponding to the current state of the system, i.e.~to a very initial state. Other functions will be added when needed, and the module translation in different languages (C/C++, Javascript, Haskell, OpenCL kernels) will be (hopefully soon) appended.
 %------------------------------------------------------------------
 \begin{flushleft} \small \label{scrap22}
-\protect\makebox[0ex][r]{\NWtarget{nuweb14b}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"lib/py/largrid.py"@\nobreak\ {\footnotesize 14b }$\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb14c}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"lib/py/largrid.py"@\nobreak\ {\footnotesize 14c }$\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@"""Module with functions for grid generation and Cartesian product"""@\\
 \mbox{}\verb@import collections@\\
-\mbox{}\verb@@\hbox{$\langle\,$Importing \texttt{simplexn} and \texttt{numpy} libraries\nobreak\ {\footnotesize \NWlink{nuweb16}{16}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Importing \texttt{simplexn} and \texttt{numpy} libraries\nobreak\ {\footnotesize \NWlink{nuweb17a}{17a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Generation of vertices of decompositions of 1D intervals\nobreak\ {\footnotesize \NWlink{nuweb4a}{4a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Generation of uniform 0D cellular complex\nobreak\ {\footnotesize \NWlink{nuweb3a}{3a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Generation of uniform 1D cellular complex\nobreak\ {\footnotesize \NWlink{nuweb3b}{3b}}$\,\rangle$}\verb@@\\
@@ -785,7 +787,7 @@ In this section we assemble top-down the \texttt{largrid} module, by orderly lis
 \mbox{}\verb@@\hbox{$\langle\,$Cartesian product of two lar models\nobreak\ {\footnotesize \NWlink{nuweb13a}{13a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@if __name__=="__main__":@\\
 \mbox{}\verb@   @\hbox{$\langle\,$Multidimensional visualisation examples\nobreak\ {\footnotesize \NWlink{nuweb12b}{12b}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@   @\hbox{$\langle\,$Test examples of Cartesian product\nobreak\ {\footnotesize \NWlink{nuweb14a}{14a}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@   @\hbox{$\langle\,$Test examples of Cartesian product\nobreak\ {\footnotesize \NWlink{nuweb14b}{14b}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
 \vspace{-2ex}
@@ -806,7 +808,7 @@ A possible unit test strategy is to create a directory for unit tests associated
 \protect\makebox[0ex][r]{\NWtarget{nuweb15a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Create directory and echo of creation\nobreak\ {\footnotesize 15a}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
-\mbox{}\verb@@\hbox{$\langle\,$Create directory from path\nobreak\ {\footnotesize \NWlink{nuweb17a}{17a}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Create directory from path\nobreak\ {\footnotesize \NWlink{nuweb17b}{17b}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@createDir('@@1\verb@')@\\
 \mbox{}\verb@print "'@@1\verb@' repository created"@\\
 \mbox{}\verb@@{\NWsep}
@@ -895,33 +897,33 @@ The list of macros follow.
 %-------------------------------------------------------------------------------
 
 {\small\begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item $\langle\,$Assembling grid skeletons\nobreak\ {\footnotesize \NWlink{nuweb10b}{10b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
+\item $\langle\,$Assembling grid skeletons\nobreak\ {\footnotesize \NWlink{nuweb10b}{10b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
 \item $\langle\,$Binary range examples\nobreak\ {\footnotesize \NWlink{nuweb9b}{9b}}$\,\rangle$ {\footnotesize {\NWtxtNoRef}.}
-\item $\langle\,$Cartesian product of two lar models\nobreak\ {\footnotesize \NWlink{nuweb13a}{13a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
+\item $\langle\,$Cartesian product of two lar models\nobreak\ {\footnotesize \NWlink{nuweb13a}{13a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
 \item $\langle\,$Cartesian product of vertices\nobreak\ {\footnotesize \NWlink{nuweb13b}{13b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb13a}{13a}.}
 \item $\langle\,$Create directory and echo of creation:\nobreak\ {\footnotesize ?}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb15b}{15b}.}
 \item $\langle\,$Create directory and echo of creation\nobreak\ {\footnotesize \NWlink{nuweb15a}{15a}}$\,\rangle$ {\footnotesize {\NWtxtNoRef}.}
-\item $\langle\,$Create directory from path\nobreak\ {\footnotesize \NWlink{nuweb17a}{17a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb15a}{15a}\NWlink{nuweb17b}{, 17b}.
+\item $\langle\,$Create directory from path\nobreak\ {\footnotesize \NWlink{nuweb17b}{17b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb15a}{15a}\NWlink{nuweb17c}{, 17c}.
 }
-\item $\langle\,$Enumeration of binary ranges of given order\nobreak\ {\footnotesize \NWlink{nuweb9a}{9a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
+\item $\langle\,$Enumeration of binary ranges of given order\nobreak\ {\footnotesize \NWlink{nuweb9a}{9a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
 \item $\langle\,$Example of cuboidal grid of dimensions $(2,3)$\nobreak\ {\footnotesize \NWlink{nuweb6b}{6b}}$\,\rangle$ {\footnotesize {\NWtxtNoRef}.}
-\item $\langle\,$Filtering binary ranges by order\nobreak\ {\footnotesize \NWlink{nuweb9c}{9c}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Generation of cellular complex of 0/1 dimension $d$\nobreak\ {\footnotesize \NWlink{nuweb3c}{3c}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Generation of grid cells\nobreak\ {\footnotesize \NWlink{nuweb7}{7}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Generation of grid vertices\nobreak\ {\footnotesize \NWlink{nuweb4b}{4b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Generation of uniform 0D cellular complex\nobreak\ {\footnotesize \NWlink{nuweb3a}{3a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Generation of uniform 1D cellular complex\nobreak\ {\footnotesize \NWlink{nuweb3b}{3b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Generation of vertices of decompositions of 1D intervals\nobreak\ {\footnotesize \NWlink{nuweb4a}{4a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}\NWlink{nuweb15d}{, 15d}.
+\item $\langle\,$Filtering binary ranges by order\nobreak\ {\footnotesize \NWlink{nuweb9c}{9c}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Generation of cellular complex of 0/1 dimension $d$\nobreak\ {\footnotesize \NWlink{nuweb3c}{3c}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Generation of grid cells\nobreak\ {\footnotesize \NWlink{nuweb7}{7}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Generation of grid vertices\nobreak\ {\footnotesize \NWlink{nuweb4b}{4b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Generation of uniform 0D cellular complex\nobreak\ {\footnotesize \NWlink{nuweb3a}{3a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Generation of uniform 1D cellular complex\nobreak\ {\footnotesize \NWlink{nuweb3b}{3b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Generation of vertices of decompositions of 1D intervals\nobreak\ {\footnotesize \NWlink{nuweb4a}{4a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}\NWlink{nuweb15d}{, 15d}.
 }
-\item $\langle\,$Importing \texttt{simplexn} and \texttt{numpy} libraries\nobreak\ {\footnotesize \NWlink{nuweb16}{16}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Multidimensional grid generation\nobreak\ {\footnotesize \NWlink{nuweb12a}{12a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
-\item $\langle\,$Multidimensional visualisation examples\nobreak\ {\footnotesize \NWlink{nuweb12b}{12b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
+\item $\langle\,$Importing \texttt{simplexn} and \texttt{numpy} libraries\nobreak\ {\footnotesize \NWlink{nuweb17a}{17a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Multidimensional grid generation\nobreak\ {\footnotesize \NWlink{nuweb12a}{12a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
+\item $\langle\,$Multidimensional visualisation examples\nobreak\ {\footnotesize \NWlink{nuweb12b}{12b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
 \item $\langle\,$Skeleton component examples\nobreak\ {\footnotesize \NWlink{nuweb10a}{10a}}$\,\rangle$ {\footnotesize {\NWtxtNoRef}.}
-\item $\langle\,$Test examples of Cartesian product\nobreak\ {\footnotesize \NWlink{nuweb14a}{14a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
+\item $\langle\,$Test examples of Cartesian product\nobreak\ {\footnotesize \NWlink{nuweb14b}{14b}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
 \item $\langle\,$Test example\nobreak\ {\footnotesize \NWlink{nuweb6a}{6a}}$\,\rangle$ {\footnotesize {\NWtxtNoRef}.}
-\item $\langle\,$Topological product of cells\nobreak\ {\footnotesize \NWlink{nuweb13c}{13c}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb13a}{13a}.}
+\item $\langle\,$Topological product of cells\nobreak\ {\footnotesize \NWlink{nuweb14a}{14a}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb13a}{13a}.}
 \item $\langle\,$Tracing the evaluation of expression ``\texttt{larCellProd([c1,c1])}''\nobreak\ {\footnotesize \NWlink{nuweb8}{8}}$\,\rangle$ {\footnotesize {\NWtxtNoRef}.}
-\item $\langle\,$Transformation from multindex to address in a linear array storage\nobreak\ {\footnotesize \NWlink{nuweb5}{5}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14b}{14b}.}
+\item $\langle\,$Transformation from multindex to address in a linear array storage\nobreak\ {\footnotesize \NWlink{nuweb5}{5}}$\,\rangle$ {\footnotesize {\NWtxtRefIn} \NWlink{nuweb14c}{14c}.}
 \end{list}}
 %-------------------------------------------------------------------------------
 
@@ -934,7 +936,7 @@ The list of macros follow.
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap28}
-\protect\makebox[0ex][r]{\NWtarget{nuweb16}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Importing \texttt{simplexn} and \texttt{numpy} libraries\nobreak\ {\footnotesize 16}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb17a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Importing \texttt{simplexn} and \texttt{numpy} libraries\nobreak\ {\footnotesize 17a}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@from simplexn import *@\\
@@ -944,7 +946,7 @@ The list of macros follow.
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb14b}{14b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb14c}{14c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -954,7 +956,7 @@ An useful utility will allow for the creation of a subdirectory from a \texttt{d
 %------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap29}
-\protect\makebox[0ex][r]{\NWtarget{nuweb17a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Create directory from path\nobreak\ {\footnotesize 17a}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb17b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Create directory from path\nobreak\ {\footnotesize 17b}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@import os@\\
@@ -966,7 +968,7 @@ An useful utility will allow for the creation of a subdirectory from a \texttt{d
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb15a}{15a}\NWlink{nuweb17b}{, 17b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb15a}{15a}\NWlink{nuweb17c}{, 17c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -976,10 +978,10 @@ It may be useful to define the repository(ies) for the unit tests associated to 
 %------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap30}
-\protect\makebox[0ex][r]{\NWtarget{nuweb17b}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"test/py/largrid-tests.py"@\nobreak\ {\footnotesize 17b }$\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb17c}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"test/py/largrid-tests.py"@\nobreak\ {\footnotesize 17c }$\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
-\mbox{}\verb@@\hbox{$\langle\,$Create directory from path\nobreak\ {\footnotesize \NWlink{nuweb17a}{17a}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Create directory from path\nobreak\ {\footnotesize \NWlink{nuweb17b}{17b}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@createDir('test/py/largrid/')@\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
