@@ -75,6 +75,7 @@ First we generate a 2D grid of squares by Cartesian product, and produce the bul
 %rand(10, 10)
 %
 
+%-------------------------------------------------------------------------------
 @d Generation of random image
 @{import scipy.misc, numpy
 from numpy.random import randint
@@ -93,11 +94,13 @@ for i in range(rowSize):
 					image_array[h,k] = 255
 scipy.misc.imsave('./outfile.png', image_array)
 @}
+%-------------------------------------------------------------------------------
 
 \paragraph{Generation of random artefacts upon the image}
 
 Then random noise is added to the previously generated image, in order to produce artifacts at the pixel scale. 
 
+%-------------------------------------------------------------------------------
 @d Generation of random artifacts
 @{noiseFraction = 0.1
 noiseQuantity = rows*columns*noiseFraction
@@ -109,17 +112,67 @@ while k < noiseQuantity:
 	k += 1
 scipy.misc.imsave('./outfile.png', image_array)
 @}
+%-------------------------------------------------------------------------------
 
 
 \section{Selection of an image segment}
 
-In this section we implement several image segmentation and selection of a segment methods. The first and simplest method is the selection of the portion of a binary image contained within a (mobile) image window.
+In this section we implement several methods for image segmentation and segment selection. The first and simplest method is the selection of the portion of a binary image contained within a (mobile) image window.
 
 \subsection{Selection of a test chain}
 
 Here we select the (white) sub-image contained in a given image window, and compute the coordinate representation of the test sub-image.
 
-\paragraph{}
+\paragraph{Image window}
+
+A window within a $d$-image is defined by $2\times d$ integer numbers or 2-multi-indices, corresponding to the window  \texttt{minPoint} (minimum indices) and to the window \texttt{maxPoint} (maximum indices).
+
+%-------------------------------------------------------------------------------
+@d Generation of multi-index window
+@{from pyplasm import *
+minPoint, maxPoint = (20,20), (40,30)
+indexRanges = zip(minPoint,maxPoint)
+window = CART([range(min,max) for min,max in indexRanges])
+@}
+%-------------------------------------------------------------------------------
+
+\paragraph{From window multi-indices to chain coordinates}
+
+%-------------------------------------------------------------------------------
+@d Window-to-chain mapping
+@{imageShape = [rows,columns]
+d = len(imageShape)
+weights = [PROD(imageShape[(k+1):]) for k in range(d-1)]+[1]
+imageCochain = image_array.reshape(PROD(imageShape))
+windowChain = [INNERPROD([index,weights]) for index in window]
+segmentChain = [cell for cell in windowChain if imageCochain[cell]==255]
+@}
+%-------------------------------------------------------------------------------
+
+\subsection{Extract segment chain from binary image}
+
+
+%-------------------------------------------------------------------------------
+@d Change chain color to grey
+@{for cell in segmentChain: imageCochain[cell] = 127
+image_array = imageCochain.reshape(imageShape)
+scipy.misc.imsave('./outfile.png', image_array)
+@}
+%-------------------------------------------------------------------------------
+
+
+
+\paragraph{Test example}
+
+%------------------------------------------------------------------
+@o test/py/morph/test01.py
+@{@< Generation of random image @>
+@< Generation of random artifacts @>
+@< Generation of multi-index window @>
+@< Window-to-chain mapping @>
+@< Change chain color to grey @>
+@}
+%------------------------------------------------------------------
 
 
 \bibliographystyle{amsalpha}

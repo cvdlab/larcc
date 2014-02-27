@@ -96,6 +96,7 @@ First we generate a 2D grid of squares by Cartesian product, and produce the bul
 %rand(10, 10)
 %
 
+%-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap1}
 \protect\makebox[0ex][r]{\NWtarget{nuweb2a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Generation of random image\nobreak\ {\footnotesize 2a}$\,\rangle\equiv$
@@ -122,14 +123,17 @@ First we generate a 2D grid of squares by Cartesian product, and produce the bul
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item {\NWtxtMacroNoRef}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb3d}{3d}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
+%-------------------------------------------------------------------------------
+
 \paragraph{Generation of random artefacts upon the image}
 
 Then random noise is added to the previously generated image, in order to produce artifacts at the pixel scale. 
 
+%-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap2}
 \protect\makebox[0ex][r]{\NWtarget{nuweb2b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Generation of random artifacts\nobreak\ {\footnotesize 2b}$\,\rangle\equiv$
@@ -149,19 +153,115 @@ Then random noise is added to the previously generated image, in order to produc
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item {\NWtxtMacroNoRef}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb3d}{3d}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
+%-------------------------------------------------------------------------------
+
+
 \section{Selection of an image segment}
 
-In this section we implement several image segmentation and selection of a segment methods. The first and simplest method is the selection of the portion of a binary image contained within a (mobile) image window.
+In this section we implement several methods for image segmentation and segment selection. The first and simplest method is the selection of the portion of a binary image contained within a (mobile) image window.
 
 \subsection{Selection of a test chain}
 
 Here we select the (white) sub-image contained in a given image window, and compute the coordinate representation of the test sub-image.
 
-\paragraph{}
+\paragraph{Image window}
+
+A window within a $d$-image is defined by $2\times d$ integer numbers or 2-multi-indices, corresponding to the window  \texttt{minPoint} (minimum indices) and to the window \texttt{maxPoint} (maximum indices).
+
+%-------------------------------------------------------------------------------
+\begin{flushleft} \small
+\begin{minipage}{\linewidth} \label{scrap3}
+\protect\makebox[0ex][r]{\NWtarget{nuweb3a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Generation of multi-index window\nobreak\ {\footnotesize 3a}$\,\rangle\equiv$
+\vspace{-1ex}
+\begin{list}{}{} \item
+\mbox{}\verb@from pyplasm import *@\\
+\mbox{}\verb@minPoint, maxPoint = (20,20), (40,30)@\\
+\mbox{}\verb@indexRanges = zip(minPoint,maxPoint)@\\
+\mbox{}\verb@window = CART([range(min,max) for min,max in indexRanges])@\\
+\mbox{}\verb@@{\NWsep}
+\end{list}
+\vspace{-1ex}
+\footnotesize\addtolength{\baselineskip}{-1ex}
+\begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
+\item \NWtxtMacroRefIn\ \NWlink{nuweb3d}{3d}.
+\end{list}
+\end{minipage}\\[4ex]
+\end{flushleft}
+%-------------------------------------------------------------------------------
+
+\paragraph{From window multi-indices to chain coordinates}
+
+%-------------------------------------------------------------------------------
+\begin{flushleft} \small
+\begin{minipage}{\linewidth} \label{scrap4}
+\protect\makebox[0ex][r]{\NWtarget{nuweb3b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Window-to-chain mapping\nobreak\ {\footnotesize 3b}$\,\rangle\equiv$
+\vspace{-1ex}
+\begin{list}{}{} \item
+\mbox{}\verb@imageShape = [rows,columns]@\\
+\mbox{}\verb@d = len(imageShape)@\\
+\mbox{}\verb@weights = [PROD(imageShape[(k+1):]) for k in range(d-1)]+[1]@\\
+\mbox{}\verb@imageCochain = image_array.reshape(PROD(imageShape))@\\
+\mbox{}\verb@windowChain = [INNERPROD([index,weights]) for index in window]@\\
+\mbox{}\verb@segmentChain = [cell for cell in windowChain if imageCochain[cell]==255]@\\
+\mbox{}\verb@@{\NWsep}
+\end{list}
+\vspace{-1ex}
+\footnotesize\addtolength{\baselineskip}{-1ex}
+\begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
+\item \NWtxtMacroRefIn\ \NWlink{nuweb3d}{3d}.
+\end{list}
+\end{minipage}\\[4ex]
+\end{flushleft}
+%-------------------------------------------------------------------------------
+
+\subsection{Extract segment chain from binary image}
+
+
+%-------------------------------------------------------------------------------
+\begin{flushleft} \small
+\begin{minipage}{\linewidth} \label{scrap5}
+\protect\makebox[0ex][r]{\NWtarget{nuweb3c}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Change chain color to grey\nobreak\ {\footnotesize 3c}$\,\rangle\equiv$
+\vspace{-1ex}
+\begin{list}{}{} \item
+\mbox{}\verb@for cell in segmentChain: imageCochain[cell] = 127@\\
+\mbox{}\verb@image_array = imageCochain.reshape(imageShape)@\\
+\mbox{}\verb@scipy.misc.imsave('./outfile.png', image_array)@\\
+\mbox{}\verb@@{\NWsep}
+\end{list}
+\vspace{-1ex}
+\footnotesize\addtolength{\baselineskip}{-1ex}
+\begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
+\item \NWtxtMacroRefIn\ \NWlink{nuweb3d}{3d}.
+\end{list}
+\end{minipage}\\[4ex]
+\end{flushleft}
+%-------------------------------------------------------------------------------
+
+
+
+\paragraph{Test example}
+
+%------------------------------------------------------------------
+\begin{flushleft} \small
+\begin{minipage}{\linewidth} \label{scrap6}
+\protect\makebox[0ex][r]{\NWtarget{nuweb3d}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"test/py/morph/test01.py"@\nobreak\ {\footnotesize 3d }$\equiv$
+\vspace{-1ex}
+\begin{list}{}{} \item
+\mbox{}\verb@@\hbox{$\langle\,$Generation of random image\nobreak\ {\footnotesize \NWlink{nuweb2a}{2a}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Generation of random artifacts\nobreak\ {\footnotesize \NWlink{nuweb2b}{2b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Generation of multi-index window\nobreak\ {\footnotesize \NWlink{nuweb3a}{3a}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Window-to-chain mapping\nobreak\ {\footnotesize \NWlink{nuweb3b}{3b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Change chain color to grey\nobreak\ {\footnotesize \NWlink{nuweb3c}{3c}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@{\NWsep}
+\end{list}
+\vspace{-2ex}
+\end{minipage}\\[4ex]
+\end{flushleft}
+%------------------------------------------------------------------
 
 
 \bibliographystyle{amsalpha}
