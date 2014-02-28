@@ -445,6 +445,64 @@ VIEW(EXPLODE(1.5,1.5,1.5)(MKPOLS(larCuboids([3,2,1],True))))
    \label{fig:grid23D}
 \end{figure}
 
+
+\subsection{Chain of boundary operators}
+
+As we know, a \emph{chain complex} is a sequence of (linear) chain spaces $C_k$ ($d\geq k\geq 0$) and a sequence
+of boundary operators $\partial_k: C_k \to C_{k-1}$ ($d\geq k\geq 1$) between adjacent spaces (see Figure~\ref{fig:chainComplexMap}). In this section, we aim to generate the sequence of boundary matrices \texttt{CSR($[\partial_k]$)} ($1\leq k\leq d$).
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\linewidth]{images/chainComplexMap} 
+   \caption{Chain and cochain complexes.}
+   \label{fig:chainComplexMap}
+\end{figure}
+
+\paragraph{Cuboidal skeletons}
+A list of \texttt{BRC} characteristic matrices of cellular $k$-complexes ($0\leq k\leq d$) with dimension $d$, where $d={}$\texttt{len(shape)}, is returned by the function \texttt{gridSkeletons} in the macro below, where the input is given by the \emph{shape} of the grid, i.e.~by the list of cell items in each coordinate direction. Some simple test examples of skeletons of cuboidal complexes are also printed when the \texttt{largrid} module run as the \texttt{main}. Just notice that the number of returned $d$-cells is equal to \texttt{PROD(shape)}.
+
+%-------------------------------------------------------------------------------
+@D Multidimensional grid skeletons
+@{def gridSkeletons(shape):
+	gridMap = larGridSkeleton(shape)
+	skeletonIds = range(len(shape)+1)
+	skeletons = [ gridMap(id) for id in skeletonIds ]
+	return skeletons
+	
+if __name__=="__main__":
+	print "\ngridSkeletons([3]) =\n", gridSkeletons([3])
+	print "\ngridSkeletons([3,2]) =\n", gridSkeletons([3,2])
+	print "\ngridSkeletons([3,2,1]) =\n", gridSkeletons([3,2,1])
+@}
+%-------------------------------------------------------------------------------
+
+\paragraph{Boundary complex of a cuboidal grid}
+The list of boundary matrices \texttt{CSR($[\partial_k]$)} ($1\leq k\leq d$) is returned by the function
+\texttt{gridBoundaryMatrices}.
+
+%-------------------------------------------------------------------------------
+@D Generation of grid boundary complex
+@{def gridBoundaryMatrices(shape):
+	skeletons = gridSkeletons(shape)
+	boundaryMatrices = [boundary(skeletons[k+1],facets) 
+						 for k,facets in enumerate(skeletons[:-1])]
+	return boundaryMatrices
+	
+if __name__=="__main__":
+	for k in range(1):
+		print "\ngridBoundaryMatrices([3]) =\n", \
+				csr2DenseMatrix(gridBoundaryMatrices([3])[k])
+	for k in range(2):
+		print "\ngridBoundaryMatrices([3,2]) =\n", \
+				csr2DenseMatrix(gridBoundaryMatrices([3,2])[k])
+	for k in range(3):
+		print "\ngridBoundaryMatrices([3,2,1]) =\n", \
+				csr2DenseMatrix(gridBoundaryMatrices([3,2,1])[k])
+@}
+%-------------------------------------------------------------------------------
+
+
+
 \section{Cartesian product of cellular complexes}
 \label{sec:product}
 
@@ -515,6 +573,7 @@ In this section we assemble top-down the \texttt{largrid} module, by orderly lis
 @{"""Module with functions for grid generation and Cartesian product"""
 import collections
 @< Importing \texttt{simplexn} and \texttt{numpy} libraries @>
+@< Import the module @(larcc@) @>
 @< Generation of vertices of decompositions of 1D intervals  @>
 @< Generation of uniform 0D cellular complex  @>
 @< Generation of uniform 1D cellular complex  @>
@@ -526,6 +585,8 @@ import collections
 @< Filtering binary ranges by order @>
 @< Assembling grid skeletons @>
 @< Multidimensional grid generation @>
+@< Multidimensional grid skeletons @>
+@< Generation of grid boundary complex @>
 @< Cartesian product of two lar models   @>
 if __name__=="__main__":
 	@< Multidimensional visualisation examples @>
@@ -627,6 +688,26 @@ It may be useful to define the repository(ies) for the unit tests associated to 
 createDir('test/py/largrid/')
 @}
 %------------------------------------------------------------------
+
+\subsection{Importing a generic module}
+First we define a parametric macro to allow the importing of \texttt{larcc} modules from the project repository \texttt{lib/py/}. When the user needs to import some project's module, she may call this macro as done in Section~\ref{sec:lar2psm}.
+%------------------------------------------------------------------
+@d Import the module
+@{import sys
+sys.path.insert(0, 'lib/py/')
+import @1
+from @1 import *
+@}
+%------------------------------------------------------------------
+
+\paragraph{Importing a module} A function used to import a generic \texttt{lacccc} module within the current environment is also useful.
+%------------------------------------------------------------------
+@d Function to import a generic module
+@{def importModule(moduleName):
+	@< Import the module @(moduleName@) @>
+@| importModule @}
+%------------------------------------------------------------------
+
 
 
 

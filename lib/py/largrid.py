@@ -3,6 +3,11 @@ import collections
 from simplexn import *
 import numpy as np
 
+import sys
+sys.path.insert(0, 'lib/py/')
+import larcc
+from larcc import *
+
 def larSplit(dom):
     def larSplit1(n):
         assert n > 0 and type(n) == int
@@ -76,6 +81,34 @@ def larCuboids(shape, full=False):
       skeletonIds = range(len(shape)+1)
       cells = CAT([ gridMap(id) for id in skeletonIds ])
    return vertGrid, cells
+
+def gridSkeletons(shape):
+   gridMap = larGridSkeleton(shape)
+   skeletonIds = range(len(shape)+1)
+   skeletons = [ gridMap(id) for id in skeletonIds ]
+   return skeletons
+   
+if __name__=="__main__":
+   print "\ngridSkeletons([3]) =\n", gridSkeletons([3])
+   print "\ngridSkeletons([3,2]) =\n", gridSkeletons([3,2])
+   print "\ngridSkeletons([3,2,1]) =\n", gridSkeletons([3,2,1])
+
+def gridBoundaryMatrices(shape):
+   skeletons = gridSkeletons(shape)
+   boundaryMatrices = [boundary(skeletons[k+1],facets) 
+                   for k,facets in enumerate(skeletons[:-1])]
+   return boundaryMatrices
+   
+if __name__=="__main__":
+   for k in range(1):
+      print "\ngridBoundaryMatrices([3]) =\n", \
+            csr2DenseMatrix(gridBoundaryMatrices([3])[k])
+   for k in range(2):
+      print "\ngridBoundaryMatrices([3,2]) =\n", \
+            csr2DenseMatrix(gridBoundaryMatrices([3,2])[k])
+   for k in range(3):
+      print "\ngridBoundaryMatrices([3,2,1]) =\n", \
+            csr2DenseMatrix(gridBoundaryMatrices([3,2,1])[k])
 
 def larModelProduct(twoModels):
     (V, cells1), (W, cells2) = twoModels

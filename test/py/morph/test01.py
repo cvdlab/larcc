@@ -1,3 +1,8 @@
+import sys
+sys.path.insert(0, 'lib/py/')
+import largrid
+from largrid import *
+
 import scipy.misc, numpy
 from numpy.random import randint
 rows, columns = 100,100
@@ -40,4 +45,15 @@ segmentChain = [cell for cell in windowChain if imageCochain[cell]==255]
 for cell in segmentChain: imageCochain[cell] = 127
 image_array = imageCochain.reshape(imageShape)
 scipy.misc.imsave('./outfile.png', image_array)
+
+def visImageChain (imageShape,chain):
+   model = larCuboids(imageShape)
+   imageVerts = model[0]
+   imageLAR = model[1]
+   chainLAR = [cell for k,cell in enumerate(imageLAR) if k in chain]
+   return imageVerts,chainLAR
+   
+if __name__== "__main__":
+   model = visImageChain (imageShape,segmentChain)
+   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
 
