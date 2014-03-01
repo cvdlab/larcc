@@ -10,10 +10,10 @@ sys.path.insert(0, 'lib/py/')
 import largrid
 from largrid import *
 
+
 import morph
 from morph import *
  
-
 rows, columns = 100,100
 rowSize, columnSize = 10,10
 shape = (rows, columns)
@@ -23,8 +23,7 @@ minPoint, maxPoint = (20,20), (40,30)
 window = minPoint, maxPoint
 segmentChain = setMaskWindow(window,image_array)
    
-if __name__== "__main__":
-   model = visImageChain (shape,segmentChain)
-   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
-   model = visImageChainBoundary (shape,segmentChain)
-   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
+solid = visImageChain (shape,segmentChain)
+VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(solid)))
+b_rep = imageChainBoundary(shape)(2)(segmentChain)
+VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(b_rep)))

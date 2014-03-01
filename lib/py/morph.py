@@ -11,9 +11,6 @@ sys.path.insert(0, 'lib/py/')
 import largrid
 from largrid import *
 
-import morph
-from morph import *
- 
 
 def randomImage(shape, structure, noiseFraction=0.1):
    """ Generation of random image of given shape and structure. 
@@ -43,16 +40,23 @@ def randomImage(shape, structure, noiseFraction=0.1):
    
    return image_array
 
+def mapTupleToInt(shape):
+   d = len(shape)
+   weights = [PROD(shape[(k+1):]) for k in range(d-1)]+[1]
+   
+   def mapTupleToInt0(tuple):
+      return INNERPROD([tuple,weights])
+   return mapTupleToInt0
+
 def setMaskWindow(window,image_array):
    minPoint, maxPoint = window
    imageShape = list(image_array.shape)
    indexRanges = zip(minPoint,maxPoint)
    tuples = CART([range(min,max) for min,max in indexRanges])
    
-   d = len(imageShape)
-   weights = [PROD(imageShape[(k+1):]) for k in range(d-1)]+[1]
    imageCochain = image_array.reshape(PROD(imageShape))
-   windowChain = [INNERPROD([index,weights]) for index in tuples]
+   mapping = mapTupleToInt(imageShape)
+   windowChain = [mapping(tuple) for tuple in tuples]
    segmentChain = [cell for cell in windowChain if imageCochain[cell]==255]
    
    for cell in segmentChain: imageCochain[cell] = 127
@@ -61,28 +65,44 @@ def setMaskWindow(window,image_array):
    
    return segmentChain
 
+def larImage(shape):
+   """ Compute vertices and skeletons of an image of given shape """
+   imageVerts,_ = larCuboids(list(shape))
+   skeletons = gridSkeletons(list(shape))
+   return imageVerts, skeletons
+
+def boundaryOps(skeletons):
+   """ CSR matrices of boundary operators from list of skeletons """
+   return [boundary(skeletons[k+1],faces) 
+      for k,faces in enumerate(skeletons[:-1])]
+
 def visImageChain (shape,chain):
-   imageShape = list(shape)
-   model = larCuboids(imageShape)
-   imageVerts = model[0]
-   imageLAR = model[1]
-   chainLAR = [cell for k,cell in enumerate(imageLAR) if k in chain]
+   imageVerts, skeletons = larImage(shape)
+   chainLAR = [cell for k,cell in enumerate(skeletons[-1]) if k in chain]
    return imageVerts,chainLAR
 
-def visImageChainBoundary (shape,chain):
-   imageShape = list(shape)
-   model = larCuboids(imageShape)
-   imageVerts = model[0]
-   skeletons = gridSkeletons(imageShape)
-   facets = skeletons[-2]
-   csrBoundaryMat = gridBoundaryMatrices(imageShape)[-1]
-   csrChain = scipy.sparse.csr_matrix((PROD(imageShape),1))
-   for k in chain: csrChain[k,0] = 1
-   csrBoundaryChain = matrixProduct(csrBoundaryMat, csrChain)
-   for k,value in enumerate(csrBoundaryChain.data):
-      if MOD([value,2]) == 0: csrBoundaryChain.data[k] = 0
-   cooBoundaryChain = csrBoundaryChain.tocoo()
-   boundaryCells = [cooBoundaryChain.row[k] 
-      for k,val in enumerate(cooBoundaryChain.data) if val == 1]
-   return imageVerts,[facets[k] for k in boundaryCells]
+def imageChainBoundary(shape):
+   imageVerts, skeletons = larImage(shape)
+   operators = boundaryOps(skeletons)
+   cellNumber = PROD(list(shape))
+   
+   def imageChainBoundary0(k):
+      csrBoundaryMat = operators[-1]
+      facets = skeletons[k-1]
+      
+      def imageChainBoundary1(chain):
+         csrChain = scipy.sparse.csr_matrix((cellNumber,1))
+         for h in chain: csrChain[h,0] = 1
+         csrBoundaryChain = matrixProduct(csrBoundaryMat, csrChain)
+         for h,value in enumerate(csrBoundaryChain.data):
+            if MOD([value,2]) == 0: csrBoundaryChain.data[h] = 0
+         cooBoundaryChain = csrBoundaryChain.tocoo()
+         boundaryCells = [cooBoundaryChain.row[h] 
+            for h,val in enumerate(cooBoundaryChain.data) if val == 1]
+         
+         boundaryChainModel = imageVerts, [facets[h] for h in boundaryCells]     
+         return boundaryChainModel
+      
+      return imageChainBoundary1
+   return imageChainBoundary0
 

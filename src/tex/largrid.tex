@@ -484,8 +484,8 @@ The list of boundary matrices \texttt{CSR($[\partial_k]$)} ($1\leq k\leq d$) is 
 @D Generation of grid boundary complex
 @{def gridBoundaryMatrices(shape):
 	skeletons = gridSkeletons(shape)
-	boundaryMatrices = [boundary(skeletons[k+1],facets) 
-						 for k,facets in enumerate(skeletons[:-1])]
+	boundaryMatrices = [boundary(skeletons[k+1],faces) 
+						 for k,faces in enumerate(skeletons[:-1])]
 	return boundaryMatrices
 	
 if __name__=="__main__":

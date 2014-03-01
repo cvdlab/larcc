@@ -198,16 +198,32 @@ where
 w_k = n_{k+1}  n_{k+2} \cdots  n_{d-1}, \qquad 0\leq k\leq d-2.
 \]
 
+\paragraph{Implementation}
+A functional implementation of the \emph{Tuples to integers mapping} is given by the second-order  \texttt{mapTupleToInt} function, that  accepts in a first application the \texttt{shape} of the image (to compute the tuple space of indices of $d$-cells), and then takes a single tuple in the second application. Of course, the function  returns the cell address in the linear address space associated to the given \texttt{shape}.
+
+%-------------------------------------------------------------------------------
+@d Tuples to integers mapping
+@{def mapTupleToInt(shape):
+	d = len(shape)
+	weights = [PROD(shape[(k+1):]) for k in range(d-1)]+[1]
+	
+	def mapTupleToInt0(tuple):
+		return INNERPROD([tuple,weights])
+	return mapTupleToInt0
+@}
+%-------------------------------------------------------------------------------
+
+
 \paragraph{From tuples multi-indices to chain coordinates}
 
-The set of \texttt{tuples} of all pixels (or $d$-dimensional image elements) within the \emph{mask} is here mapped to the corresponding set of (single) integers associated to the low-level image elements (pixels or voxels, depending on the image dimension and shape), denoted \texttt{windowChain}. Such total chain of the mask \texttt{window} is then filtered to contain the only coordinates of \emph{white} image elements within the window, and returned as the set of integer cell indices \texttt{segmentChain}.
+The set of address \texttt{tuples} of $d-cells$ ($d$-dimensional image elements) within the \emph{mask} is here mapped to the corresponding set of (single) integers associated to the low-level image elements (pixels or voxels, depending on the image dimension and shape), denoted \texttt{windowChain}. Such total chain of the mask \texttt{window} is then filtered to contain the only coordinates of \emph{white} image elements within the window, and returned as the set of integer cell indices \texttt{segmentChain}.
+
 
 %-------------------------------------------------------------------------------
 @d Window-to-chain mapping
-@{d = len(imageShape)
-weights = [PROD(imageShape[(k+1):]) for k in range(d-1)]+[1]
-imageCochain = image_array.reshape(PROD(imageShape))
-windowChain = [INNERPROD([index,weights]) for index in tuples]
+@{imageCochain = image_array.reshape(PROD(imageShape))
+mapping = mapTupleToInt(imageShape)
+windowChain = [mapping(tuple) for tuple in tuples]
 segmentChain = [cell for cell in windowChain if imageCochain[cell]==255]
 @}
 %-------------------------------------------------------------------------------
@@ -229,48 +245,134 @@ scipy.misc.imsave('./outfile.png', image_array)
 
 A $d$-image is a \emph{cellular $d$-complex} where cells are $k$-cuboids ($0\leq k\leq d$), i.e.~Cartesian products of a number $k$ of 1D intervals, embedded in $d$-dimensional Euclidean space. 
 
-A direct construction of cuboidal complexes is offered in \texttt{larcc} by the \texttt{largrid} module. 
-The \texttt{visImageChain} function given by the macro \emph{Visualisation of an image chain} below. 
+\subsection{LAR chain complex construction}
+
+In our first multidimensional implementation of morphologic operators through algebraic topology of the image seen as a cellular complex, we compute the whole sequence of characteristic matrices $M_k$ ($0\leq k \leq d$) in \texttt{BRC} form, and the whole sequence of matrices $[\partial_k]$ ($0\leq k \leq d$) in \texttt{CSR} form.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.7\linewidth]{images/larcomplex} 
+   \caption{The LAR definition of  a chain complex: a sequence of characteristic matrices \emph{and} a sequence of boundary operators.}
+   \label{fig:example}
+\end{figure}
+
+\paragraph{Array of characteristic matrices}
+
+A direct construction of cuboidal complexes is offered, within the \texttt{larcc} package, by the \texttt{largrid.larCuboids} function. 
+
+%-------------------------------------------------------------------------------
+@d Characteristic matrices of multidimensional image
+@{def larImage(shape):
+	""" Compute vertices and skeletons of an image of given shape """
+	imageVerts,_ = larCuboids(list(shape))
+	skeletons = gridSkeletons(list(shape))
+	return imageVerts, skeletons
+@}
+%-------------------------------------------------------------------------------
+
+\paragraph{Example}
+Consider a (very!) small 3D image of \texttt{shape=(2,2,2)}. The data structures returned by the \texttt{larImage} function are shown below, where \texttt{imageVerts} gives the integer coordinates of vertices of the 3D (image) complex, and \texttt{skeletons} is the list of characteristic matrices $M_k$ ($0\leq k\leq d$) in \texttt{BRC} form.
+
+%-------------------------------------------------------------------------------
+@d Example of characteristic matrices (and vertices) of multidimensional image
+@{imageVerts, skeletons = larImage((2,2,2))
+
+print imageVerts,
+>>> [[0,0,0],[0,0,1],[0,0,2],[0,1,0],[0,1,1],[0,1,2],[0,2,0],[0,2,1],[0,2,2],
+[1,0,0],[1,0,1],[1,0,2],[1,1,0],[1,1,1],[1,1,2],[1,2,0],[1,2,1],[1,2,2],[2,0,
+0],[2,0,1],[2,0,2],[2,1,0],[2,1,1],[2,1,2],[2,2,0],[2,2,1],[2,2,2]]
+
+print skeletons[1:],
+>>> [
+[[0,1],[1,2],[3,4],[4,5],[6,7],[7,8],[9,10],[10,11],[12,13],[13,14],[15,
+16],[16,17],[18,19],[19,20],[21,22],[22,23],[24,25],[25,26],[0,3],[1,4],[2,
+5],[3,6],[4,7],[5,8],[9,12],[10,13],[11,14],[12,15],[13,16],[14,17],[18,21],
+[19,22],[20,23],[21,24],[22,25],[23,26],[0,9],[1,10],[2,11],[3,12],[4,13],[5,
+14],[6,15],[7,16],[8,17],[9,18],[10,19],[11,20],[12,21],[13,22],[14,23],[15,
+24],[16,25],[17,26]],
+[[0,1,3,4],[1,2,4,5],[3,4,6,7],[4,5,7,8],[9,10,12,13],[10,11,13,14],[12,13,15,
+16],[13,14,16,17],[18,19,21,22],[19,20,22,23],[21,22,24,25],[22,23,25,26],[0,
+1,9,10],[1,2,10,11],[3,4,12,13],[4,5,13,14],[6,7,15,16],[7,8,16,17],[9,10,18,
+19],[10,11,19,20],[12,13,21,22],[13,14,22,23],[15,16,24,25],[16,17,25,26],[0,
+3,9,12],[1,4,10,13],[2,5,11,14],[3,6,12,15],[4,7,13,16],[5,8,14,17],[9,12,18,
+21],[10,13,19,22],[11,14,20,23],[12,15,21,24],[13,16,22,25],[14,17,23,26]],
+[[0,1,3,4,9,10,12,13],[1,2,4,5,10,11,13,14],[3,4,6,7,12,13,15,16],[4,5,7,8,13,
+14,16,17],[9,10,12,13,18,19,21,22],[10,11,13,14,19,20,22,23],[12,13,15,16,21,
+22,24,25],[13,14,16,17,22,23,25,26]]
+]
+@}
+%-------------------------------------------------------------------------------
 
 
-\subsection{Visualisation of an image chain}
+\paragraph{Array of matrices of boundary operators}
+
+The function \texttt{boundaryOps} takes the array of \texttt{BRC} reprs of characteristic matrices, and returns the array of \texttt{CSR} matrix reprs of boundary operators $\partial_k$ ($1\leq k\leq d$).
+
+%-------------------------------------------------------------------------------
+@d CSR matrices of boundary operators
+@{def boundaryOps(skeletons):
+	""" CSR matrices of boundary operators from list of skeletons """
+	return [boundary(skeletons[k+1],faces) 
+		for k,faces in enumerate(skeletons[:-1])]
+@}
+%-------------------------------------------------------------------------------
+
+
+\paragraph{Boundary chain of a $k$-chain of a $d$-image}
+
+%-------------------------------------------------------------------------------
+@d Boundary of image chain computation
+@{def imageChainBoundary(shape):
+	imageVerts, skeletons = larImage(shape)
+	operators = boundaryOps(skeletons)
+	cellNumber = PROD(list(shape))
+	
+	def imageChainBoundary0(k):
+		csrBoundaryMat = operators[-1]
+		facets = skeletons[k-1]
+		
+		def imageChainBoundary1(chain):
+			@< Boundary*chain product and interpretation @>
+			boundaryChainModel = imageVerts, [facets[h] for h in boundaryCells]		
+			return boundaryChainModel
+		
+		return imageChainBoundary1
+	return imageChainBoundary0
+@}
+%-------------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------
+@d Boundary*chain product and interpretation
+@{csrChain = scipy.sparse.csr_matrix((cellNumber,1))
+for h in chain: csrChain[h,0] = 1
+csrBoundaryChain = matrixProduct(csrBoundaryMat, csrChain)
+for h,value in enumerate(csrBoundaryChain.data):
+	if MOD([value,2]) == 0: csrBoundaryChain.data[h] = 0
+cooBoundaryChain = csrBoundaryChain.tocoo()
+boundaryCells = [cooBoundaryChain.row[h] 
+	for h,val in enumerate(cooBoundaryChain.data) if val == 1]
+@}
+%-------------------------------------------------------------------------------
+
+
+\subsection{Visualisation of an image chain and its boundary}
+
 
 \paragraph{$d$-Chain visualisation}
+
+The \texttt{visImageChain} function given by the macro \emph{Visualisation of an image chain} below. 
 
 %-------------------------------------------------------------------------------
 @d Pyplasm visualisation of an image chain
 @{def visImageChain (shape,chain):
-	imageShape = list(shape)
-	model = larCuboids(imageShape)
-	imageVerts = model[0]
-	imageLAR = model[1]
-	chainLAR = [cell for k,cell in enumerate(imageLAR) if k in chain]
+	imageVerts, skeletons = larImage(shape)
+	chainLAR = [cell for k,cell in enumerate(skeletons[-1]) if k in chain]
 	return imageVerts,chainLAR
 @}
 %-------------------------------------------------------------------------------
 
-\paragraph{Boundary visualisation of a $d$-chain}
-
-%-------------------------------------------------------------------------------
-@d Boundary visualisation of an image chain
-@{def visImageChainBoundary (shape,chain):
-	imageShape = list(shape)
-	model = larCuboids(imageShape)
-	imageVerts = model[0]
-	skeletons = gridSkeletons(imageShape)
-	facets = skeletons[-2]
-	csrBoundaryMat = gridBoundaryMatrices(imageShape)[-1]
-	csrChain = scipy.sparse.csr_matrix((PROD(imageShape),1))
-	for k in chain: csrChain[k,0] = 1
-	csrBoundaryChain = matrixProduct(csrBoundaryMat, csrChain)
-	for k,value in enumerate(csrBoundaryChain.data):
-		if MOD([value,2]) == 0: csrBoundaryChain.data[k] = 0
-	cooBoundaryChain = csrBoundaryChain.tocoo()
-	boundaryCells = [cooBoundaryChain.row[k] 
-		for k,val in enumerate(cooBoundaryChain.data) if val == 1]
-	return imageVerts,[facets[k] for k in boundaryCells]
-@}
-%-------------------------------------------------------------------------------
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -293,11 +395,16 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 @{""" LAR implementation of morphological operators on multidimensional images."""
 @< Initial import of modules @>
 @< Generation of random image @>
+@< Tuples to integers mapping @>
 @< Generation of a masking window @>
+@< Characteristic matrices of multidimensional image @>
+@< CSR matrices of boundary operators @>
 @< Pyplasm visualisation of an image chain @>
-@< Boundary visualisation of an image chain @>
+@< Boundary of image chain computation @>
 @}
 %-------------------------------------------------------------------------------
+
+The set of importing commends needed by test files in this module is given in the macro below.
 
 %-------------------------------------------------------------------------------
 @d Initial import of modules
@@ -311,7 +418,6 @@ import sys
 sys.path.insert(0, 'lib/py/')
 
 @< Import the module @(largrid@) @>
-@< Import the module @(morph@) @> 
 @}
 %-------------------------------------------------------------------------------
 
@@ -327,6 +433,7 @@ The \texttt{larcc.morph} API is used here to generate a random black and white i
 %------------------------------------------------------------------
 @o test/py/morph/test01.py
 @{@< Initial import of modules @>
+@< Import the module @(morph@) @> 
 rows, columns = 100,100
 rowSize, columnSize = 10,10
 shape = (rows, columns)
@@ -336,11 +443,10 @@ minPoint, maxPoint = (20,20), (40,30)
 window = minPoint, maxPoint
 segmentChain = setMaskWindow(window,image_array)
 	
-if __name__== "__main__":
-	model = visImageChain (shape,segmentChain)
-	VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
-	model = visImageChainBoundary (shape,segmentChain)
-	VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
+solid = visImageChain (shape,segmentChain)
+VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(solid)))
+b_rep = imageChainBoundary(shape)(2)(segmentChain)
+VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(b_rep)))
 @}
 %------------------------------------------------------------------
 
