@@ -29,6 +29,11 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 
+\usepackage{framed}
+\usepackage{amsthm}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
 %----macros begin---------------------------------------------------------------
 \usepackage{color}
 \usepackage{amsthm}
@@ -107,7 +112,7 @@ A multidimensional binary image is generated here by using a random approach, bo
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb6a}{6a}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb7a}{7a}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -204,20 +209,22 @@ A \emph{window} within a $d$-image is defined by $2\times d$ integer numbers (2 
 \mbox{}\verb@   minPoint, maxPoint = window@\\
 \mbox{}\verb@   imageShape = list(image_array.shape)@\\
 \mbox{}\verb@   @\hbox{$\langle\,$Generation of multi-index window\nobreak\ {\footnotesize \NWlink{nuweb3b}{3b}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@   @\hbox{$\langle\,$Window-to-chain mapping\nobreak\ {\footnotesize \NWlink{nuweb4a}{4a}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@   @\hbox{$\langle\,$Change chain color to grey\nobreak\ {\footnotesize \NWlink{nuweb4b}{4b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@   @\hbox{$\langle\,$Window-to-chain mapping\nobreak\ {\footnotesize \NWlink{nuweb4}{4}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@   @\hbox{$\langle\,$Change chain color to grey\nobreak\ {\footnotesize \NWlink{nuweb5a}{5a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@   return segmentChain@\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb6a}{6a}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb7a}{7a}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
 %-------------------------------------------------------------------------------
 
+The set of tuples of indices contained in a (multidimensional) window is given below.
+ 
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap5}
@@ -237,6 +244,41 @@ A \emph{window} within a $d$-image is defined by $2\times d$ integer numbers (2 
 \end{flushleft}
 %-------------------------------------------------------------------------------
 
+
+
+\subsection{Mapping of integer tuples to integers}
+
+In order to produce the coordinate representation of a chain in a multidimensional image (or $d$-image) we need: (a) to choose a basis of image elements, i.e.~of $d$-cells, and in particular to fix an ordering of them; (b) to map the multidimensional index, selecting a single $d$-cell of the image, to a single integer mapping the cell to its linear position within the chosen basis ordering. 
+
+
+\paragraph{Grid of hyper-cubes of unit size}
+Let $S_i=(0,1,...,n_i-1)$ be ordered integer sets with $n_i$ elements, and 
+\[
+S= S_0 \times S_1 \times \cdots \times S_{d-1}
+\] 
+the set of indices of elements of a $d$-image.
+
+\begin{definition}[$d$-image shape]
+The \emph{shape} of a $d$-image with $n_0\times n_1 \times\cdots\times n_{d-1}$ elements (here called \emph{voxels}) is the ordered set $(n_0, n_1, \ldots, n_{d-1})$.
+\end{definition}
+
+
+\paragraph{$d$-dimensional row-major order}
+
+Given a $d$-image with shape $S=(n_0,n_1,...,n_{d-1})$ and number of elements $n=\prod n_i$, 
+the mapping  
+\[
+S_0 \times S_1 \times \cdots \times S_{d-1} \to \{ 0, 1, \ldots, n-1\}
+\]
+ is a {linear combination} with integer {weights}  $(w_0,w_1,...,w_{d-2},1)$, such that:
+\[
+(i_0,i_1,...,i_{d-1}) \mapsto i_0 w_0 +i_1 w_1 +\cdots +i_{d-1} w_{d-1},
+\]
+where 
+\[
+w_k = n_{k+1}  n_{k+2} \cdots  n_{d-1}, \qquad 0\leq k\leq d-2.
+\]
+
 \paragraph{From tuples multi-indices to chain coordinates}
 
 The set of \texttt{tuples} of all pixels (or $d$-dimensional image elements) within the \emph{mask} is here mapped to the corresponding set of (single) integers associated to the low-level image elements (pixels or voxels, depending on the image dimension and shape), denoted \texttt{windowChain}. Such total chain of the mask \texttt{window} is then filtered to contain the only coordinates of \emph{white} image elements within the window, and returned as the set of integer cell indices \texttt{segmentChain}.
@@ -244,7 +286,7 @@ The set of \texttt{tuples} of all pixels (or $d$-dimensional image elements) wit
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap6}
-\protect\makebox[0ex][r]{\NWtarget{nuweb4a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Window-to-chain mapping\nobreak\ {\footnotesize 4a}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb4}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Window-to-chain mapping\nobreak\ {\footnotesize 4}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@d = len(imageShape)@\\
@@ -270,7 +312,7 @@ Now we need to show visually the selected \texttt{segmentChain}, by change the c
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap7}
-\protect\makebox[0ex][r]{\NWtarget{nuweb4b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Change chain color to grey\nobreak\ {\footnotesize 4b}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb5a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Change chain color to grey\nobreak\ {\footnotesize 5a}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@for cell in segmentChain: imageCochain[cell] = 127@\\
@@ -288,38 +330,6 @@ Now we need to show visually the selected \texttt{segmentChain}, by change the c
 %-------------------------------------------------------------------------------
 
 
-\paragraph{Test example}
-
-The macros previously defined are here composed to generate a random black and white image, with a \emph{image segment} (in a fixed position window within the image) extracted, colored in middle grey, and exported to an image file.  
-
-%------------------------------------------------------------------
-\begin{flushleft} \small
-\begin{minipage}{\linewidth} \label{scrap8}
-\protect\makebox[0ex][r]{\NWtarget{nuweb4c}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"test/py/morph/test01.py"@\nobreak\ {\footnotesize 4c }$\equiv$
-\vspace{-1ex}
-\begin{list}{}{} \item
-\mbox{}\verb@@\hbox{$\langle\,$Initial import of modules\nobreak\ {\footnotesize \NWlink{nuweb6b}{6b}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@rows, columns = 100,100@\\
-\mbox{}\verb@rowSize, columnSize = 10,10@\\
-\mbox{}\verb@shape = (rows, columns)@\\
-\mbox{}\verb@structure = (rowSize, columnSize)@\\
-\mbox{}\verb@image_array = randomImage(shape, structure, 0.3)@\\
-\mbox{}\verb@minPoint, maxPoint = (20,20), (40,30)@\\
-\mbox{}\verb@window = minPoint, maxPoint@\\
-\mbox{}\verb@segmentChain = setMaskWindow(window,image_array)@\\
-\mbox{}\verb@   @\\
-\mbox{}\verb@if __name__== "__main__":@\\
-\mbox{}\verb@   model = visImageChain (shape,segmentChain)@\\
-\mbox{}\verb@   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))@\\
-\mbox{}\verb@   model = visImageChainBoundary (shape,segmentChain)@\\
-\mbox{}\verb@   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))@\\
-\mbox{}\verb@@{\NWsep}
-\end{list}
-\vspace{-2ex}
-\end{minipage}\\[4ex]
-\end{flushleft}
-%------------------------------------------------------------------
-
 \section{Construction of (co)boundary operators}
 
 A $d$-image is a \emph{cellular $d$-complex} where cells are $k$-cuboids ($0\leq k\leq d$), i.e.~Cartesian products of a number $k$ of 1D intervals, embedded in $d$-dimensional Euclidean space. 
@@ -334,8 +344,8 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
-\begin{minipage}{\linewidth} \label{scrap9}
-\protect\makebox[0ex][r]{\NWtarget{nuweb5a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Pyplasm visualisation of an image chain\nobreak\ {\footnotesize 5a}$\,\rangle\equiv$
+\begin{minipage}{\linewidth} \label{scrap8}
+\protect\makebox[0ex][r]{\NWtarget{nuweb5b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Pyplasm visualisation of an image chain\nobreak\ {\footnotesize 5b}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@def visImageChain (shape,chain):@\\
@@ -350,7 +360,7 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb6a}{6a}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb7a}{7a}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -360,8 +370,8 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
-\begin{minipage}{\linewidth} \label{scrap10}
-\protect\makebox[0ex][r]{\NWtarget{nuweb5b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Boundary visualisation of an image chain\nobreak\ {\footnotesize 5b}$\,\rangle\equiv$
+\begin{minipage}{\linewidth} \label{scrap9}
+\protect\makebox[0ex][r]{\NWtarget{nuweb6}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Boundary visualisation of an image chain\nobreak\ {\footnotesize 6}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@def visImageChainBoundary (shape,chain):@\\
@@ -385,7 +395,7 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb6a}{6a}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb7a}{7a}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -409,16 +419,16 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 \paragraph{Exporting the morph module}
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
-\begin{minipage}{\linewidth} \label{scrap11}
-\protect\makebox[0ex][r]{\NWtarget{nuweb6a}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"lib/py/morph.py"@\nobreak\ {\footnotesize 6a }$\equiv$
+\begin{minipage}{\linewidth} \label{scrap10}
+\protect\makebox[0ex][r]{\NWtarget{nuweb7a}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"lib/py/morph.py"@\nobreak\ {\footnotesize 7a }$\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@""" LAR implementation of morphological operators on multidimensional images."""@\\
-\mbox{}\verb@@\hbox{$\langle\,$Initial import of modules\nobreak\ {\footnotesize \NWlink{nuweb6b}{6b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Initial import of modules\nobreak\ {\footnotesize \NWlink{nuweb7b}{7b}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Generation of random image\nobreak\ {\footnotesize \NWlink{nuweb2a}{2a}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@\hbox{$\langle\,$Generation of a masking window\nobreak\ {\footnotesize \NWlink{nuweb3a}{3a}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@@\hbox{$\langle\,$Pyplasm visualisation of an image chain\nobreak\ {\footnotesize \NWlink{nuweb5a}{5a}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@@\hbox{$\langle\,$Boundary visualisation of an image chain\nobreak\ {\footnotesize \NWlink{nuweb5b}{5b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Pyplasm visualisation of an image chain\nobreak\ {\footnotesize \NWlink{nuweb5b}{5b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Boundary visualisation of an image chain\nobreak\ {\footnotesize \NWlink{nuweb6}{6}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
 \vspace{-2ex}
@@ -428,8 +438,8 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 
 %-------------------------------------------------------------------------------
 \begin{flushleft} \small
-\begin{minipage}{\linewidth} \label{scrap12}
-\protect\makebox[0ex][r]{\NWtarget{nuweb6b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Initial import of modules\nobreak\ {\footnotesize 6b}$\,\rangle\equiv$
+\begin{minipage}{\linewidth} \label{scrap11}
+\protect\makebox[0ex][r]{\NWtarget{nuweb7b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Initial import of modules\nobreak\ {\footnotesize 7b}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@@\\
@@ -441,20 +451,59 @@ The \texttt{visImageChain} function given by the macro \emph{Visualisation of an
 \mbox{}\verb@import sys@\\
 \mbox{}\verb@sys.path.insert(0, 'lib/py/')@\\
 \mbox{}\verb@@\\
-\mbox{}\verb@@\hbox{$\langle\,$Import the module\nobreak\ ({\footnotesize \NWtarget{nuweb6c}{6c}\label{scrap13}
- }\mbox{}\verb@largrid@ ) {\footnotesize \NWlink{nuweb7a}{7a}}$\,\rangle$}\verb@@\\
-\mbox{}\verb@@\hbox{$\langle\,$Import the module\nobreak\ ({\footnotesize \NWtarget{nuweb6d}{6d}\label{scrap14}
- }\mbox{}\verb@morph@ ) {\footnotesize \NWlink{nuweb7a}{7a}}$\,\rangle$}\verb@ @\\
+\mbox{}\verb@@\hbox{$\langle\,$Import the module\nobreak\ ({\footnotesize \NWtarget{nuweb7c}{7c}\label{scrap12}
+ }\mbox{}\verb@largrid@ ) {\footnotesize \NWlink{nuweb8b}{8b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@@\hbox{$\langle\,$Import the module\nobreak\ ({\footnotesize \NWtarget{nuweb7d}{7d}\label{scrap13}
+ }\mbox{}\verb@morph@ ) {\footnotesize \NWlink{nuweb8b}{8b}}$\,\rangle$}\verb@ @\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb4c}{4c}\NWlink{nuweb6a}{, 6a}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb7a}{7a}\NWlink{nuweb8a}{, 8a}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
 %-------------------------------------------------------------------------------
+
+
+\section{Morphological operations examples}
+
+\subsection{2D image masking and boundary computation}
+
+\paragraph{Test example}
+
+The \texttt{larcc.morph} API is used here to generate a random black and white image, with an \emph{image segment} selected and extracted by masking, then colored in middle grey, and exported to an image file.  
+
+%------------------------------------------------------------------
+\begin{flushleft} \small
+\begin{minipage}{\linewidth} \label{scrap14}
+\protect\makebox[0ex][r]{\NWtarget{nuweb8a}{\rule{0ex}{0ex}}\hspace{1em}}\verb@"test/py/morph/test01.py"@\nobreak\ {\footnotesize 8a }$\equiv$
+\vspace{-1ex}
+\begin{list}{}{} \item
+\mbox{}\verb@@\hbox{$\langle\,$Initial import of modules\nobreak\ {\footnotesize \NWlink{nuweb7b}{7b}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@rows, columns = 100,100@\\
+\mbox{}\verb@rowSize, columnSize = 10,10@\\
+\mbox{}\verb@shape = (rows, columns)@\\
+\mbox{}\verb@structure = (rowSize, columnSize)@\\
+\mbox{}\verb@image_array = randomImage(shape, structure, 0.3)@\\
+\mbox{}\verb@minPoint, maxPoint = (20,20), (40,30)@\\
+\mbox{}\verb@window = minPoint, maxPoint@\\
+\mbox{}\verb@segmentChain = setMaskWindow(window,image_array)@\\
+\mbox{}\verb@   @\\
+\mbox{}\verb@if __name__== "__main__":@\\
+\mbox{}\verb@   model = visImageChain (shape,segmentChain)@\\
+\mbox{}\verb@   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))@\\
+\mbox{}\verb@   model = visImageChainBoundary (shape,segmentChain)@\\
+\mbox{}\verb@   VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))@\\
+\mbox{}\verb@@{\NWsep}
+\end{list}
+\vspace{-2ex}
+\end{minipage}\\[4ex]
+\end{flushleft}
+%------------------------------------------------------------------
+
+
 
 %===============================================================================
 \appendix
@@ -465,7 +514,7 @@ First we define a parametric macro to allow the importing of \texttt{larcc} modu
 %------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap15}
-\protect\makebox[0ex][r]{\NWtarget{nuweb7a}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Import the module\nobreak\ {\footnotesize 7a}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb8b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Import the module\nobreak\ {\footnotesize 8b}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@import @@1\verb@@\\
@@ -475,7 +524,7 @@ First we define a parametric macro to allow the importing of \texttt{larcc} modu
 \vspace{-1ex}
 \footnotesize\addtolength{\baselineskip}{-1ex}
 \begin{list}{}{\setlength{\itemsep}{-\parsep}\setlength{\itemindent}{-\leftmargin}}
-\item \NWtxtMacroRefIn\ \NWlink{nuweb6b}{6b}\NWlink{nuweb7b}{, 7b}.
+\item \NWtxtMacroRefIn\ \NWlink{nuweb7b}{7b}\NWlink{nuweb8c}{, 8c}.
 \end{list}
 \end{minipage}\\[4ex]
 \end{flushleft}
@@ -485,12 +534,12 @@ First we define a parametric macro to allow the importing of \texttt{larcc} modu
 %------------------------------------------------------------------
 \begin{flushleft} \small
 \begin{minipage}{\linewidth} \label{scrap16}
-\protect\makebox[0ex][r]{\NWtarget{nuweb7b}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Function to import a generic module\nobreak\ {\footnotesize 7b}$\,\rangle\equiv$
+\protect\makebox[0ex][r]{\NWtarget{nuweb8c}{\rule{0ex}{0ex}}\hspace{1em}}$\langle\,$Function to import a generic module\nobreak\ {\footnotesize 8c}$\,\rangle\equiv$
 \vspace{-1ex}
 \begin{list}{}{} \item
 \mbox{}\verb@def importModule(moduleName):@\\
-\mbox{}\verb@   @\hbox{$\langle\,$Import the module\nobreak\ ({\footnotesize \NWtarget{nuweb7c}{7c}\label{scrap17}
- }\mbox{}\verb@moduleName@ ) {\footnotesize \NWlink{nuweb7a}{7a}}$\,\rangle$}\verb@@\\
+\mbox{}\verb@   @\hbox{$\langle\,$Import the module\nobreak\ ({\footnotesize \NWtarget{nuweb8d}{8d}\label{scrap17}
+ }\mbox{}\verb@moduleName@ ) {\footnotesize \NWlink{nuweb8b}{8b}}$\,\rangle$}\verb@@\\
 \mbox{}\verb@@{\NWsep}
 \end{list}
 \vspace{-1ex}

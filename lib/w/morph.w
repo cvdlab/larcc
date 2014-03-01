@@ -8,6 +8,11 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 
+\usepackage{framed}
+\usepackage{amsthm}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+
 %----macros begin---------------------------------------------------------------
 \usepackage{color}
 \usepackage{amsthm}
@@ -149,12 +154,49 @@ A \emph{window} within a $d$-image is defined by $2\times d$ integer numbers (2 
 @}
 %-------------------------------------------------------------------------------
 
+The set of tuples of indices contained in a (multidimensional) window is given below.
+ 
 %-------------------------------------------------------------------------------
 @d Generation of multi-index window
 @{indexRanges = zip(minPoint,maxPoint)
 tuples = CART([range(min,max) for min,max in indexRanges])
 @}
 %-------------------------------------------------------------------------------
+
+
+
+\subsection{Mapping of integer tuples to integers}
+
+In order to produce the coordinate representation of a chain in a multidimensional image (or $d$-image) we need: (a) to choose a basis of image elements, i.e.~of $d$-cells, and in particular to fix an ordering of them; (b) to map the multidimensional index, selecting a single $d$-cell of the image, to a single integer mapping the cell to its linear position within the chosen basis ordering. 
+
+
+\paragraph{Grid of hyper-cubes of unit size}
+Let $S_i=(0,1,...,n_i-1)$ be ordered integer sets with $n_i$ elements, and 
+\[
+S= S_0 \times S_1 \times \cdots \times S_{d-1}
+\] 
+the set of indices of elements of a $d$-image.
+
+\begin{definition}[$d$-image shape]
+The \emph{shape} of a $d$-image with $n_0\times n_1 \times\cdots\times n_{d-1}$ elements (here called \emph{voxels}) is the ordered set $(n_0, n_1, \ldots, n_{d-1})$.
+\end{definition}
+
+
+\paragraph{$d$-dimensional row-major order}
+
+Given a $d$-image with shape $S=(n_0,n_1,...,n_{d-1})$ and number of elements $n=\prod n_i$, 
+the mapping  
+\[
+S_0 \times S_1 \times \cdots \times S_{d-1} \to \{ 0, 1, \ldots, n-1\}
+\]
+ is a {linear combination} with integer {weights}  $(w_0,w_1,...,w_{d-2},1)$, such that:
+\[
+(i_0,i_1,...,i_{d-1}) \mapsto i_0 w_0 +i_1 w_1 +\cdots +i_{d-1} w_{d-1},
+\]
+where 
+\[
+w_k = n_{k+1}  n_{k+2} \cdots  n_{d-1}, \qquad 0\leq k\leq d-2.
+\]
 
 \paragraph{From tuples multi-indices to chain coordinates}
 
@@ -182,30 +224,6 @@ scipy.misc.imsave('./outfile.png', image_array)
 @}
 %-------------------------------------------------------------------------------
 
-
-\paragraph{Test example}
-
-The macros previously defined are here composed to generate a random black and white image, with a \emph{image segment} (in a fixed position window within the image) extracted, colored in middle grey, and exported to an image file.  
-
-%------------------------------------------------------------------
-@o test/py/morph/test01.py
-@{@< Initial import of modules @>
-rows, columns = 100,100
-rowSize, columnSize = 10,10
-shape = (rows, columns)
-structure = (rowSize, columnSize)
-image_array = randomImage(shape, structure, 0.3)
-minPoint, maxPoint = (20,20), (40,30)
-window = minPoint, maxPoint
-segmentChain = setMaskWindow(window,image_array)
-	
-if __name__== "__main__":
-	model = visImageChain (shape,segmentChain)
-	VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
-	model = visImageChainBoundary (shape,segmentChain)
-	VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
-@}
-%------------------------------------------------------------------
 
 \section{Construction of (co)boundary operators}
 
@@ -296,6 +314,37 @@ sys.path.insert(0, 'lib/py/')
 @< Import the module @(morph@) @> 
 @}
 %-------------------------------------------------------------------------------
+
+
+\section{Morphological operations examples}
+
+\subsection{2D image masking and boundary computation}
+
+\paragraph{Test example}
+
+The \texttt{larcc.morph} API is used here to generate a random black and white image, with an \emph{image segment} selected and extracted by masking, then colored in middle grey, and exported to an image file.  
+
+%------------------------------------------------------------------
+@o test/py/morph/test01.py
+@{@< Initial import of modules @>
+rows, columns = 100,100
+rowSize, columnSize = 10,10
+shape = (rows, columns)
+structure = (rowSize, columnSize)
+image_array = randomImage(shape, structure, 0.3)
+minPoint, maxPoint = (20,20), (40,30)
+window = minPoint, maxPoint
+segmentChain = setMaskWindow(window,image_array)
+	
+if __name__== "__main__":
+	model = visImageChain (shape,segmentChain)
+	VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
+	model = visImageChainBoundary (shape,segmentChain)
+	VIEW(EXPLODE(1.2,1.2,1.2)(MKPOLS(model)))
+@}
+%------------------------------------------------------------------
+
+
 
 %===============================================================================
 \appendix
